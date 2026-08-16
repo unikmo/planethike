@@ -1,10 +1,11 @@
-import { ArrowDown, ArrowRight, Globe2, MapPin, Sparkles } from 'lucide-react';
+import { ArrowDown, ArrowRight, Globe2 } from 'lucide-react';
+import PreregisterForm from './PreregisterForm';
 
 const chaosCodes = [
   ['01', 'Dress loud', 'Mismatched. Patched. Unexpected.'],
   ['02', 'Walk your way', 'Your pace. Your route. Your rules.'],
   ['03', 'Make a statement', 'Turn the sidewalk into your gallery.'],
-  ['04', 'Expect chaos', 'Surprise missions land the day before.'],
+  ['04', 'Expect chaos', 'Surprise missions land before your walk.'],
 ];
 
 const cities = ['Berlin', 'London', 'Paris', 'Málaga', 'New York', 'Cape Town', 'Sydney', 'Dubai'];
@@ -20,36 +21,36 @@ export default function Home() {
           <a href="#impact">Impact</a>
           <a href="#about">About</a>
         </nav>
-        <a className="navCta" href="#join">Join the chaos <ArrowRight size={16} /></a>
+        <a className="navCta" href="#join">Pre-register <ArrowRight size={16} /></a>
       </header>
 
       <section className="hero" id="top">
         <div className="heroImage" aria-hidden="true" />
         <div className="heroShade" />
-        <div className="heroMeta">GLOBAL EDITION 001 <span>•</span> 11.10.26</div>
+        <div className="heroMeta">GLOBAL EDITION 001 <span>•</span> MAY 2027</div>
         <div className="heroCopy">
           <p className="eyebrow">PlanetHike presents</p>
           <h1>THE<br/><em>CHAOS</em><br/>WALK</h1>
           <p className="heroTag">For misfits, rebels &amp; originals.</p>
           <div className="heroActions">
-            <a className="button buttonLight" href="#join">Join the chaos <ArrowRight size={18} /></a>
+            <a className="button buttonLight" href="#join">Pre-register now <ArrowRight size={18} /></a>
             <a className="textLink" href="#chaos">See what happens <ArrowDown size={16} /></a>
           </div>
         </div>
         <div className="heroFacts">
-          <span>11 OCT 2026</span><span>11AM LOCAL</span><span>10,000 STEPS</span><span>WORLDWIDE</span>
+          <span>MAY 2027</span><span>10,000 STEPS</span><span>WORLDWIDE</span><span>PRE-REGISTRATION OPEN</span>
         </div>
       </section>
 
       <section className="ticker" aria-label="PlanetHike message">
-        <div>STAND OUT • WALK TOGETHER • LEAVE SOMETHING BEHIND • STAND OUT • WALK TOGETHER • LEAVE SOMETHING BEHIND •</div>
+        <div>STAND OUT • WALK TOGETHER • LEAVE SOMETHING BEHIND • PRE-REGISTRATION OPEN • STAND OUT • WALK TOGETHER • LEAVE SOMETHING BEHIND •</div>
       </section>
 
       <section className="manifesto" id="chaos">
         <div className="sectionKicker">01 / The idea</div>
         <h2>Normal has<br/>enough events.</h2>
         <div className="manifestoText">
-          <p>On October 11, the world steps out — not to fit in, but to stand out.</p>
+          <p>In May 2027, the world steps out — not to fit in, but to stand out.</p>
           <p>No stopwatch. No perfect pace. Just 10,000 steps of beautifully strange, shared chaos.</p>
         </div>
       </section>
@@ -93,8 +94,8 @@ export default function Home() {
         <div className="dropsCopy">
           <span className="sectionKicker light">03 / Chaos Drops</span>
           <h2>The rules change<br/>the day before.</h2>
-          <p>Registered walkers get a surprise set of mini-missions on October 10. Complete them. Ignore them. Remix them. Just make the walk yours.</p>
-          <a href="#join" className="button buttonAcid">Get the drops <ArrowRight size={18}/></a>
+          <p>Pre-registered walkers get first access to the date, city updates and surprise mini-missions. Complete them. Ignore them. Remix them. Just make the walk yours.</p>
+          <a href="#join" className="button buttonAcid">Get first access <ArrowRight size={18}/></a>
         </div>
       </section>
 
@@ -110,7 +111,7 @@ export default function Home() {
         </div>
         <div className="cityFooter">
           <p>Walk solo, gather your friends, or put your city on the map.</p>
-          <a href="#join" className="textLink dark">Host your city <ArrowRight size={16}/></a>
+          <a href="#join" className="textLink dark">Register interest as a host <ArrowRight size={16}/></a>
         </div>
       </section>
 
@@ -132,19 +133,17 @@ export default function Home() {
         <div className="sectionKicker">06 / PlanetHike</div>
         <p className="brandStatement">We create the world’s most <em>unforgettable</em> walks.</p>
         <div className="editionStrip">
-          <div><span>2026</span><strong>CHAOS</strong></div>
-          <div className="mystery"><span>2027</span><strong>?</strong></div>
+          <div><span>2027</span><strong>CHAOS</strong></div>
           <div className="mystery"><span>2028</span><strong>?</strong></div>
+          <div className="mystery"><span>2029</span><strong>?</strong></div>
         </div>
-        <p className="brandFoot">One global date. One new story. A tradition worth coming back for.</p>
+        <p className="brandFoot">One global moment. One new story. A tradition worth coming back for.</p>
       </section>
 
       <section className="joinSection" id="join">
-        <Sparkles className="joinSpark" size={52} strokeWidth={1.2}/>
-        <p>11 OCT 2026 · 11AM LOCAL · WORLDWIDE</p>
-        <h2>DON’T<br/>SHOW UP<br/><em>NORMAL.</em></h2>
-        <a className="button buttonDark" href="mailto:hello@planethike.org?subject=I%20want%20to%20join%20The%20Chaos%20Walk">Join the chaos <ArrowRight size={20}/></a>
-        <div className="joinNote"><MapPin size={15}/> Registration flow coming next — this foundation is ready for your database.</div>
+        <p>MAY 2027 · WORLDWIDE · PRE-REGISTRATION OPEN</p>
+        <h2>BE FIRST<br/>TO JOIN<br/><em>THE CHAOS.</em></h2>
+        <PreregisterForm />
       </section>
 
       <footer>
