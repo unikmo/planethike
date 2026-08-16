@@ -11,6 +11,7 @@ export async function POST(request: NextRequest) {
     const interest = String(body.interest || 'walker').trim();
     const company = String(body.company || '').trim();
 
+    // Honeypot: silently accept bot submissions without storing them.
     if (company) return NextResponse.json({ ok: true });
 
     if (!firstName || firstName.length > 80) {
@@ -27,38 +28,43 @@ export async function POST(request: NextRequest) {
     }
 
     const supabaseUrl = process.env.SUPABASE_URL;
-    const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+    const publishableKey = process.env.SUPABASE_PUBLISHABLE_KEY;
 
-    if (!supabaseUrl || !serviceRoleKey) {
+    if (!supabaseUrl || !publishableKey) {
       return NextResponse.json(
         { error: 'Pre-registration is being connected. Please try again shortly.' },
         { status: 503 },
       );
     }
 
-    const response = await fetch(
-      `${supabaseUrl}/rest/v1/planethike_preregistrations?on_conflict=email`,
-      {
-        method: 'POST',
-        headers: {
-          apikey: serviceRoleKey,
-          Authorization: `Bearer ${serviceRoleKey}`,
-          'Content-Type': 'application/json',
-          Prefer: 'resolution=merge-duplicates,return=minimal',
-        },
-        body: JSON.stringify({
-          first_name: firstName,
-          email,
-          location,
-          interest,
-          source: 'planethike.org',
-        }),
-        cache: 'no-store',
+    const response = await fetch(`${supabaseUrl}/rest/v1/planethike_preregistrations`, {
+      method: 'POST',
+      headers: {
+        apikey: publishableKey,
+        Authorization: `Bearer ${publishableKey}`,
+        'Content-Type': 'application/json',
+        Prefer: 'return=minimal',
       },
-    );
+      body: JSON.stringify({
+        first_name: firstName,
+        email,
+        location,
+        interest,
+        source: 'planethike.org',
+      }),
+      cache: 'no-store',
+    });
 
     if (!response.ok) {
-      console.error('Supabase preregistration error', response.status, await response.text());
+      const errorText = await response.text();
+
+      // Email is unique. Treat an existing preregistration as success so repeat
+      // submissions do not expose account/list membership or frustrate users.
+      if (response.status === 409 && errorText.includes('23505')) {
+        return NextResponse.json({ ok: true, already_registered: true });
+      }
+
+      console.error('Supabase preregistration error', response.status, errorText);
       return NextResponse.json({ error: 'We could not save your pre-registration. Please try again.' }, { status: 500 });
     }
 
