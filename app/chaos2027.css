@@ -1,0 +1,205 @@
+.hero2027 {
+  min-height: 100svh;
+  background: #ece4d8;
+  color: #111;
+  align-items: stretch;
+  overflow: hidden;
+}
+
+.heroImage2027 {
+  left: 42%;
+  background-image: url('https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1800&q=90');
+  background-size: cover;
+  background-position: center 26%;
+  transform: none;
+  filter: saturate(1.05) contrast(1.02);
+}
+
+.heroShade2027 {
+  background: linear-gradient(90deg, #f3eee5 0%, #f3eee5 36%, rgba(243,238,229,.72) 45%, rgba(243,238,229,.1) 63%, rgba(0,0,0,.08) 100%);
+}
+
+.heroCopy2027 {
+  width: 47%;
+  min-width: 560px;
+  padding: 145px 5vw 52px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.heroCopy2027 .eyebrow { margin-bottom: 28px; }
+.heroCopy2027 h1 {
+  font-size: clamp(76px, 8.8vw, 150px);
+  line-height: .82;
+  letter-spacing: -.075em;
+  color: #111;
+}
+.heroCopy2027 .heroTag {
+  margin: 24px 0 16px;
+  font-family: 'DM Sans', Arial, sans-serif;
+  font-style: normal;
+  font-size: clamp(17px, 1.4vw, 23px);
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.heroDate {
+  margin: 0 0 30px;
+  color: #8f2e79;
+  font-weight: 700;
+  letter-spacing: .18em;
+  font-size: 12px;
+}
+.heroOutline {
+  border: 1px solid #111;
+  color: #111;
+  background: rgba(255,255,255,.36);
+}
+.heroPillRow {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  margin-top: 44px;
+  max-width: 690px;
+  border-top: 1px solid rgba(17,17,17,.24);
+}
+.heroPillRow span {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  min-height: 58px;
+  padding: 12px 16px 12px 0;
+  border-bottom: 1px solid rgba(17,17,17,.24);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.siteHeader { color: #111; mix-blend-mode: normal; }
+
+.challengeWall {
+  background: #121212;
+  color: #fffdf8;
+  padding: 130px 5vw 110px;
+}
+.challengeWallHead {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 8vw;
+  align-items: end;
+  margin-bottom: 80px;
+}
+.challengeWallHead h2 {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: clamp(70px, 9vw, 145px);
+  line-height: .8;
+  letter-spacing: -.075em;
+  margin: 0;
+}
+.challengeWallHead p {
+  max-width: 520px;
+  margin: 0;
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(24px, 2.4vw, 34px);
+  line-height: 1.08;
+}
+.challengeTrack {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  border-top: 1px solid rgba(255,255,255,.25);
+  border-bottom: 1px solid rgba(255,255,255,.25);
+}
+.challengeMoment {
+  min-height: 210px;
+  padding: 22px 18px;
+  border-right: 1px solid rgba(255,255,255,.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.challengeMoment:last-child { border-right: 0; }
+.challengeMoment span { font-size: 11px; letter-spacing: .12em; opacity: .7; }
+.challengeMoment strong { font-family: 'Archivo Black', sans-serif; font-size: 24px; line-height: .95; text-transform: uppercase; }
+.challengeMoment2, .challengeMoment5 { background: #5b2b83; }
+.challengeMoment3 { background: #e2a11d; color: #111; }
+.challengeMoment6 { background: #d7ff2f; color: #111; }
+.challengeNote { display: flex; gap: 8px; align-items: center; margin: 28px 0 0; opacity: .72; font-size: 12px; }
+
+.fanVisual {
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at 50% 45%, #8952b3 0%, #58227d 42%, #201126 100%);
+}
+.fanVisual:before { display: none; }
+.fanArc {
+  width: min(78%, 520px);
+  aspect-ratio: 2 / 1;
+  border-radius: 520px 520px 34px 34px;
+  background: repeating-conic-gradient(from 270deg at 50% 100%, #7c2e9a 0deg 7deg, #a846b5 7deg 14deg, #e0b327 14deg 21deg, #1f9596 21deg 28deg);
+  border: 16px solid #111;
+  border-bottom-width: 34px;
+  transform: rotate(-5deg);
+  box-shadow: 0 28px 70px rgba(0,0,0,.35);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: #fff;
+}
+.fanArc span { font-family: 'Archivo Black', sans-serif; font-size: clamp(48px, 6vw, 92px); line-height: .8; transform: rotate(4deg); }
+.fanArc small { font-weight: 800; letter-spacing: .12em; }
+
+.commerceSection { padding: 140px 5vw; background: #f3efe6; }
+.commerceGrid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 8vw; align-items: start; }
+.commerceGrid h2 {
+  margin: 0;
+  font-family: 'Archivo Black', sans-serif;
+  font-size: clamp(60px, 7vw, 110px);
+  line-height: .86;
+  letter-spacing: -.07em;
+}
+.commerceCopy { max-width: 590px; }
+.commerceCopy p { font-family: 'Instrument Serif', serif; font-size: 27px; line-height: 1.12; margin: 0 0 24px; }
+
+.shopHero {
+  min-height: 78vh;
+  padding: 130px 5vw 80px;
+  background: #e9dfd2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6vw;
+  align-items: end;
+}
+.shopHero h1 { font-family: 'Archivo Black', sans-serif; font-size: clamp(74px, 10vw, 155px); line-height: .8; letter-spacing: -.07em; margin: 0; }
+.shopHero p { max-width: 560px; font-family: 'Instrument Serif', serif; font-size: 30px; line-height: 1.1; }
+.shopCards { display: grid; grid-template-columns: repeat(3, 1fr); }
+.shopCard { min-height: 470px; padding: 34px; border-right: 1px solid #111; display: flex; flex-direction: column; justify-content: space-between; }
+.shopCard:last-child { border-right: 0; }
+.shopCard:nth-child(1) { background: #d7ff2f; }
+.shopCard:nth-child(2) { background: #ff8c30; }
+.shopCard:nth-child(3) { background: #7a46a0; color: #fff; }
+.shopCard span { font-size: 11px; letter-spacing: .15em; text-transform: uppercase; }
+.shopCard h2 { font-family: 'Archivo Black', sans-serif; font-size: 48px; line-height: .9; margin: 0; }
+.shopCard strong { font-size: 28px; }
+.shopPolicy { padding: 110px 5vw; display: grid; grid-template-columns: 1fr 1fr; gap: 8vw; }
+.shopPolicy h2 { font-family: 'Archivo Black', sans-serif; font-size: clamp(56px, 6vw, 92px); line-height: .9; margin: 0; }
+.shopPolicy p { font-family: 'Instrument Serif', serif; font-size: 27px; line-height: 1.12; }
+
+@media (max-width: 900px) {
+  .heroImage2027 { left: 0; top: 38%; background-position: center 20%; }
+  .heroShade2027 { background: linear-gradient(180deg, #f3eee5 0%, #f3eee5 38%, rgba(243,238,229,.78) 52%, rgba(0,0,0,.1) 100%); }
+  .heroCopy2027 { width: 100%; min-width: 0; padding: 105px 18px 36px; justify-content: flex-start; }
+  .heroCopy2027 h1 { font-size: clamp(66px, 19vw, 110px); }
+  .heroCopy2027 .heroTag { font-size: 13px; }
+  .heroDate { font-size: 10px; }
+  .heroActions { flex-direction: row; flex-wrap: wrap; }
+  .heroPillRow { margin-top: auto; grid-template-columns: 1fr 1fr; }
+  .challengeWall { padding: 100px 18px 80px; }
+  .challengeWallHead, .commerceGrid, .shopHero, .shopPolicy { grid-template-columns: 1fr; }
+  .challengeTrack { grid-template-columns: 1fr 1fr; }
+  .challengeMoment { border-bottom: 1px solid rgba(255,255,255,.25); }
+  .shopHero { padding: 110px 18px 70px; min-height: 70vh; }
+  .shopCards { grid-template-columns: 1fr; }
+  .shopCard { border-right: 0; border-bottom: 1px solid #111; min-height: 330px; }
+  .commerceSection, .shopPolicy { padding: 100px 18px; }
+}
