@@ -11,7 +11,6 @@ export async function POST(request: NextRequest) {
     const interest = String(body.interest || 'walker').trim();
     const company = String(body.company || '').trim();
 
-    // Honeypot: silently accept bot submissions without storing them.
     if (company) return NextResponse.json({ ok: true });
 
     if (!firstName || firstName.length > 80) {
@@ -23,7 +22,7 @@ export async function POST(request: NextRequest) {
     if (!location || location.length > 120) {
       return NextResponse.json({ error: 'Please enter your city and country.' }, { status: 400 });
     }
-    if (!['walker', 'host', 'team'].includes(interest)) {
+    if (!['walker', 'host', 'volunteer', 'team'].includes(interest)) {
       return NextResponse.json({ error: 'Please choose a valid interest.' }, { status: 400 });
     }
 
@@ -57,9 +56,6 @@ export async function POST(request: NextRequest) {
 
     if (!response.ok) {
       const errorText = await response.text();
-
-      // Email is unique. Treat an existing preregistration as success so repeat
-      // submissions do not expose account/list membership or frustrate users.
       if (response.status === 409 && errorText.includes('23505')) {
         return NextResponse.json({ ok: true, already_registered: true });
       }
