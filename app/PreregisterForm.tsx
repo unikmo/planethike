@@ -27,7 +27,7 @@ export default function PreregisterForm() {
       if (!response.ok) throw new Error(data.error || 'Something went wrong.');
 
       setStatus('success');
-      setMessage('You’re on the first-access list. We’ll send the 2027 date and city news first.');
+      setMessage('You’re on the first-access list. We’ll send the May 2027 date, city news and next steps first.');
       event.currentTarget.reset();
     } catch (error) {
       setStatus('error');
@@ -64,11 +64,12 @@ export default function PreregisterForm() {
           <input name="location" autoComplete="address-level2" maxLength={120} placeholder="Berlin, Germany" required />
         </label>
         <label>
-          <span>I’m interested in</span>
+          <span>I want to</span>
           <select name="interest" defaultValue="walker">
-            <option value="walker">Walking</option>
-            <option value="host">Hosting my city</option>
-            <option value="team">Bringing a group / team</option>
+            <option value="walker">Join the walk</option>
+            <option value="host">Lead my city</option>
+            <option value="volunteer">Volunteer with my city crew</option>
+            <option value="team">Bring a group / team</option>
           </select>
         </label>
       </div>
@@ -76,11 +77,11 @@ export default function PreregisterForm() {
       <input className={styles.honeypot} name="company" tabIndex={-1} autoComplete="off" aria-hidden="true" />
 
       <button className={styles.submit} type="submit" disabled={status === 'loading'}>
-        {status === 'loading' ? 'Joining…' : 'Pre-register now'}
+        {status === 'loading' ? 'Joining…' : 'Pre-register free'}
         {status !== 'loading' && <ArrowRight size={18} />}
       </button>
 
-      <p className={styles.microcopy}>No payment. No commitment. Just first access to the May 2027 launch, city announcements and Chaos Drops.</p>
+      <p className={styles.microcopy}>Free registration. No payment. City Lead and volunteer applicants receive separate onboarding when their city moves forward.</p>
       {status === 'error' && <p className={styles.error} role="alert">{message}</p>}
     </form>
   );
