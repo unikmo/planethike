@@ -1,0 +1,80 @@
+.surgeryImage { background-image: url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1600&q=88'); background-position: center; filter: saturate(.72) contrast(1.02); }
+.impactCta { align-self: flex-start; margin-top: 30px; }
+
+.subHeader { position: absolute; top: 0; left: 0; right: 0; z-index: 30; height: 76px; padding: 0 5vw; display: flex; align-items: center; justify-content: space-between; }
+.subHeader.darkHeader { color: var(--white); }
+.subHero { min-height: 92vh; display: flex; align-items: end; padding: 130px 5vw 80px; }
+.cityLeadHero { background: var(--acid); }
+.subHeroInner { max-width: 1280px; }
+.subHero h1, .surgeryHeroPage h1 { font-family: 'Archivo Black', sans-serif; text-transform: uppercase; font-size: clamp(72px, 12vw, 180px); line-height: .77; letter-spacing: -.075em; margin: 0; }
+.subHero h1 em, .surgeryHeroPage h1 em { font-family: 'Instrument Serif', serif; font-weight: 400; text-transform: none; }
+.subLead { max-width: 660px; margin: 40px 0 30px; font-family: 'Instrument Serif', serif; font-size: clamp(25px, 2.4vw, 36px); line-height: 1.12; }
+
+.roleStrip { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
+.roleStrip article { min-height: 280px; padding: 38px 5vw; display: flex; flex-direction: column; gap: 18px; border-right: 1px solid var(--ink); }
+.roleStrip article:last-child { border-right: 0; }
+.roleStrip strong { font-family: 'Archivo Black', sans-serif; font-size: 25px; text-transform: uppercase; line-height: .95; margin-top: auto; }
+.roleStrip span { font-size: 14px; line-height: 1.5; }
+
+.processSection { padding: 140px 5vw; }
+.processIntro { display: grid; grid-template-columns: 1.4fr .6fr; gap: 8vw; align-items: end; margin-bottom: 90px; }
+.processIntro h2, .protocolSection h2, .leadCta h2, .surgeryStatement h2, .maskStoryCopy h2, .surgeryTransparency h2 { font-family: 'Archivo Black', sans-serif; text-transform: uppercase; font-size: clamp(54px, 7vw, 108px); line-height: .88; letter-spacing: -.065em; margin: 0; }
+.processIntro p { font-family: 'Instrument Serif', serif; font-size: 28px; line-height: 1.15; margin: 0; }
+.processList { border-top: 1px solid rgba(17,17,17,.25); }
+.processList article { display: grid; grid-template-columns: 80px 1fr 1.4fr; gap: 28px; align-items: start; padding: 30px 0; border-bottom: 1px solid rgba(17,17,17,.25); }
+.processList h3 { font-family: 'Archivo Black', sans-serif; text-transform: uppercase; font-size: 24px; margin: 0; }
+.processList p { margin: 0; max-width: 720px; line-height: 1.6; }
+
+.protocolSection { background: var(--ink); color: var(--white); padding: 130px 5vw; display: grid; grid-template-columns: 1fr 1fr; gap: 8vw; }
+.protocolGrid { display: grid; align-content: center; }
+.protocolGrid span { display: flex; align-items: center; gap: 14px; padding: 17px 0; border-bottom: 1px solid rgba(255,255,255,.2); text-transform: uppercase; font-size: 12px; letter-spacing: .06em; }
+.leadCta { min-height: 78vh; padding: 120px 5vw; background: var(--pink); display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+.leadCta > p { font-size: 11px; letter-spacing: .16em; font-weight: 700; }
+.leadCta .button { margin-top: 44px; }
+.leadCta small { max-width: 600px; margin-top: 22px; line-height: 1.5; }
+
+.surgeryHeroPage { position: relative; min-height: 100svh; color: var(--white); display: flex; align-items: end; }
+.surgeryHeroPhoto { position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=2200&q=88'); background-size: cover; background-position: center; }
+.surgeryHeroShade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.72)); }
+.surgeryHeroCopy { position: relative; z-index: 2; padding: 0 5vw 90px; width: min(1400px, 96vw); }
+.surgeryHeroCopy > p:last-child { max-width: 680px; font-family: 'Instrument Serif', serif; font-size: 30px; line-height: 1.1; margin: 38px 0 0; }
+.surgeryStatement { padding: 150px 5vw; display: grid; grid-template-columns: 1.25fr .75fr; gap: 8vw; align-items: end; }
+.surgeryStatement .sectionKicker { grid-column: 1 / -1; }
+.surgeryStatement > p:last-child { font-family: 'Instrument Serif', serif; font-size: 29px; line-height: 1.15; margin: 0; }
+.impactPrinciples { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
+.impactPrinciples article { min-height: 330px; padding: 38px 5vw; display: flex; flex-direction: column; border-right: 1px solid var(--ink); }
+.impactPrinciples article:last-child { border-right: 0; }
+.impactPrinciples strong { font-family: 'Archivo Black', sans-serif; text-transform: uppercase; font-size: 24px; margin: auto 0 12px; }
+.impactPrinciples p { margin: 0; line-height: 1.5; }
+.maskStory { display: grid; grid-template-columns: .9fr 1.1fr; min-height: 820px; }
+.maskStoryVisual { background: var(--orange); padding: 60px 5vw; display: flex; flex-direction: column; justify-content: space-between; }
+.maskStoryVisual span, .maskStoryVisual small { font-size: 11px; letter-spacing: .16em; font-weight: 700; }
+.maskStoryVisual strong { font-family: 'Archivo Black', sans-serif; font-size: clamp(70px, 9vw, 142px); line-height: .75; letter-spacing: -.07em; }
+.maskStoryCopy { padding: 8vw 7vw; display: flex; flex-direction: column; justify-content: center; }
+.maskStoryCopy > p:not(.sectionKicker) { font-family: 'Instrument Serif', serif; font-size: 25px; line-height: 1.2; max-width: 650px; }
+.maskStoryCopy .button { align-self: flex-start; margin-top: 24px; }
+.surgeryTransparency { background: #6d54ff; color: var(--white); padding: 150px 5vw; }
+.surgeryTransparency p:last-child { max-width: 700px; margin: 40px 0 0 auto; font-family: 'Instrument Serif', serif; font-size: 28px; line-height: 1.15; }
+
+@media (max-width: 900px) {
+  .subHeader { padding: 0 18px; height: 64px; }
+  .subHeader .textLink { font-size: 9px; }
+  .subHero { min-height: 88vh; padding: 110px 18px 70px; }
+  .roleStrip, .impactPrinciples { grid-template-columns: 1fr; }
+  .roleStrip article, .impactPrinciples article { border-right: 0; border-bottom: 1px solid var(--ink); min-height: 240px; padding: 30px 18px; }
+  .processSection { padding: 100px 18px; }
+  .processIntro { grid-template-columns: 1fr; gap: 34px; margin-bottom: 60px; }
+  .processIntro p { font-size: 25px; }
+  .processList article { grid-template-columns: 48px 1fr; }
+  .processList article p { grid-column: 2; }
+  .protocolSection { grid-template-columns: 1fr; padding: 100px 18px; }
+  .leadCta { padding: 100px 18px; min-height: 70vh; }
+  .surgeryHeroCopy { padding: 0 18px 70px; }
+  .surgeryStatement { grid-template-columns: 1fr; padding: 110px 18px; gap: 40px; }
+  .surgeryStatement .sectionKicker { grid-column: auto; }
+  .maskStory { grid-template-columns: 1fr; }
+  .maskStoryVisual { min-height: 600px; padding: 40px 18px; }
+  .maskStoryCopy { padding: 90px 18px; }
+  .surgeryTransparency { padding: 110px 18px; }
+  .surgeryTransparency p:last-child { margin-left: 0; font-size: 25px; }
+}
