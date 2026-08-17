@@ -17,7 +17,8 @@
   gap: 8px;
 }
 
-.form label > span {
+.form label > span,
+.availabilityLabel {
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: .14em;
@@ -43,6 +44,23 @@
 .form select:focus {
   border-color: #111;
   background: rgba(255,255,255,.8);
+}
+
+.form select:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.availabilityText {
+  min-height: 58px;
+  margin: 8px 0 0;
+  padding: 13px 16px;
+  border: 1px solid rgba(17,17,17,.2);
+  background: rgba(255,255,255,.25);
+  font-size: 13px;
+  line-height: 1.35;
+  display: flex;
+  align-items: center;
 }
 
 .submit {
