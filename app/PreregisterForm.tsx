@@ -1,12 +1,19 @@
 'use client';
 
-import { FormEvent, useState } from 'react';
+import { FormEvent, useMemo, useState } from 'react';
 import { ArrowRight, Check } from 'lucide-react';
 import styles from './PreregisterForm.module.css';
+import { participationCountries } from './locations';
 
 export default function PreregisterForm() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [message, setMessage] = useState('');
+  const [countryCode, setCountryCode] = useState('');
+
+  const selectedCountry = useMemo(
+    () => participationCountries.find((country) => country.code === countryCode),
+    [countryCode],
+  );
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -29,6 +36,7 @@ export default function PreregisterForm() {
       setStatus('success');
       setMessage('You’re on the first-access list. We’ll send the May 2027 date, city news and next steps first.');
       event.currentTarget.reset();
+      setCountryCode('');
     } catch (error) {
       setStatus('error');
       setMessage(error instanceof Error ? error.message : 'Unable to pre-register right now.');
@@ -60,9 +68,26 @@ export default function PreregisterForm() {
 
       <div className={styles.row}>
         <label>
-          <span>City / Country</span>
-          <input name="location" autoComplete="address-level2" maxLength={120} placeholder="Berlin, Germany" required />
+          <span>Country</span>
+          <select name="country_code" value={countryCode} onChange={(event) => setCountryCode(event.target.value)} required>
+            <option value="" disabled>Select country</option>
+            {participationCountries.map((country) => (
+              <option key={country.code} value={country.code}>{country.name}</option>
+            ))}
+          </select>
         </label>
+        <label>
+          <span>City</span>
+          <select name="city" defaultValue="" disabled={!selectedCountry} required>
+            <option value="" disabled>{selectedCountry ? 'Select city' : 'Choose country first'}</option>
+            {selectedCountry?.cities.map((city) => (
+              <option key={city} value={city}>{city}</option>
+            ))}
+          </select>
+        </label>
+      </div>
+
+      <div className={styles.row}>
         <label>
           <span>I want to</span>
           <select name="interest" defaultValue="walker">
@@ -72,6 +97,16 @@ export default function PreregisterForm() {
             <option value="team">Bring a group / team</option>
           </select>
         </label>
+        <div aria-live="polite">
+          <span className={styles.availabilityLabel}>Mask availability</span>
+          <p className={styles.availabilityText}>
+            {!selectedCountry
+              ? 'Select your country to see the launch setup.'
+              : selectedCountry.commerce
+                ? 'Official Chaos Mask shop planned for this market.'
+                : 'Participation is open. Make your own Chaos Mask locally — no purchase required.'}
+          </p>
+        </div>
       </div>
 
       <input className={styles.honeypot} name="company" tabIndex={-1} autoComplete="off" aria-hidden="true" />
@@ -81,7 +116,7 @@ export default function PreregisterForm() {
         {status !== 'loading' && <ArrowRight size={18} />}
       </button>
 
-      <p className={styles.microcopy}>Free registration. No payment. City Lead and volunteer applicants receive separate onboarding when their city moves forward.</p>
+      <p className={styles.microcopy}>Free registration. No payment. Where official PlanetHike delivery is not available, walkers can make their own mask locally and participate fully.</p>
       {status === 'error' && <p className={styles.error} role="alert">{message}</p>}
     </form>
   );
