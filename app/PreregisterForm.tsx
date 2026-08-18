@@ -98,13 +98,13 @@ export default function PreregisterForm() {
           </select>
         </label>
         <div aria-live="polite">
-          <span className={styles.availabilityLabel}>Mask availability</span>
+          <span className={styles.availabilityLabel}>Chaos Fan availability</span>
           <p className={styles.availabilityText}>
             {!selectedCountry
               ? 'Select your country to see the launch setup.'
               : selectedCountry.commerce
-                ? 'Official Chaos Mask shop planned for this market.'
-                : 'Participation is open. Make your own Chaos Mask locally — no purchase required.'}
+                ? 'Official Chaos Fan shop planned for this market.'
+                : 'Participation is open. Make your own Chaos Fan locally — no purchase required.'}
           </p>
         </div>
       </div>
@@ -116,7 +116,7 @@ export default function PreregisterForm() {
         {status !== 'loading' && <ArrowRight size={18} />}
       </button>
 
-      <p className={styles.microcopy}>Free registration. No payment. Where official PlanetHike delivery is not available, walkers can make their own mask locally and participate fully.</p>
+      <p className={styles.microcopy}>Free registration. No payment. Where official PlanetHike delivery is not available, walkers can make their own Chaos Fan locally and participate fully.</p>
       {status === 'error' && <p className={styles.error} role="alert">{message}</p>}
     </form>
   );
