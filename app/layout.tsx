@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import './subpages.css';
 import './chaos2027.css';
+import './hero-approved.css';
 
 export const metadata: Metadata = {
   title: 'PlanetHike — The world’s most unforgettable walks',
