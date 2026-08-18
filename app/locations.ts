@@ -34,7 +34,7 @@ export const participationCountries: ParticipationCountry[] = [
   { code: 'GB', name: 'United Kingdom', commerce: true, cities: ['London', 'Manchester', 'Birmingham', 'Edinburgh', 'City not yet listed'] },
   { code: 'US', name: 'United States', commerce: true, cities: ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Seattle', 'Miami', 'Boston', 'City not yet listed'] },
 
-  // Participation-only launch markets. Local walkers can create their own mask where commerce is unavailable.
+  // Participation-only launch markets. Local walkers can create their own Chaos Fan where commerce is unavailable.
   { code: 'BW', name: 'Botswana', commerce: false, cities: ['Gaborone', 'City not yet listed'] },
   { code: 'CM', name: 'Cameroon', commerce: false, cities: ['Douala', 'Yaoundé', 'City not yet listed'] },
   { code: 'CI', name: "Côte d’Ivoire", commerce: false, cities: ['Abidjan', 'City not yet listed'] },
