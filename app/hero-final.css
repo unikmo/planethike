@@ -1,60 +1,136 @@
-/* Final hero overrides: crisp local asset, no oversized bitmap stretching. */
+/* Responsive Chaos hero: native HTML copy + crisp local image */
+.hero2027 {
+  min-height: 820px;
+  padding-top: 74px;
+  background: #f3eee5;
+  color: #111;
+  overflow: hidden;
+}
+
 .heroImage2027 {
-  left: 45%;
+  position: absolute;
   top: 74px;
-  bottom: 0;
   right: 0;
-  background-color: #f3eee5;
+  bottom: 0;
+  left: 48%;
   background-image: url('/chaos-hero-2027.webp');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: right bottom;
   transform: none;
   filter: none;
-  will-change: auto;
+  image-rendering: auto;
 }
 
 .heroShade2027 {
-  background: linear-gradient(90deg, #f3eee5 0%, #f3eee5 39%, rgba(243,238,229,.94) 44%, rgba(243,238,229,.50) 52%, rgba(243,238,229,0) 64%);
+  position: absolute;
+  inset: 74px 0 0;
+  background: linear-gradient(90deg,
+    #f3eee5 0%,
+    #f3eee5 42%,
+    rgba(243,238,229,.97) 46%,
+    rgba(243,238,229,.58) 54%,
+    rgba(243,238,229,.08) 66%,
+    rgba(243,238,229,0) 74%);
+  pointer-events: none;
 }
 
 .heroCopy2027 {
-  width: 47%;
-  min-width: 540px;
-  padding: 132px 3.1vw 42px;
-  justify-content: flex-end;
+  position: relative;
+  z-index: 3;
+  width: min(47vw, 700px);
+  min-width: 520px;
+  min-height: calc(820px - 74px);
+  padding: 88px 0 46px 3.2vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.heroCopy2027 .eyebrow {
+  margin: 0 0 18px;
+  color: #6f3798;
+  font-size: 11px;
+  letter-spacing: .19em;
 }
 
 .heroCopy2027 h1 {
-  font-size: clamp(72px, 7.8vw, 138px);
-  line-height: .84;
+  margin: 0;
+  max-width: 640px;
+  font-size: clamp(78px, 7.2vw, 132px);
+  line-height: .82;
+  letter-spacing: -.075em;
 }
 
 .heroCopy2027 .heroTag {
   display: inline-block;
   width: fit-content;
-  background: #d7ff2f;
+  margin: 24px 0 14px;
   padding: 8px 12px 7px;
-  margin: 20px 0 14px;
+  background: #d7ff2f;
+  color: #111;
+  font-family: 'DM Sans', Arial, sans-serif;
+  font-style: normal;
+  font-size: clamp(15px, 1.1vw, 19px);
+  font-weight: 800;
   letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.heroDate {
+  margin: 0 0 28px;
+  color: #7441a1;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .2em;
+}
+
+.heroActions {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.heroActions .button {
+  min-height: 52px;
+  border-radius: 8px;
+  padding: 0 22px;
+}
+
+.heroOutline {
+  border: 1px solid rgba(17,17,17,.72);
+  background: rgba(255,255,255,.38);
+  color: #111;
 }
 
 .heroPillRow {
-  margin-top: 28px;
-  max-width: 640px;
+  width: min(680px, 44vw);
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid rgba(17,17,17,.18);
 }
 
-.heroPillRow span { min-height: 52px; }
+.heroPillRow span {
+  min-height: 68px;
+  padding: 14px 12px 10px 0;
+  border-right: 1px solid rgba(17,17,17,.14);
+  border-bottom: 0;
+  align-items: flex-start;
+  font-size: 10px;
+  line-height: 1.35;
+}
 
-/* Reuse the Chaos visual for the shoe story instead of the old matching-shoe stock image. */
+.heroPillRow span:last-child { border-right: 0; }
+
 .photoShoes {
   background-image: url('/chaos-hero-2027.webp') !important;
-  background-size: cover !important;
-  background-position: center 88% !important;
-  background-repeat: no-repeat !important;
+  background-size: 165% auto !important;
+  background-position: 72% 92% !important;
+  filter: none !important;
 }
 
-/* Defer below-the-fold rendering work. This improves initial paint/LCP without changing content. */
 .manifesto,
 .editorialGrid,
 .rulesSection,
@@ -70,61 +146,65 @@ footer {
   contain-intrinsic-size: 900px;
 }
 
-@media (min-width: 1200px) {
-  .hero2027 { min-height: 820px; }
-  .heroImage2027 { left: 44%; }
-}
-
-@media (max-width: 1100px) {
-  .heroImage2027 {
-    left: 43%;
-    background-size: contain;
-    background-position: right bottom;
-  }
+@media (max-width: 1180px) {
+  .heroImage2027 { left: 44%; background-size: cover; background-position: 64% bottom; }
+  .heroCopy2027 { width: 52vw; min-width: 500px; }
+  .heroPillRow { width: 50vw; grid-template-columns: repeat(2, 1fr); }
+  .heroPillRow span { border-bottom: 1px solid rgba(17,17,17,.14); }
 }
 
 @media (max-width: 900px) {
   .hero2027 {
-    min-height: 100svh;
+    min-height: 0;
     padding-top: 64px;
+    display: grid;
+    grid-template-rows: auto auto;
+    background: #f3eee5;
   }
 
   .heroImage2027 {
-    left: 0;
-    right: 0;
-    top: 46%;
-    bottom: 0;
-    height: 54%;
-    background-size: contain;
-    background-position: center bottom;
+    position: relative;
+    grid-row: 2;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    width: 100%;
+    height: min(62vw, 540px);
+    min-height: 380px;
+    background-size: cover;
+    background-position: 62% bottom;
   }
 
-  .heroShade2027 {
-    background: linear-gradient(180deg, #f3eee5 0%, #f3eee5 44%, rgba(243,238,229,.68) 52%, rgba(243,238,229,0) 66%);
-  }
+  .heroShade2027 { display: none; }
 
   .heroCopy2027 {
+    grid-row: 1;
     width: 100%;
     min-width: 0;
-    padding: 96px 18px 24px;
+    min-height: 0;
+    padding: 44px 20px 30px;
     justify-content: flex-start;
   }
 
-  .heroCopy2027 h1 { font-size: clamp(62px, 18vw, 104px); }
-  .heroCopy2027 .heroTag { font-size: 12px; padding: 6px 8px; }
-  .heroDate { margin-bottom: 18px; }
+  .heroCopy2027 .eyebrow { margin-bottom: 14px; }
+  .heroCopy2027 h1 { font-size: clamp(64px, 17.5vw, 100px); max-width: 520px; }
+  .heroCopy2027 .heroTag { margin-top: 18px; font-size: 12px; line-height: 1.25; }
+  .heroDate { margin-bottom: 20px; font-size: 10px; }
+  .heroActions { gap: 10px; }
+  .heroActions .button { min-height: 48px; padding: 0 16px; font-size: 10px; }
   .heroPillRow { display: none; }
 }
 
-@media (max-width: 540px) {
+@media (max-width: 560px) {
+  .heroCopy2027 { padding: 32px 16px 24px; }
+  .heroCopy2027 h1 { font-size: clamp(56px, 18vw, 78px); line-height: .83; }
+  .heroCopy2027 .heroTag { max-width: 95%; }
+  .heroActions { display: grid; grid-template-columns: 1fr; }
+  .heroActions .button { width: 100%; }
   .heroImage2027 {
-    top: 50%;
-    height: 50%;
-    background-size: contain;
-    background-position: center bottom;
-  }
-
-  .heroCopy2027 {
-    padding-top: 82px;
+    height: 74vw;
+    min-height: 340px;
+    background-position: 62% bottom;
   }
 }
