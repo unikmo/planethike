@@ -1,0 +1,65 @@
+/* Final hero overrides: fast local WebP asset + crisp responsive composition */
+.heroImage2027 {
+  left: 44%;
+  top: 82px;
+  bottom: 0;
+  right: 0;
+  background-image: url('/chaos-hero-2027.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+  transform: none;
+  filter: none;
+}
+.heroShade2027 {
+  background: linear-gradient(90deg, #f3eee5 0%, #f3eee5 39%, rgba(243,238,229,.88) 45%, rgba(243,238,229,.2) 58%, rgba(243,238,229,0) 72%);
+}
+.heroCopy2027 {
+  width: 47%;
+  min-width: 540px;
+  padding: 132px 3.1vw 42px;
+  justify-content: flex-end;
+}
+.heroCopy2027 h1 {
+  font-size: clamp(72px, 7.8vw, 138px);
+  line-height: .84;
+}
+.heroCopy2027 .heroTag {
+  display: inline-block;
+  width: fit-content;
+  background: #d7ff2f;
+  padding: 8px 12px 7px;
+  margin: 20px 0 14px;
+  letter-spacing: .08em;
+}
+.heroPillRow {
+  margin-top: 28px;
+  max-width: 640px;
+}
+.heroPillRow span { min-height: 52px; }
+@media (min-width: 1200px) {
+  .hero2027 { min-height: 880px; }
+}
+@media (max-width: 900px) {
+  .hero2027 { min-height: 100svh; padding-top: 64px; }
+  .heroImage2027 {
+    left: 0;
+    top: 43%;
+    height: 57%;
+    background-size: cover;
+    background-position: 58% bottom;
+  }
+  .heroShade2027 {
+    background: linear-gradient(180deg, #f3eee5 0%, #f3eee5 43%, rgba(243,238,229,.42) 54%, rgba(243,238,229,0) 70%);
+  }
+  .heroCopy2027 {
+    width: 100%;
+    min-width: 0;
+    padding: 96px 18px 24px;
+    justify-content: flex-start;
+  }
+  .heroCopy2027 h1 { font-size: clamp(62px, 18vw, 104px); }
+  .heroCopy2027 .heroTag { font-size: 12px; padding: 6px 8px; }
+  .heroDate { margin-bottom: 18px; }
+  .heroPillRow { display: none; }
+}
