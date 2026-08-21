@@ -14,6 +14,7 @@ const core = [
   '/shop',
   '/shop/chaos-fan',
   '/join',
+  '/guides',
 ];
 
 const guides = [
@@ -35,6 +36,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `https://planethike.org${path}`,
     lastModified: now,
     changeFrequency: path.startsWith('/guides/') ? 'monthly' : 'weekly',
-    priority: path === '' ? 1 : path.startsWith('/guides/') ? 0.7 : 0.85,
+    priority: path === '' ? 1 : path === '/guides' ? 0.8 : path.startsWith('/guides/') ? 0.7 : 0.85,
   }));
 }
