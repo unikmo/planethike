@@ -1,6 +1,6 @@
-/* Responsive Chaos hero: native HTML copy + crisp local image */
+/* Responsive Chaos hero: native HTML copy + deliberately restrained local image */
 .hero2027 {
-  min-height: 820px;
+  min-height: 760px;
   padding-top: 74px;
   background: #f3eee5;
   color: #111;
@@ -9,10 +9,10 @@
 
 .heroImage2027 {
   position: absolute;
-  top: 74px;
-  right: 0;
-  bottom: 0;
-  left: 48%;
+  top: 96px;
+  right: 2.5vw;
+  bottom: 28px;
+  left: 55%;
   background-image: url('/chaos-hero-2027.webp');
   background-repeat: no-repeat;
   background-size: contain;
@@ -27,21 +27,21 @@
   inset: 74px 0 0;
   background: linear-gradient(90deg,
     #f3eee5 0%,
-    #f3eee5 42%,
-    rgba(243,238,229,.97) 46%,
-    rgba(243,238,229,.58) 54%,
-    rgba(243,238,229,.08) 66%,
-    rgba(243,238,229,0) 74%);
+    #f3eee5 44%,
+    rgba(243,238,229,.98) 48%,
+    rgba(243,238,229,.68) 56%,
+    rgba(243,238,229,.12) 68%,
+    rgba(243,238,229,0) 76%);
   pointer-events: none;
 }
 
 .heroCopy2027 {
   position: relative;
   z-index: 3;
-  width: min(47vw, 700px);
+  width: min(49vw, 700px);
   min-width: 520px;
-  min-height: calc(820px - 74px);
-  padding: 88px 0 46px 3.2vw;
+  min-height: calc(760px - 74px);
+  padding: 70px 0 40px 3.2vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -56,8 +56,8 @@
 
 .heroCopy2027 h1 {
   margin: 0;
-  max-width: 640px;
-  font-size: clamp(78px, 7.2vw, 132px);
+  max-width: 620px;
+  font-size: clamp(72px, 6.7vw, 122px);
   line-height: .82;
   letter-spacing: -.075em;
 }
@@ -65,20 +65,20 @@
 .heroCopy2027 .heroTag {
   display: inline-block;
   width: fit-content;
-  margin: 24px 0 14px;
+  margin: 22px 0 14px;
   padding: 8px 12px 7px;
   background: #d7ff2f;
   color: #111;
   font-family: 'DM Sans', Arial, sans-serif;
   font-style: normal;
-  font-size: clamp(15px, 1.1vw, 19px);
+  font-size: clamp(15px, 1.05vw, 18px);
   font-weight: 800;
   letter-spacing: .08em;
   text-transform: uppercase;
 }
 
 .heroDate {
-  margin: 0 0 28px;
+  margin: 0 0 26px;
   color: #7441a1;
   font-size: 12px;
   font-weight: 800;
@@ -93,9 +93,9 @@
 }
 
 .heroActions .button {
-  min-height: 52px;
+  min-height: 50px;
   border-radius: 8px;
-  padding: 0 22px;
+  padding: 0 21px;
 }
 
 .heroOutline {
@@ -105,16 +105,16 @@
 }
 
 .heroPillRow {
-  width: min(680px, 44vw);
-  margin-top: 32px;
+  width: min(650px, 45vw);
+  margin-top: 28px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   border-top: 1px solid rgba(17,17,17,.18);
 }
 
 .heroPillRow span {
-  min-height: 68px;
-  padding: 14px 12px 10px 0;
+  min-height: 62px;
+  padding: 13px 11px 9px 0;
   border-right: 1px solid rgba(17,17,17,.14);
   border-bottom: 0;
   align-items: flex-start;
@@ -126,7 +126,7 @@
 
 .photoShoes {
   background-image: url('/chaos-hero-2027.webp') !important;
-  background-size: 165% auto !important;
+  background-size: 135% auto !important;
   background-position: 72% 92% !important;
   filter: none !important;
 }
@@ -147,9 +147,18 @@ footer {
 }
 
 @media (max-width: 1180px) {
-  .heroImage2027 { left: 44%; background-size: cover; background-position: 64% bottom; }
-  .heroCopy2027 { width: 52vw; min-width: 500px; }
-  .heroPillRow { width: 50vw; grid-template-columns: repeat(2, 1fr); }
+  .hero2027 { min-height: 720px; }
+  .heroImage2027 {
+    left: 54%;
+    right: 2vw;
+    top: 102px;
+    bottom: 24px;
+    background-size: contain;
+    background-position: right bottom;
+  }
+  .heroCopy2027 { width: 51vw; min-width: 480px; min-height: calc(720px - 74px); }
+  .heroCopy2027 h1 { font-size: clamp(66px, 6.8vw, 104px); }
+  .heroPillRow { width: 48vw; grid-template-columns: repeat(2, 1fr); }
   .heroPillRow span { border-bottom: 1px solid rgba(17,17,17,.14); }
 }
 
@@ -170,10 +179,10 @@ footer {
     bottom: auto;
     left: auto;
     width: 100%;
-    height: min(62vw, 540px);
-    min-height: 380px;
-    background-size: cover;
-    background-position: 62% bottom;
+    height: min(52vw, 440px);
+    min-height: 300px;
+    background-size: contain;
+    background-position: center bottom;
   }
 
   .heroShade2027 { display: none; }
@@ -183,28 +192,30 @@ footer {
     width: 100%;
     min-width: 0;
     min-height: 0;
-    padding: 44px 20px 30px;
+    padding: 38px 20px 26px;
     justify-content: flex-start;
   }
 
-  .heroCopy2027 .eyebrow { margin-bottom: 14px; }
-  .heroCopy2027 h1 { font-size: clamp(64px, 17.5vw, 100px); max-width: 520px; }
-  .heroCopy2027 .heroTag { margin-top: 18px; font-size: 12px; line-height: 1.25; }
-  .heroDate { margin-bottom: 20px; font-size: 10px; }
+  .heroCopy2027 .eyebrow { margin-bottom: 13px; }
+  .heroCopy2027 h1 { font-size: clamp(60px, 16vw, 92px); max-width: 500px; }
+  .heroCopy2027 .heroTag { margin-top: 16px; font-size: 12px; line-height: 1.25; }
+  .heroDate { margin-bottom: 18px; font-size: 10px; }
   .heroActions { gap: 10px; }
-  .heroActions .button { min-height: 48px; padding: 0 16px; font-size: 10px; }
+  .heroActions .button { min-height: 47px; padding: 0 16px; font-size: 10px; }
   .heroPillRow { display: none; }
 }
 
 @media (max-width: 560px) {
-  .heroCopy2027 { padding: 32px 16px 24px; }
-  .heroCopy2027 h1 { font-size: clamp(56px, 18vw, 78px); line-height: .83; }
+  .heroCopy2027 { padding: 28px 16px 22px; }
+  .heroCopy2027 h1 { font-size: clamp(52px, 16vw, 70px); line-height: .84; }
   .heroCopy2027 .heroTag { max-width: 95%; }
   .heroActions { display: grid; grid-template-columns: 1fr; }
   .heroActions .button { width: 100%; }
   .heroImage2027 {
-    height: 74vw;
-    min-height: 340px;
-    background-position: 62% bottom;
+    height: 60vw;
+    min-height: 260px;
+    max-height: 360px;
+    background-size: contain;
+    background-position: center bottom;
   }
 }
