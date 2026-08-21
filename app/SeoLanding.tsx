@@ -36,7 +36,7 @@ export default function SeoLanding({
           <a href="/10000-step-challenge">10,000 Steps</a>
           <a href="/cities">Cities</a>
           <a href="/companies">Companies</a>
-          <a href="/guides/how-many-miles-is-10000-steps">Guides</a>
+          <a href="/guides">Guides</a>
         </nav>
         <a className="seoHeaderCta" href="/#join">Pre-register</a>
       </header>
