@@ -68,7 +68,7 @@ export async function POST(request: NextRequest) {
         country_code: country.code,
         country: country.name,
         city,
-        current_role: currentRole,
+        role_context: currentRole,
         local_network: localNetwork,
         crew_status: crewStatus,
         organizing_experience: organizingExperience,
