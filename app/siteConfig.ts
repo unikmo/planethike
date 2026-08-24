@@ -15,7 +15,8 @@ export const siteConfig = {
     month: 'May 2027',
     exactDate: null,
     registrationStatus: 'first-access',
-    participationPrice: 0,
+    firstAccessPrice: 0,
+    participationPrice: null,
   },
   cause: {
     status: 'partner-verification-pending',
