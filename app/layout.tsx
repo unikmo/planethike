@@ -9,12 +9,12 @@ import './seo-pages.css';
 export const metadata: Metadata = {
   title: 'PlanetHike — The world’s most unforgettable walks',
   description:
-    'PlanetHike is the home of The Chaos Walk — a free global 10,000-step walking challenge for misfits, rebels and originals, coming May 2027.',
+    'PlanetHike is building The Chaos Walk — a global 10,000-step walking event planned for May 2027. City Lead applications and participant first access are open.',
   metadataBase: new URL('https://planethike.org'),
   alternates: { canonical: '/' },
   openGraph: {
     title: 'PlanetHike — The Chaos Walk',
-    description: 'A free global 10,000-step walking challenge for misfits, rebels & originals. Pre-registration is open for May 2027.',
+    description: 'The Chaos Walk is planned for May 2027. Apply to lead your city or join the participant first-access list.',
     url: 'https://planethike.org',
     siteName: 'PlanetHike',
     type: 'website',
