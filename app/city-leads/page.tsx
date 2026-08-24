@@ -1,4 +1,5 @@
 import { ArrowLeft, ArrowRight, CheckCircle2, MapPinned, ShieldCheck, Users } from 'lucide-react';
+import MobileMenu from '../MobileMenu';
 
 const steps = [
   ['01', 'Apply', 'Tell us your city, your background, local network and why you want to lead the first Chaos Walk there.'],
@@ -14,6 +15,7 @@ export default function CityLeadsPage() {
       <header className="subHeader">
         <a className="brand" href="/">PLANET<span>HIKE</span></a>
         <a className="textLink dark" href="/"><ArrowLeft size={15}/> Back to Chaos Walk</a>
+        <MobileMenu />
       </header>
 
       <section className="subHero cityLeadHero">
