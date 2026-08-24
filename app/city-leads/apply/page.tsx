@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
 import CityLeadApplicationForm from '../../CityLeadApplicationForm';
+import MobileMenu from '../../MobileMenu';
 
 export const metadata: Metadata = {
   title: 'Apply to Become a City Lead | PlanetHike',
   description: 'Apply to lead a future Chaos Walk in your city. PlanetHike reviews local capacity, safety, accessibility and crew readiness before confirming a city.',
   alternates: { canonical: '/city-leads/apply' },
+  robots: { index: false, follow: true },
 };
 
 export default function CityLeadApplyPage() {
@@ -19,6 +21,7 @@ export default function CityLeadApplyPage() {
           <a href="/guides">Guides</a>
         </nav>
         <a className="seoHeaderCta" href="/join">Join first-access</a>
+        <MobileMenu />
       </header>
 
       <section className="seoHero">
