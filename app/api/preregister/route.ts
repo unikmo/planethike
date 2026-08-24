@@ -11,6 +11,7 @@ export async function POST(request: NextRequest) {
     const countryCode = String(body.country_code || '').trim().toUpperCase();
     const city = String(body.city || '').trim();
     const interest = String(body.interest || 'walker').trim();
+    const consent = String(body.consent || '').trim();
     const company = String(body.company || '').trim();
 
     if (company) return NextResponse.json({ ok: true });
@@ -24,13 +25,16 @@ export async function POST(request: NextRequest) {
 
     const country = countryByCode[countryCode];
     if (!country) {
-      return NextResponse.json({ error: 'Please choose an available participation country.' }, { status: 400 });
+      return NextResponse.json({ error: 'Please choose a participation country.' }, { status: 400 });
     }
-    if (!city || !country.cities.includes(city)) {
-      return NextResponse.json({ error: 'Please choose a city from the list.' }, { status: 400 });
+    if (!city || city.length > 100) {
+      return NextResponse.json({ error: 'Please enter your city.' }, { status: 400 });
     }
-    if (!['walker', 'host', 'volunteer', 'team'].includes(interest)) {
-      return NextResponse.json({ error: 'Please choose a valid interest.' }, { status: 400 });
+    if (interest !== 'walker') {
+      return NextResponse.json({ error: 'City Lead applications use the dedicated City Lead form.' }, { status: 400 });
+    }
+    if (consent !== 'yes') {
+      return NextResponse.json({ error: 'Please confirm the privacy consent to join the first-access list.' }, { status: 400 });
     }
 
     const supabaseUrl = process.env.SUPABASE_URL;
@@ -38,7 +42,7 @@ export async function POST(request: NextRequest) {
 
     if (!supabaseUrl || !publishableKey) {
       return NextResponse.json(
-        { error: 'Pre-registration is being connected. Please try again shortly.' },
+        { error: 'The first-access list is being connected. Please try again shortly.' },
         { status: 503 },
       );
     }
@@ -58,9 +62,10 @@ export async function POST(request: NextRequest) {
         country: country.name,
         city,
         location: `${city}, ${country.name}`,
-        commerce_eligible: country.commerce,
-        interest,
+        commerce_eligible: false,
+        interest: 'walker',
         source: 'planethike.org',
+        consent_at: new Date().toISOString(),
       }),
       cache: 'no-store',
     });
@@ -71,11 +76,11 @@ export async function POST(request: NextRequest) {
         return NextResponse.json({ ok: true, already_registered: true });
       }
 
-      console.error('Supabase preregistration error', response.status, errorText);
-      return NextResponse.json({ error: 'We could not save your pre-registration. Please try again.' }, { status: 500 });
+      console.error('Supabase first-access error', response.status, errorText);
+      return NextResponse.json({ error: 'We could not save your first-access request. Please try again.' }, { status: 500 });
     }
 
-    return NextResponse.json({ ok: true, commerce_eligible: country.commerce });
+    return NextResponse.json({ ok: true });
   } catch {
     return NextResponse.json({ error: 'Invalid request.' }, { status: 400 });
   }
