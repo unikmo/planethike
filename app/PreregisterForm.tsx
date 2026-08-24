@@ -1,6 +1,6 @@
 'use client';
 
-import { FormEvent, useMemo, useState } from 'react';
+import { FormEvent, useState } from 'react';
 import { ArrowRight, Check } from 'lucide-react';
 import styles from './PreregisterForm.module.css';
 import { participationCountries } from './locations';
@@ -8,12 +8,6 @@ import { participationCountries } from './locations';
 export default function PreregisterForm() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [message, setMessage] = useState('');
-  const [countryCode, setCountryCode] = useState('');
-
-  const selectedCountry = useMemo(
-    () => participationCountries.find((country) => country.code === countryCode),
-    [countryCode],
-  );
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -34,12 +28,11 @@ export default function PreregisterForm() {
       if (!response.ok) throw new Error(data.error || 'Something went wrong.');
 
       setStatus('success');
-      setMessage('You’re on the first-access list. We’ll send the May 2027 date, city news and next steps first.');
+      setMessage('You’re on the first-access list. We’ll send the confirmed May 2027 date, city news and next steps when they are ready.');
       event.currentTarget.reset();
-      setCountryCode('');
     } catch (error) {
       setStatus('error');
-      setMessage(error instanceof Error ? error.message : 'Unable to pre-register right now.');
+      setMessage(error instanceof Error ? error.message : 'Unable to join the first-access list right now.');
     }
   }
 
@@ -58,7 +51,7 @@ export default function PreregisterForm() {
       <div className={styles.row}>
         <label>
           <span>First name</span>
-          <input name="first_name" autoComplete="given-name" maxLength={80} placeholder="Tichi" required />
+          <input name="first_name" autoComplete="given-name" maxLength={80} placeholder="First name" required />
         </label>
         <label>
           <span>Email</span>
@@ -69,7 +62,7 @@ export default function PreregisterForm() {
       <div className={styles.row}>
         <label>
           <span>Country</span>
-          <select name="country_code" value={countryCode} onChange={(event) => setCountryCode(event.target.value)} required>
+          <select name="country_code" defaultValue="" required>
             <option value="" disabled>Select country</option>
             {participationCountries.map((country) => (
               <option key={country.code} value={country.code}>{country.name}</option>
@@ -78,45 +71,24 @@ export default function PreregisterForm() {
         </label>
         <label>
           <span>City</span>
-          <select name="city" defaultValue="" disabled={!selectedCountry} required>
-            <option value="" disabled>{selectedCountry ? 'Select city' : 'Choose country first'}</option>
-            {selectedCountry?.cities.map((city) => (
-              <option key={city} value={city}>{city}</option>
-            ))}
-          </select>
+          <input name="city" autoComplete="address-level2" maxLength={100} placeholder="Your city" required />
         </label>
       </div>
 
-      <div className={styles.row}>
-        <label>
-          <span>I want to</span>
-          <select name="interest" defaultValue="walker">
-            <option value="walker">Join the walk</option>
-            <option value="host">Lead my city</option>
-            <option value="volunteer">Volunteer with my city crew</option>
-            <option value="team">Bring a group / team</option>
-          </select>
-        </label>
-        <div aria-live="polite">
-          <span className={styles.availabilityLabel}>Chaos Fan availability</span>
-          <p className={styles.availabilityText}>
-            {!selectedCountry
-              ? 'Select your country to see the launch setup.'
-              : selectedCountry.commerce
-                ? 'Official Chaos Fan shop planned for this market.'
-                : 'Participation is open. Make your own Chaos Fan locally — no purchase required.'}
-          </p>
-        </div>
-      </div>
-
+      <input type="hidden" name="interest" value="walker" />
       <input className={styles.honeypot} name="company" tabIndex={-1} autoComplete="off" aria-hidden="true" />
 
+      <label className={styles.consent}>
+        <input type="checkbox" name="consent" value="yes" required />
+        <span>I agree that PlanetHike may use these details to manage my first-access request and send event updates. See the <a href="/privacy">privacy notice</a>.</span>
+      </label>
+
       <button className={styles.submit} type="submit" disabled={status === 'loading'}>
-        {status === 'loading' ? 'Joining…' : 'Pre-register free'}
+        {status === 'loading' ? 'Joining…' : 'Join the first-access list'}
         {status !== 'loading' && <ArrowRight size={18} />}
       </button>
 
-      <p className={styles.microcopy}>Free registration. No payment. Where official PlanetHike delivery is not available, walkers can make their own Chaos Fan locally and participate fully.</p>
+      <p className={styles.microcopy}>Free. No payment. This is an early-interest list, not a confirmed event registration. Cities and the exact May 2027 date will be announced only after they are verified.</p>
       {status === 'error' && <p className={styles.error} role="alert">{message}</p>}
     </form>
   );
