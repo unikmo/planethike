@@ -1,4 +1,29 @@
 import type { Metadata } from 'next';
 import SeoLanding from '../SeoLanding';
-export const metadata: Metadata={title:'The Chaos Walk | Fun Global Walking Event | PlanetHike',description:'Join The Chaos Walk in May 2027: a free global 10,000-step walking event with two different shoes, one Chaos Fan and city challenges.',alternates:{canonical:'/the-chaos-walk'}};
-export default function Page(){const eventSchema={ '@context':'https://schema.org','@type':'Event',name:'The Chaos Walk 2027',description:'A free global 10,000-step walking challenge by PlanetHike.',startDate:'2027-05',eventAttendanceMode:'https://schema.org/MixedEventAttendanceMode',eventStatus:'https://schema.org/EventScheduled',organizer:{'@type':'Organization',name:'PlanetHike',url:'https://planethike.org'},offers:{'@type':'Offer',price:'0',priceCurrency:'EUR',availability:'https://schema.org/InStock',url:'https://planethike.org/join'}};return <><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(eventSchema)}}/><SeoLanding eyebrow="THE SIGNATURE EXPERIENCE" title="The Chaos Walk" intro="A free global 10,000-step walking challenge that turns an ordinary walk into a city-wide piece of controlled chaos." bullets={['Free pre-registration','10,000-step format','Two different shoes','One annual Chaos Fan']} sections={[{heading:'Not just a walk',body:'The route is broken up by Chaos Drops: shared challenge moments that give every participating city the same global rhythm while leaving room for local personality.'},{heading:'The signature look',body:'Wear two different shoes, deliberately clash colours and bring a Chaos Fan. The point is not a costume; it is to look unmistakably part of the same global moment.'},{heading:'Join in your city',body:'Each active city is led by an approved City Lead and volunteer crew. Confirmed cities receive local meeting details, route information and FAQs.'},{heading:'Have fun. Fund surgery.',body:'Registration is free. Where the official Chaos Fan is sold, €3 from every fan supports qualified reconstructive mouth and nose surgery partners.'}]} faq={[{q:'Is The Chaos Walk free?',a:'Yes. Pre-registration and participation are free. Merchandise is separate.'},{q:'How far is the walk?',a:'The experience is built around approximately 10,000 steps, rather than a race time.'},{q:'Do I have to buy a Chaos Fan?',a:'Where official delivery is not available, participants can make a local fan and still participate fully.'}]}/></>}
+
+export const metadata: Metadata = {
+  title: 'The Chaos Walk | 10,000-Step Social Walking Experience | PlanetHike',
+  description: 'The Chaos Walk is PlanetHike’s free 10,000-step social walking experience planned for May 2027. Join first-access while exact dates and confirmed city details are finalized.',
+  alternates: { canonical: '/the-chaos-walk' },
+};
+
+export default function Page() {
+  return <SeoLanding
+    eyebrow="THE SIGNATURE EXPERIENCE / MAY 2027 / EXACT DATE TBA"
+    title="The Chaos Walk"
+    intro="A free 10,000-step social walking experience designed to turn an ordinary walk into a city-wide piece of controlled chaos. The first-access list is open; local event confirmation follows city readiness."
+    bullets={['Free first-access list','10,000-step format','Two different shoes','One planned annual Chaos Fan']}
+    sections={[
+      {heading:'Not just a walk',body:'The route is designed around Chaos Drops: shared challenge moments that give confirmed cities the same global rhythm while leaving room for local personality.'},
+      {heading:'The signature look',body:'Wear two different shoes, deliberately clash colours and bring a Chaos Fan. The point is not a uniform; it is a simple visual ritual that makes the experience recognisable.'},
+      {heading:'City status matters',body:'A city is not confirmed because it appears in a form or interest list. PlanetHike confirms local event information only after an approved City Lead, local operating readiness and publishable details are in place.'},
+      {heading:'Human impact follows verification',body:'PlanetHike intends to link official fan sales to a transparent reconstructive-surgery contribution. Partner, contribution amount, settlement and reporting details will be published before commerce opens.'}
+    ]}
+    faq={[
+      {q:'Is The Chaos Walk free?',a:'The planned participation model is free. Merchandise is separate and optional.'},
+      {q:'Is my city already confirmed?',a:'Not necessarily. Joining first-access records demand. PlanetHike publishes confirmed city information only after local operating readiness is verified.'},
+      {q:'What is the exact May 2027 date?',a:'The exact date has not been announced yet. First-access members will receive the confirmed date when it is locked.'},
+      {q:'Do I have to buy a Chaos Fan?',a:'No. Participation is not intended to require a purchase. A DIY fan route is planned where official commerce is unavailable.'}
+    ]}
+  />;
+}
