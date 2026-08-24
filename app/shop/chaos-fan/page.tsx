@@ -1,4 +1,27 @@
 import type { Metadata } from 'next';
 import SeoLanding from '../../SeoLanding';
-export const metadata: Metadata={title:'Official Chaos Fan | Folding Hand Fan | PlanetHike',description:'Meet the official 2027 Chaos Fan: the collectible folding hand fan of The Chaos Walk. €19.99, with €3 from every fan funding reconstructive surgery.',alternates:{canonical:'/shop/chaos-fan'}};
-export default function Page(){const productSchema={'@context':'https://schema.org','@type':'Product',name:'Official Chaos Fan — Edition 001',description:'The collectible folding hand fan of The Chaos Walk 2027.',brand:{'@type':'Brand',name:'PlanetHike'},offers:{'@type':'Offer',url:'https://planethike.org/shop/chaos-fan',priceCurrency:'EUR',price:'19.99',availability:'https://schema.org/PreOrder'}};return <><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(productSchema)}}/><SeoLanding eyebrow="EDITION 001 / OFFICIAL OBJECT" title="The Official Chaos Fan" intro="A useful, photogenic folding hand fan that becomes the shared visual object of The Chaos Walk—and helps fund reconstructive surgery." bullets={['€19.99 launch price','€3 funds surgery','Annual collectible edition','DIY alternative where shipping is unavailable']} sections={[{heading:'Why a hand fan?',body:'It is useful during a warm-weather walk, visible in photos, easy to wave during Chaos Drops and collectible after the event.'},{heading:'Built for the ritual',body:'The fan is used for the global fan shot, challenge moments, portraits and the finish ritual. It is part of the experience rather than disposable merch.'},{heading:'€3 from every official fan',body:'A fixed €3 contribution from each official fan is committed to qualified reconstructive mouth and nose surgery organisations.'},{heading:'Global participation, selective commerce',body:'PlanetHike only sells where fulfilment is reliable and shipping economics are reasonable. Elsewhere, participants can make a local Chaos Fan and participate fully.'}]} ctaLabel="Pre-register free" ctaHref="/#join" secondaryLabel="Visit the Chaos Shop" secondaryHref="/shop"/></>}
+
+export const metadata: Metadata = {
+  title: 'Chaos Fan Edition 001 Preview | PlanetHike',
+  description: 'Preview the planned Edition 001 Chaos Fan for The Chaos Walk. Sales are not open yet; join PlanetHike first-access and request a fan launch alert.',
+  alternates: { canonical: '/shop/chaos-fan' },
+};
+
+export default function Page() {
+  return <SeoLanding
+    eyebrow="EDITION 001 / PRODUCT PREVIEW / NOT YET FOR SALE"
+    title="The Chaos Fan"
+    intro="A useful, photogenic folding fan designed to become the shared visual object of The Chaos Walk. The current planned launch price is €19.99, but checkout is not open and final commerce terms are not yet confirmed."
+    bullets={['Planned Edition 001 hero product','Planned price €19.99 — not an active offer','No purchase required to join','DIY alternative planned where official shipping is unavailable']}
+    sections={[
+      {heading:'Why a hand fan?',body:'It is useful during a warm-weather walk, visible in photos, easy to wave during Chaos Drops and collectible after the event.'},
+      {heading:'Built for the ritual',body:'The fan is designed for the global fan shot, challenge moments, portraits and the finish ritual. It should earn its place in the experience rather than become disposable merch.'},
+      {heading:'Impact promise comes after proof',body:'PlanetHike intends to connect official fan sales to a transparent reconstructive-surgery contribution. Partner, contribution amount, settlement and reporting details will be published before sales open.'},
+      {heading:'Global participation, selective commerce',body:'Official sales will open only where checkout, fulfilment, shipping and returns have been tested. Participation remains broader than commerce.'}
+    ]}
+    ctaLabel="Join + request fan alert"
+    ctaHref="/#join"
+    secondaryLabel="Back to product preview"
+    secondaryHref="/shop"
+  />;
+}
