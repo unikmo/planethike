@@ -1,4 +1,12 @@
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import type { Metadata } from 'next';
+import { ArrowLeft, ArrowRight, Fan } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Chaos Shop | Prelaunch | PlanetHike',
+  description: 'The PlanetHike Chaos Shop is in prelaunch. Product pricing, fulfilment markets and any cause-linked contribution mechanics will be published only after verification.',
+  robots: { index: false, follow: true },
+  alternates: { canonical: '/shop' },
+};
 
 export default function ShopPage() {
   return (
@@ -10,12 +18,12 @@ export default function ShopPage() {
 
       <section className="shopHero">
         <div>
-          <p className="sectionKicker">EDITION 001 / MAY 2027</p>
+          <p className="sectionKicker">EDITION 001 / PRELAUNCH</p>
           <h1>THE<br/>CHAOS<br/>SHOP.</h1>
         </div>
         <div>
-          <p>Registration is free. The shop is optional, except that every participant should carry a Chaos Fan — official where we sell, locally made where we do not.</p>
-          <a href="/#join" className="button buttonDark">Pre-register free <ArrowRight size={18}/></a>
+          <p>The Chaos Fan is planned as the shared visual object of Edition 001. Checkout is not open and no public product price or cause-linked contribution amount is final yet.</p>
+          <a href="/join" className="button buttonDark">Get first access <ArrowRight size={18}/></a>
         </div>
       </section>
 
@@ -23,38 +31,38 @@ export default function ShopPage() {
         <article className="shopCard">
           <span>THE ICON</span>
           <div>
-            <h2>OFFICIAL<br/>CHAOS FAN</h2>
-            <strong>€19.99</strong>
+            <h2>CHAOS<br/>FAN</h2>
+            <strong><Fan size={36}/></strong>
           </div>
-          <p>Edition 001 collectible fan. €3 from every fan sold is committed to reconstructive mouth and nose surgery.</p>
+          <p>Planned as a useful, photogenic ritual object for shared fan waves, challenge moments and the finish.</p>
         </article>
         <article className="shopCard">
-          <span>THE PAIRING</span>
+          <span>STATUS</span>
           <div>
-            <h2>FAN +<br/>MISMATCHED SOCKS</h2>
-            <strong>€29.99</strong>
+            <h2>PRICING<br/>PENDING</h2>
+            <strong>—</strong>
           </div>
-          <p>For people who want the signature look without overthinking it. Final product mix subject to fulfilment testing.</p>
+          <p>Pricing and unit economics must pass fulfilment testing before public sale.</p>
         </article>
         <article className="shopCard">
-          <span>THE FULL LOOK</span>
+          <span>CAUSE MODEL</span>
           <div>
-            <h2>CHAOS<br/>KIT</h2>
-            <strong>€44.99–€49.99</strong>
+            <h2>VERIFY<br/>FIRST</h2>
+            <strong>—</strong>
           </div>
-          <p>Fan plus a limited apparel/accessory combination. Designed to feel collectible, not like standard event merchandise.</p>
+          <p>Any sales-linked cause commitment will be published only after partner and settlement mechanics are verified.</p>
         </article>
       </section>
 
       <section className="shopPolicy">
         <div>
-          <p className="sectionKicker">FULFILMENT POLICY</p>
-          <h2>GLOBAL WALK.<br/>CONSERVATIVE<br/>COMMERCE.</h2>
+          <p className="sectionKicker">PRELAUNCH RULE</p>
+          <h2>NO CHECKOUT<br/>BEFORE THE<br/>MODEL WORKS.</h2>
         </div>
         <div>
-          <p>PlanetHike will only open commerce in countries where Gelato or another approved fulfilment partner can deliver reliably and at a reasonable total shipping cost.</p>
-          <p>Participation is broader. In countries where we do not sell, City Leads and participants can create the fan locally using PlanetHike’s approved DIY design guidance. No one is excluded because cross-border fulfilment is expensive or unreliable.</p>
-          <p>Official product availability will be shown by country before checkout. We will test fulfilment before expanding the commerce positive list.</p>
+          <p>PlanetHike is testing product, fulfilment, market coverage and cost before enabling commerce.</p>
+          <p>The event concept is not dependent on a purchase. Final participation and fan guidance will be published with the confirmed event details.</p>
+          <p>Until then, the shop remains informational and excluded from search indexing.</p>
         </div>
       </section>
     </main>
