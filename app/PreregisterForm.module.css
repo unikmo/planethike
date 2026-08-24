@@ -41,9 +41,13 @@
 }
 
 .form input:focus,
-.form select:focus {
+.form select:focus,
+.form input:focus-visible,
+.form select:focus-visible {
   border-color: #111;
   background: rgba(255,255,255,.8);
+  outline: 3px solid rgba(93,114,255,.7);
+  outline-offset: 2px;
 }
 
 .form select:disabled {
@@ -62,6 +66,50 @@
   display: flex;
   align-items: center;
 }
+
+.choiceGroup {
+  display: grid;
+  gap: 12px;
+  margin: 4px 0 0;
+  padding: 18px;
+  border: 1px solid rgba(17,17,17,.22);
+  background: rgba(255,255,255,.24);
+}
+
+.choiceGroup legend {
+  padding: 0 6px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-weight: 800;
+}
+
+.form .checkboxLabel {
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  gap: 10px;
+  align-items: start;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.form .checkboxLabel input {
+  width: 18px;
+  height: 18px;
+  min-height: 0;
+  margin: 1px 0 0;
+  padding: 0;
+  accent-color: #111;
+}
+
+.form .checkboxLabel span {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.checkboxLabel a { text-decoration: underline; }
 
 .submit {
   width: 100%;
@@ -82,6 +130,7 @@
 }
 
 .submit:disabled { opacity: .55; cursor: wait; }
+.submit:focus-visible { outline: 3px solid #5d72ff; outline-offset: 3px; }
 
 .microcopy,
 .error {
@@ -91,7 +140,7 @@
   line-height: 1.5;
 }
 
-.microcopy { opacity: .66; }
+.microcopy { opacity: .7; }
 .error { color: #8d1111; font-weight: 700; }
 
 .honeypot {
@@ -136,10 +185,42 @@
   line-height: 1.15;
 }
 
+.success .successNote {
+  margin-top: 12px;
+  font-family: 'DM Sans', Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1.45;
+  opacity: .78;
+}
+
+.successActions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.successActions a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 15px;
+  border: 1px solid rgba(255,255,255,.5);
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+
+.successActions a:focus-visible { outline: 3px solid #d7ff2f; outline-offset: 3px; }
+
 @media (max-width: 700px) {
   .row { grid-template-columns: 1fr; }
   .form { gap: 13px; }
   .form input,
   .form select { min-height: 54px; }
   .success { padding: 34px 20px; }
+  .successActions { display: grid; }
 }
