@@ -1,4 +1,25 @@
 import type { Metadata } from 'next';
 import SeoLanding from '../SeoLanding';
-export const metadata: Metadata={title:'Walk for a Cause | Free Charity Walking Event | PlanetHike',description:'Walk for a cause without turning participation into a fundraiser. The Chaos Walk is free; €3 from every official Chaos Fan funds reconstructive surgery.',alternates:{canonical:'/walk-for-a-cause'}};
-export default function Page(){return <SeoLanding eyebrow="FUN FIRST / HUMAN IMPACT BUILT IN" title="Walk for a Cause" intro="PlanetHike combines a genuinely fun walking event with a clear human mission: helping fund reconstructive mouth and nose surgery." bullets={['Free event participation','No pledge requirement','€3 per official fan funds surgery','Transparent partner reporting']} sections={[{heading:'Not a traditional fundraiser',body:'You do not need to collect pledges or hit a fundraising target to join. PlanetHike keeps participation free and funds the mission through a fixed contribution from official Chaos Fan sales.'},{heading:'A visible human cause',body:'The cause is reconstructive mouth and nose surgery: practical care that can materially change breathing, eating, speech, confidence and daily life.'},{heading:'A fixed contribution',body:'For every official Chaos Fan sold, €3 is committed to qualified surgery organisations. The amount is simple enough for participants to understand and for PlanetHike to report publicly.'},{heading:'Fun is not a compromise',body:'People should want to join because the event is distinctive. The cause becomes stronger when the experience itself is desirable enough to spread.'}]} secondaryLabel="Read the cause model" secondaryHref="/the-cause"/>}
+
+export const metadata: Metadata = {
+  title: 'Walk for a Cause Without a Fundraising Paywall | PlanetHike',
+  description: 'The Chaos Walk is planned as free participation. PlanetHike is verifying a future sales-linked reconstructive-surgery contribution before any impact promise becomes active.',
+  alternates: { canonical: '/walk-for-a-cause' },
+};
+
+export default function Page() {
+  return <SeoLanding
+    eyebrow="FUN FIRST / HUMAN IMPACT AFTER VERIFICATION"
+    title="Walk for a Cause"
+    intro="PlanetHike is building a genuinely fun walking experience first. Participation is planned to stay free, while any future sales-linked human-impact promise must be documented before it becomes active."
+    bullets={['Free participation model','No pledge requirement','Impact mechanism still being verified','Partner and transfer rules published before sales']}
+    sections={[
+      {heading:'Not a traditional fundraiser',body:'Participants should not need to collect pledges or hit a fundraising target to join. The event experience must stand on its own.'},
+      {heading:'A human-impact direction',body:'PlanetHike is exploring reconstructive mouth and nose surgery as the human mission connected to future official merchandise.'},
+      {heading:'No number before the proof',body:'A fixed contribution amount will only be stated as an active promise after the partner, agreement, settlement process and reporting standard are locked.'},
+      {heading:'Fun is not a compromise',body:'The stronger the event experience, the less PlanetHike needs guilt-based fundraising language. Impact should benefit from participation people already want to share.'}
+    ]}
+    secondaryLabel="See the cause status"
+    secondaryHref="/the-cause"
+  />;
+}
