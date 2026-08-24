@@ -1,10 +1,11 @@
 import { ArrowRight, Fan, Globe2, HeartHandshake, MapPin, Sparkles } from 'lucide-react';
+import MobileMenu from './MobileMenu';
 import PreregisterForm from './PreregisterForm';
 
 const chaosCodes = [
   ['01', 'Two different shoes', 'Wear two different colourways or two completely different shoes. The mismatch is the signature.'],
   ['02', 'Dress off', 'Clash colours. Mix pieces that should not work together. Make it intentional.'],
-  ['03', 'Bring the Chaos Fan', 'The annual fan is the shared symbol of the walk — useful, visible and built for photos.'],
+  ['03', 'Bring the Chaos Fan', 'The annual fan is designed to become the shared symbol of the walk — useful, visible and built for photos.'],
   ['04', 'Expect challenges', 'The 10K is broken up by surprise Chaos Drops, not just kilometres.'],
 ];
 
@@ -26,12 +27,13 @@ export default function Home() {
         <nav className="desktopNav" aria-label="Primary navigation">
           <a href="/the-chaos-walk">The Walk</a>
           <a href="/cities">Cities</a>
-          <a href="/city-leads">Get involved</a>
-          <a href="/shop">Shop</a>
+          <a href="/shop">Chaos Fan</a>
+          <a href="/city-leads">City Leads</a>
           <a href="/the-cause">The Cause</a>
           <a href="/guides">Guides</a>
         </nav>
-        <a className="navCta" href="#join">Pre-register <ArrowRight size={16} /></a>
+        <a className="navCta" href="#join">Join first-access <ArrowRight size={16} /></a>
+        <MobileMenu />
       </header>
 
       <section className="hero hero2027" id="top">
@@ -41,16 +43,16 @@ export default function Home() {
           <p className="eyebrow">PlanetHike · Global Edition 001</p>
           <h1>THE<br/>CHAOS<br/>WALK</h1>
           <p className="heroTag">For misfits, rebels &amp; originals.</p>
-          <p className="heroDate">MAY 2027 · FREE TO JOIN</p>
+          <p className="heroDate">MAY 2027 · EXACT DATE TO BE ANNOUNCED</p>
           <div className="heroActions">
-            <a className="button buttonDark" href="#join">Pre-register free <ArrowRight size={18} /></a>
-            <a className="button heroOutline" href="/the-chaos-walk">See how it works <ArrowRight size={18} /></a>
+            <a className="button buttonDark" href="#join">Join first-access free <ArrowRight size={18} /></a>
+            <a className="button heroOutline" href="/shop">Preview the Chaos Fan <ArrowRight size={18} /></a>
           </div>
-          <div className="heroPillRow" aria-label="Chaos Walk highlights">
-            <span><Globe2 size={18}/> Global 10K challenge</span>
-            <span><MapPin size={18}/> City-led, worldwide</span>
-            <span><Fan size={18}/> One annual Chaos Fan</span>
-            <span><HeartHandshake size={18}/> €3 per fan funds surgery</span>
+          <div className="heroPillRow" aria-label="Chaos Walk launch status">
+            <span><Globe2 size={18}/> Free first-access list</span>
+            <span><MapPin size={18}/> City status confirmed before launch</span>
+            <span><Fan size={18}/> Fan sales are not open yet</span>
+            <span><HeartHandshake size={18}/> City Lead applications open</span>
           </div>
         </div>
       </section>
@@ -64,7 +66,7 @@ export default function Home() {
         <h2>The walk is 10K.<br/>The story is<br/>everything<br/>in between.</h2>
         <div className="manifestoText">
           <p>PlanetHike turns a familiar walking challenge into a global piece of controlled chaos.</p>
-          <p>Wear two different shoe colours — or two completely different shoes — clash the outfit, carry the fan and meet the challenge moments along the route.</p>
+          <p>Wear two different shoes, clash the outfit, carry the fan and meet the challenge moments along the route.</p>
         </div>
       </section>
 
@@ -89,33 +91,33 @@ export default function Home() {
         <div className="challengeTrack">
           {challengeMoments.map(([km, challenge], index) => <article key={km} className={`challengeMoment challengeMoment${index + 1}`}><span>{km}</span><strong>{challenge}</strong></article>)}
         </div>
-        <p className="challengeNote"><Sparkles size={17}/> Every city follows the same global rhythm, with room for local personality.</p>
+        <p className="challengeNote"><Sparkles size={17}/> Challenge details remain subject to final event and safety review.</p>
       </section>
 
       <section className="dropsSection">
         <div className="dropsVisual fanVisual"><div className="fanArc"><span>CHAOS</span><small>NOT AVERAGE</small></div></div>
-        <div className="dropsCopy"><span className="sectionKicker light">04 / The object</span><h2>One fan.<br/>A thousand<br/>uses.</h2><p>Open it for the global shot. Wave it through a Chaos Drop. Carry it after the walk. Each annual edition becomes a useful collectible.</p><a href="/shop/chaos-fan" className="button buttonAcid">Meet the Chaos Fan <ArrowRight size={18}/></a></div>
+        <div className="dropsCopy"><span className="sectionKicker light">04 / The object</span><h2>One fan.<br/>A thousand<br/>uses.</h2><p>Open it for the fan shot. Wave it through a Chaos Drop. Carry it after the walk. Edition 001 is planned as a useful collectible rather than disposable event merch.</p><a href="/shop" className="button buttonAcid">Preview the Chaos Fan <ArrowRight size={18}/></a></div>
       </section>
 
       <section className="citiesSection" id="cities">
-        <div className="sectionKicker">05 / Built city by city</div>
-        <div className="citiesTop"><h2>One City Lead.<br/>One local crew.</h2><div className="globeIcon"><Globe2 size={38} strokeWidth={1.4}/></div></div>
-        <div className="cityCloud">{cities.map((city, i) => <span key={city} className={i % 3 === 1 ? 'accentCity' : ''}>{city}</span>)}<span>+ YOUR CITY</span></div>
-        <div className="cityFooter"><p>Confirmed cities get a local lead, volunteer crew, route information and PlanetHike operating protocol.</p><a href="/city-leads" className="textLink dark">Start your city <ArrowRight size={16}/></a></div>
+        <div className="sectionKicker">05 / Demand first. Confirmation second.</div>
+        <div className="citiesTop"><h2>Tell us where<br/>you want it.</h2><div className="globeIcon"><Globe2 size={38} strokeWidth={1.4}/></div></div>
+        <div className="cityCloud" aria-label="Example interest locations, not confirmed events">{cities.map((city, i) => <span key={city} className={i % 3 === 1 ? 'accentCity' : ''}>{city}</span>)}<span>+ YOUR CITY</span></div>
+        <div className="cityFooter"><p>These are example interest locations, not confirmed events. A city becomes confirmed only after an approved City Lead, local operating readiness and publishable event information are in place.</p><a href="/cities" className="textLink dark">How city status works <ArrowRight size={16}/></a></div>
       </section>
 
       <section className="impactSection surgeryHome" id="impact">
         <div className="impactImage surgeryImage" />
-        <div className="impactCopy"><div className="sectionKicker light">06 / The cause</div><h2>Have fun.<br/>Help restore<br/>a life.</h2><p>Registration stays free. Where the official Chaos Fan is sold, €3 from every fan is committed to partner-led reconstructive mouth and nose surgery.</p><div className="impactItems"><span>01 <b>Official annual fan · €19.99</b></span><span>02 <b>€3 from every fan funds surgery</b></span><span>03 <b>Partner and payment transparency</b></span></div><a href="/the-cause" className="button buttonLight impactCta">See the mission <ArrowRight size={18}/></a></div>
+        <div className="impactCopy"><div className="sectionKicker light">06 / Human mission — verification first</div><h2>Have fun.<br/>Build impact<br/>credibly.</h2><p>PlanetHike intends to link official Chaos Fan sales to a transparent reconstructive-surgery contribution. Partner, contribution amount, settlement and reporting details will be published before sales open.</p><div className="impactItems"><span>01 <b>Participation stays free</b></span><span>02 <b>Fan commerce opens only after fulfilment is verified</b></span><span>03 <b>No impact claim before partner and money-flow proof</b></span></div><a href="/the-cause" className="button buttonLight impactCta">See the cause status <ArrowRight size={18}/></a></div>
       </section>
 
-      <section className="commerceSection"><div className="sectionKicker">07 / Global participation. Selective commerce.</div><div className="commerceGrid"><div><h2>THE WALK GOES<br/>WHERE THE SHOP<br/>DOESN’T.</h2></div><div className="commerceCopy"><p>PlanetHike sells only where fulfilment is reliable and shipping remains reasonable.</p><p>Everywhere else, participation remains open: make a local fan, wear mismatched shoes, follow the Chaos Drops and walk with your city.</p><a href="/shop" className="textLink dark">How shop availability works <ArrowRight size={16}/></a></div></div></section>
+      <section className="commerceSection"><div className="sectionKicker">07 / Free participation. Selective commerce.</div><div className="commerceGrid"><div><h2>THE WALK GOES<br/>WHERE THE SHOP<br/>DOESN’T.</h2></div><div className="commerceCopy"><p>The Chaos Fan is planned as the first official product. Sales are not open yet. PlanetHike will only launch commerce where checkout, fulfilment, shipping, returns and any impact-linked contribution have been verified.</p><p>Participation is broader than merchandise delivery. Where official sales are unavailable, a local DIY Chaos Fan option is planned so the walk does not become pay-to-participate.</p><a href="/shop" className="textLink dark">Preview Edition 001 <ArrowRight size={16}/></a></div></div></section>
 
-      <section className="brandSection" id="about"><div className="sectionKicker">08 / PlanetHike</div><p className="brandStatement">We create the world’s most <em>unforgettable</em> walks.</p><div className="editionStrip"><div><span>2027</span><strong>CHAOS</strong></div><div className="mystery"><span>2028</span><strong>?</strong></div><div className="mystery"><span>2029</span><strong>?</strong></div></div><p className="brandFoot">One global moment. One new story. A ritual worth coming back for.</p></section>
+      <section className="brandSection" id="about"><div className="sectionKicker">08 / PlanetHike</div><p className="brandStatement">We create walks designed to be <em>unforgettable.</em></p><div className="editionStrip"><div><span>2027</span><strong>CHAOS</strong></div><div className="mystery"><span>2028</span><strong>?</strong></div><div className="mystery"><span>2029</span><strong>?</strong></div></div><p className="brandFoot">One global idea. Local cities only when they are ready. A ritual worth coming back for.</p></section>
 
-      <section className="joinSection" id="join"><p>MAY 2027 · WORLDWIDE · PRE-REGISTRATION OPEN</p><h2>BE FIRST<br/>TO JOIN<br/><em>THE CHAOS.</em></h2><PreregisterForm /></section>
+      <section className="joinSection" id="join"><p>MAY 2027 · EXACT DATE TO BE ANNOUNCED · FIRST-ACCESS LIST OPEN</p><h2>BE FIRST<br/>TO JOIN<br/><em>THE CHAOS.</em></h2><PreregisterForm /></section>
 
-      <footer><a className="brand footerBrand" href="#top">PLANET<span>HIKE</span></a><p>The world’s most unforgettable walks.</p><div className="footerLinks"><a href="/the-chaos-walk">Chaos Walk</a><a href="/guides">Guides</a><a href="/city-leads">City Leads</a><a href="/shop">Shop</a><a href="/the-cause">The Cause</a></div><small>© 2026 PlanetHike.</small></footer>
+      <footer><a className="brand footerBrand" href="#top">PLANET<span>HIKE</span></a><p>The Chaos Walk · Edition 001.</p><div className="footerLinks"><a href="/the-chaos-walk">Chaos Walk</a><a href="/guides">Guides</a><a href="/city-leads">City Leads</a><a href="/shop">Chaos Fan</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/imprint">Imprint</a></div><small>© 2026 PlanetHike. May 2027 launch details remain subject to confirmation.</small></footer>
     </main>
   );
 }
