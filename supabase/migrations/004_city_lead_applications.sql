@@ -6,7 +6,7 @@ create table if not exists public.planethike_city_lead_applications (
   country_code text not null check (char_length(country_code) = 2),
   country text not null,
   city text not null check (char_length(city) between 1 and 120),
-  current_role text not null check (char_length(current_role) between 1 and 160),
+  role_context text not null check (char_length(role_context) between 1 and 160),
   local_network text not null check (local_network in ('small', 'some', 'strong')),
   crew_status text not null check (crew_status in ('need_recruit', 'one_or_two', 'crew_ready')),
   organizing_experience text not null check (char_length(organizing_experience) between 1 and 1800),
