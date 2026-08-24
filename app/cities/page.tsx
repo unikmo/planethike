@@ -1,4 +1,29 @@
 import type { Metadata } from 'next';
 import SeoLanding from '../SeoLanding';
-export const metadata: Metadata={title:'Walking Events Near You | Chaos Walk Cities | PlanetHike',description:'Find a participating Chaos Walk city or help start one. PlanetHike is building free 10,000-step walking events for May 2027.',alternates:{canonical:'/cities'}};
-export default function Page(){return <SeoLanding eyebrow="CITIES / MAY 2027" title="Find a walking event near you" intro="The Chaos Walk is global, but the experience happens locally. Every participating city needs an approved City Lead, a volunteer crew and real event information before its page goes live." bullets={['City-led, not anonymous','Local meeting details','Volunteer crews','No empty city pages']} sections={[{heading:'Confirmed cities only',body:'PlanetHike will not publish thin placeholder pages. A city page goes live only when there is a real lead, participation method, date window, meeting information and locally relevant FAQs.'},{heading:'Your city is missing?',body:'Apply to lead it. City Leads receive the operating protocol, challenge rhythm, route and safety guidance, volunteer roles, content guidance and reporting requirements.'},{heading:'Participation can be broader than commerce',body:'A city can participate even where official merchandise delivery is unavailable. Local DIY Chaos Fans keep the event inclusive without forcing expensive international shipping.'},{heading:'Local discovery, global identity',body:'Each city has its own logistics while sharing the same signature: 10,000 steps, two different shoes, one Chaos Fan and the global Chaos Drop rhythm.'}]} ctaLabel="Become a City Lead" ctaHref="/city-leads" secondaryLabel="Pre-register as a walker" secondaryHref="/#join"/>}
+
+export const metadata: Metadata = {
+  title: 'Chaos Walk Cities | May 2027 | PlanetHike',
+  description: 'PlanetHike will publish Chaos Walk city pages only after a City Lead and local operating readiness are verified for May 2027.',
+  alternates: { canonical: '/cities' },
+};
+
+export default function Page() {
+  return (
+    <SeoLanding
+      eyebrow="CITIES / MAY 2027"
+      title="A city goes live when it is ready."
+      intro="The Chaos Walk is designed as a multi-city event, but PlanetHike will not present a location as confirmed until local leadership and basic operating readiness have been reviewed."
+      bullets={['Verified cities only', 'Local City Leads', 'Local meeting details', 'No placeholder city pages']}
+      sections={[
+        { heading: 'Confirmed means confirmed', body: 'A city page goes live only when there is an approved local lead or co-lead team and enough operational information to give participants a credible next step.' },
+        { heading: 'Your city is missing?', body: 'Apply to lead it. The City Lead application asks about organising experience, initial crew capacity and local reach so PlanetHike can review readiness before promotion begins.' },
+        { heading: 'Interest is still useful', body: 'Walkers can join the first-access list even when their city is not yet confirmed. That demand signal can help PlanetHike understand where local leadership is needed.' },
+        { heading: 'Local execution, shared identity', body: 'Approved locations use the same core Chaos Walk identity—10,000 steps, two different shoes, the Chaos Fan ritual and shared challenge moments—while local logistics remain locally owned.' },
+      ]}
+      ctaLabel="Apply as a City Lead"
+      ctaHref="/city-leads"
+      secondaryLabel="Join first access"
+      secondaryHref="/join"
+    />
+  );
+}
