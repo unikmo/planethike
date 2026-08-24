@@ -12,6 +12,9 @@ export async function POST(request: NextRequest) {
     const city = String(body.city || '').trim();
     const interest = String(body.interest || 'walker').trim();
     const company = String(body.company || '').trim();
+    const privacyAccepted = body.privacy_accepted === true || body.privacy_accepted === 'on';
+    const marketingConsent = body.marketing_consent === true || body.marketing_consent === 'on';
+    const merchandiseInterest = body.merchandise_interest === true || body.merchandise_interest === 'on';
 
     if (company) return NextResponse.json({ ok: true });
 
@@ -20,6 +23,9 @@ export async function POST(request: NextRequest) {
     }
     if (!emailPattern.test(email) || email.length > 254) {
       return NextResponse.json({ error: 'Please enter a valid email address.' }, { status: 400 });
+    }
+    if (!privacyAccepted) {
+      return NextResponse.json({ error: 'Please accept the privacy notice to join the first-access list.' }, { status: 400 });
     }
 
     const country = countryByCode[countryCode];
@@ -38,11 +44,12 @@ export async function POST(request: NextRequest) {
 
     if (!supabaseUrl || !publishableKey) {
       return NextResponse.json(
-        { error: 'Pre-registration is being connected. Please try again shortly.' },
+        { error: 'First-access registration is being connected. Please try again shortly.' },
         { status: 503 },
       );
     }
 
+    const now = new Date().toISOString();
     const response = await fetch(`${supabaseUrl}/rest/v1/planethike_preregistrations`, {
       method: 'POST',
       headers: {
@@ -61,6 +68,10 @@ export async function POST(request: NextRequest) {
         commerce_eligible: country.commerce,
         interest,
         source: 'planethike.org',
+        privacy_accepted_at: now,
+        marketing_consent: marketingConsent,
+        marketing_consent_at: marketingConsent ? now : null,
+        merchandise_interest: merchandiseInterest,
       }),
       cache: 'no-store',
     });
@@ -72,10 +83,14 @@ export async function POST(request: NextRequest) {
       }
 
       console.error('Supabase preregistration error', response.status, errorText);
-      return NextResponse.json({ error: 'We could not save your pre-registration. Please try again.' }, { status: 500 });
+      return NextResponse.json({ error: 'We could not save your first-access registration. Please try again.' }, { status: 500 });
     }
 
-    return NextResponse.json({ ok: true, commerce_eligible: country.commerce });
+    return NextResponse.json({
+      ok: true,
+      commerce_eligible: country.commerce,
+      city_status: 'interest_only',
+    });
   } catch {
     return NextResponse.json({ error: 'Invalid request.' }, { status: 400 });
   }
