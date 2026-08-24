@@ -6,6 +6,7 @@ import './chaos2027.css';
 import './hero-approved.css';
 import './hero-final.css';
 import './seo-pages.css';
+import './navigation.css';
 
 export const metadata: Metadata = {
   title: 'PlanetHike — The Chaos Walk',
