@@ -1,4 +1,5 @@
 import { ArrowLeft, ArrowRight } from 'lucide-react';
+import MobileMenu from '../MobileMenu';
 
 export default function ShopPage() {
   return (
@@ -6,55 +7,57 @@ export default function ShopPage() {
       <header className="subHeader darkHeader">
         <a className="brand" href="/">PLANET<span>HIKE</span></a>
         <a className="textLink" href="/"><ArrowLeft size={15}/> Back to Chaos Walk</a>
+        <MobileMenu />
       </header>
 
       <section className="shopHero">
         <div>
-          <p className="sectionKicker">EDITION 001 / MAY 2027</p>
-          <h1>THE<br/>CHAOS<br/>SHOP.</h1>
+          <p className="sectionKicker">EDITION 001 / MAY 2027 / PREVIEW</p>
+          <h1>THE<br/>CHAOS<br/>FAN.</h1>
         </div>
         <div>
-          <p>Registration is free. The shop is optional, except that every participant should carry a Chaos Fan — official where we sell, locally made where we do not.</p>
-          <a href="/#join" className="button buttonDark">Pre-register free <ArrowRight size={18}/></a>
+          <p>The Chaos Fan is planned as PlanetHike’s first official product. Sales are not open yet. Join the free first-access list and tick the fan alert if you want to know when verified checkout and fulfilment open.</p>
+          <a href="/#join" className="button buttonDark">Join + request fan alert <ArrowRight size={18}/></a>
         </div>
       </section>
 
       <section className="shopCards">
         <article className="shopCard">
-          <span>THE ICON</span>
+          <span>THE ICON / PLANNED</span>
           <div>
             <h2>OFFICIAL<br/>CHAOS FAN</h2>
-            <strong>€19.99</strong>
+            <strong>€19.99*</strong>
           </div>
-          <p>Edition 001 collectible fan. €3 from every fan sold is committed to reconstructive mouth and nose surgery.</p>
+          <p>*Planned launch price, not an active offer. Final price, countries, shipping, returns and any impact-linked contribution will be confirmed before sales open.</p>
         </article>
         <article className="shopCard">
-          <span>THE PAIRING</span>
+          <span>THE RULE</span>
           <div>
-            <h2>FAN +<br/>MISMATCHED SOCKS</h2>
-            <strong>€29.99</strong>
+            <h2>FREE WALK.<br/>OPTIONAL<br/>MERCH.</h2>
+            <strong>NO PAYWALL</strong>
           </div>
-          <p>For people who want the signature look without overthinking it. Final product mix subject to fulfilment testing.</p>
+          <p>Buying an official product will never be required to join the walk. A DIY fan route is planned where official commerce is unavailable.</p>
         </article>
         <article className="shopCard">
-          <span>THE FULL LOOK</span>
+          <span>WHAT COMES LATER</span>
           <div>
-            <h2>CHAOS<br/>KIT</h2>
-            <strong>€44.99–€49.99</strong>
+            <h2>PROVE<br/>THE FAN<br/>FIRST.</h2>
+            <strong>ONE HERO SKU</strong>
           </div>
-          <p>Fan plus a limited apparel/accessory combination. Designed to feel collectible, not like standard event merchandise.</p>
+          <p>Additional apparel or accessory products stay on hold until the Chaos Fan proves demand, fulfilment quality and support load.</p>
         </article>
       </section>
 
       <section className="shopPolicy">
         <div>
-          <p className="sectionKicker">FULFILMENT POLICY</p>
+          <p className="sectionKicker">COMMERCE GATE</p>
           <h2>GLOBAL WALK.<br/>CONSERVATIVE<br/>COMMERCE.</h2>
         </div>
         <div>
-          <p>PlanetHike will only open commerce in countries where Gelato or another approved fulfilment partner can deliver reliably and at a reasonable total shipping cost.</p>
-          <p>Participation is broader. In countries where we do not sell, City Leads and participants can create the fan locally using PlanetHike’s approved DIY design guidance. No one is excluded because cross-border fulfilment is expensive or unreliable.</p>
-          <p>Official product availability will be shown by country before checkout. We will test fulfilment before expanding the commerce positive list.</p>
+          <p>PlanetHike will open sales only where checkout, fulfilment, shipping costs, returns and customer support have been tested.</p>
+          <p>Any reconstructive-surgery contribution linked to the fan will be published only after the partner, contribution amount, settlement process and reporting standard are verified.</p>
+          <p>Until those gates pass, this page is a product preview and interest funnel — not a checkout.</p>
+          <p><a className="textLink dark" href="/shop/chaos-fan">See the Edition 001 fan concept <ArrowRight size={16}/></a></p>
         </div>
       </section>
     </main>
