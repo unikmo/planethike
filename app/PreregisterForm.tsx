@@ -6,10 +6,13 @@ import styles from './PreregisterForm.module.css';
 import { participationCountries } from './locations';
 import { trackEvent } from './analytics';
 
+const OTHER_CITY = 'City not yet listed';
+
 export default function PreregisterForm() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [message, setMessage] = useState('');
   const [countryCode, setCountryCode] = useState('');
+  const [citySelection, setCitySelection] = useState('');
   const [submittedInterest, setSubmittedInterest] = useState('walker');
   const [fanAlertRequested, setFanAlertRequested] = useState(false);
   const started = useRef(false);
@@ -58,6 +61,7 @@ export default function PreregisterForm() {
       });
       event.currentTarget.reset();
       setCountryCode('');
+      setCitySelection('');
     } catch (error) {
       setStatus('error');
       setMessage(error instanceof Error ? error.message : 'Unable to join the first-access list right now.');
@@ -95,7 +99,15 @@ export default function PreregisterForm() {
       <div className={styles.row}>
         <label>
           <span>Country</span>
-          <select name="country_code" value={countryCode} onChange={(event) => setCountryCode(event.target.value)} required>
+          <select
+            name="country_code"
+            value={countryCode}
+            onChange={(event) => {
+              setCountryCode(event.target.value);
+              setCitySelection('');
+            }}
+            required
+          >
             <option value="" disabled>Select country</option>
             {participationCountries.map((country) => (
               <option key={country.code} value={country.code}>{country.name}</option>
@@ -104,7 +116,13 @@ export default function PreregisterForm() {
         </label>
         <label>
           <span>City / interest location</span>
-          <select name="city" defaultValue="" disabled={!selectedCountry} required>
+          <select
+            name="city"
+            value={citySelection}
+            onChange={(event) => setCitySelection(event.target.value)}
+            disabled={!selectedCountry}
+            required
+          >
             <option value="" disabled>{selectedCountry ? 'Select city' : 'Choose country first'}</option>
             {selectedCountry?.cities.map((city) => (
               <option key={city} value={city}>{city}</option>
@@ -112,6 +130,19 @@ export default function PreregisterForm() {
           </select>
         </label>
       </div>
+
+      {citySelection === OTHER_CITY && (
+        <label>
+          <span>Your city</span>
+          <input
+            name="custom_city"
+            autoComplete="address-level2"
+            maxLength={80}
+            placeholder="Enter your city"
+            required
+          />
+        </label>
+      )}
 
       <div className={styles.row}>
         <label>
