@@ -22,7 +22,7 @@ export default function Home() {
           <a href="/the-chaos-walk">The Walk</a>
           <a href="/cities">Cities</a>
           <a href="/city-leads">City Leads</a>
-          <a href="/shop">Chaos Fan</a>
+          <a href="/shop">Chaos Shop</a>
           <a href="/about">About</a>
         </nav>
         <a className="luxHeaderCta" href="#join">Join first-access free</a>
@@ -34,10 +34,10 @@ export default function Home() {
         <div className="luxHeroCopy">
           <p className="luxEyebrow">THE CHAOS WALK · EDITION 001</p>
           <h1>Two different shoes.<br/><span>Your own everything.</span></h1>
-          <p className="luxLead">A free global social walk built around one unmistakable ritual: wear two different shoes. Your clothes, your style, your city.</p>
+          <p className="luxLead">A free global 10,000-step social walk for misfits: dress off, wear two different shoes, bring the Chaos Fan and make your city impossible to ignore.</p>
           <div className="luxHeroActions">
             <a className="luxButton luxButtonDark" href="#join">Join first-access free <ArrowRight size={17}/></a>
-            <a className="luxButton luxButtonGhost" href="/shop">Preview the Chaos Fan <ArrowRight size={17}/></a>
+            <a className="luxButton luxButtonGhost" href="/shop">Preview the Chaos Shop <ArrowRight size={17}/></a>
           </div>
           <p className="luxMeta">MAY 2027 · exact date and local city status announced when confirmed</p>
         </div>
@@ -46,12 +46,12 @@ export default function Home() {
       <section className="luxPathGrid" aria-label="Ways to take part">
         <a href="#join" className="luxPath">
           <span className="luxPathIcon"><Footprints size={23}/></span>
-          <div><small>01 · PARTICIPATE</small><strong>Join the walk</strong><p>Free first-access. No purchase required.</p></div>
+          <div><small>01 · PARTICIPATE</small><strong>Join the walk</strong><p>10,000 steps. Free first-access. No purchase required.</p></div>
           <ArrowRight size={19}/>
         </a>
         <a href="/shop" className="luxPath">
           <span className="luxPathIcon luxPathIconBlue"><Fan size={23}/></span>
-          <div><small>02 · OPTIONAL OBJECT</small><strong>Chaos Fan</strong><p>A colourful hand fan. Sales open later.</p></div>
+          <div><small>02 · THE SHARED OBJECT</small><strong>Bring the Chaos Fan</strong><p>Edition 001 · planned €19.99. The walk is free; the fan is the ritual.</p></div>
           <ArrowRight size={19}/>
         </a>
         <a href="/city-leads" className="luxPath">
@@ -65,7 +65,7 @@ export default function Home() {
         <div className="luxSignatureCopy">
           <p className="luxEyebrow">THE SIGNATURE</p>
           <h2>Not a uniform.<br/>Not a costume.<br/><em>A visible choice.</em></h2>
-          <p>PlanetHike should be recognisable without making everyone look the same. The shared code is simple: two clearly different shoes. Everything else belongs to the person wearing them.</p>
+          <p>The shoes are the unmistakable PlanetHike code. Everything else should look deliberately off: colour clashes, unexpected combinations and your own style turned up for one day.</p>
           <a className="luxTextLink" href="/the-chaos-walk">See how The Chaos Walk works <ArrowRight size={16}/></a>
         </div>
         <div className="luxSignatureImage" role="img" aria-label="Close-up of deliberately mismatched teal and orange shoes" />
@@ -73,14 +73,14 @@ export default function Home() {
 
       <section className="luxNoUniform">
         <div className="luxNoUniformHead">
-          <p className="luxEyebrow">ONE RULE. MANY PEOPLE.</p>
-          <h2>Wear your own thing.</h2>
-          <p>The visual system should feel like a movement, not a fashion collection.</p>
+          <p className="luxEyebrow">ONE DAY · NO NORMAL</p>
+          <h2>Dress off.</h2>
+          <p>If you normally blend in, this is the day you do not.</p>
         </div>
         <div className="luxPrinciples">
-          <article><span>01</span><h3>Keep your clothes.</h3><p>Denim, linen, office trousers, dresses, shorts, vintage, sportswear. The participant brings the personality.</p></article>
-          <article><span>02</span><h3>Make the shoes unmistakable.</h3><p>Different colours, silhouettes or styles. The mismatch should read instantly, not look accidental.</p></article>
-          <article><span>03</span><h3>The fan is optional.</h3><p>The colourful hand fan is a shared object for those who want it — never a requirement to belong.</p></article>
+          <article><span>01</span><h3>Clash your colours.</h3><p>Bright, wrong, unexpected. Mix pieces that should not work together. If it looks too coordinated, break it.</p></article>
+          <article><span>02</span><h3>Make the shoes unmistakable.</h3><p>Two different colours, silhouettes or styles. The mismatch should read instantly from across the street.</p></article>
+          <article><span>03</span><h3>Bring the Chaos Fan.</h3><p>The colourful hand fan is the shared symbol of the day and PlanetHike’s hero product. You can walk without it, but you will want it in the photograph.</p></article>
         </div>
       </section>
 
@@ -88,10 +88,10 @@ export default function Home() {
         <div className="luxFanMedia" role="img" aria-label="Participant holding the colourful PlanetHike hand fan" />
         <div className="luxFanCopy">
           <p className="luxEyebrow luxEyebrowLight">THE CHAOS FAN · EDITION 001</p>
-          <h2>A hand fan.<br/>Not a gadget.</h2>
-          <p>Useful on the walk. Highly visible in photographs. Easy to carry afterwards. The Chaos Fan is planned as an optional annual collectible, not tech gear and not a participation requirement.</p>
-          <div className="luxStatus"><span className="luxStatusDot"/> Sales are not open yet</div>
-          <a className="luxButton luxButtonLight" href="/shop">Preview Edition 001 <ArrowRight size={17}/></a>
+          <h2>The object<br/>of the day.</h2>
+          <p>A real folding hand fan — no tech. Open it for the city-wide fan shot, carry it through the walk and keep it as Edition 001 afterwards. Participation stays free, but the fan is designed to become part of the ritual.</p>
+          <div className="luxStatus"><span className="luxStatusDot"/> Planned launch price €19.99 · sales not open yet</div>
+          <a className="luxButton luxButtonLight" href="/shop">Preview the Chaos Shop <ArrowRight size={17}/></a>
         </div>
       </section>
 
@@ -123,23 +123,23 @@ export default function Home() {
       </section>
 
       <section className="luxCause">
-        <div><Sparkles size={27}/><strong>Free to join.</strong><p>Participation stays separate from merchandise.</p></div>
+        <div><Sparkles size={27}/><strong>Free to join.</strong><p>Merchandise supports the experience; it never becomes an entry ticket.</p></div>
         <div><Globe2 size={27}/><strong>Global idea. Local proof.</strong><p>City status is published only when local readiness is real.</p></div>
-        <div><HeartHandshake size={27}/><strong>Cause partner to be announced.</strong><p>Any impact-linked fan contribution will be published only after the partner and money flow are verified.</p></div>
+        <div><HeartHandshake size={27}/><strong>Cause partner to be announced.</strong><p>Any impact-linked contribution will be published only after the partner and money flow are verified.</p></div>
       </section>
 
       <section className="luxJoin" id="join">
         <div className="luxJoinHead">
           <p className="luxEyebrow">MAY 2027 · FIRST-ACCESS LIST OPEN</p>
           <h2>Walk different.</h2>
-          <p>Choose your city. Wear two different shoes. We’ll send confirmed launch information when it is ready.</p>
+          <p>Your city. 10,000 steps. Two different shoes. Off colours. One very visible day.</p>
         </div>
         <div className="luxJoinForm"><PreregisterForm /></div>
       </section>
 
       <footer className="luxFooter">
         <div><a className="luxBrand luxFooterBrand" href="#top">PLANETHIKE</a><p>Two different shoes. Your own everything.</p></div>
-        <div className="luxFooterLinks"><a href="/the-chaos-walk">The Walk</a><a href="/cities">Cities</a><a href="/city-leads">City Leads</a><a href="/shop">Chaos Fan</a><a href="/faq">FAQ</a><a href="/about">About</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/imprint">Imprint</a></div>
+        <div className="luxFooterLinks"><a href="/the-chaos-walk">The Walk</a><a href="/cities">Cities</a><a href="/city-leads">City Leads</a><a href="/shop">Chaos Shop</a><a href="/faq">FAQ</a><a href="/about">About</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/imprint">Imprint</a></div>
         <small>© 2026 PlanetHike · May 2027 launch details remain subject to confirmation.</small>
       </footer>
     </main>
