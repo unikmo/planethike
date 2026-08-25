@@ -1,5 +1,12 @@
+import type { Metadata } from 'next';
 import { ArrowLeft, ArrowRight, Fan, MapPin, Package, Shirt, Truck } from 'lucide-react';
 import MobileMenu from '../MobileMenu';
+
+export const metadata: Metadata = {
+  title: 'Chaos Shop — Edition 001 | PlanetHike',
+  description: 'Preview the PlanetHike Chaos Fan, mismatch socks, Chaos Tee, bundles and the planned direct-delivery or event-collection fulfilment model for The Chaos Walk.',
+  alternates: { canonical: '/shop' },
+};
 
 const products = [
   {
