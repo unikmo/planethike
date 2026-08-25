@@ -2,11 +2,11 @@ import { ArrowLeft, ArrowRight, CheckCircle2, MapPinned, ShieldCheck, Users } fr
 import MobileMenu from '../MobileMenu';
 
 const steps = [
-  ['01', 'Apply', 'Tell us your city, your background, local network and why you want to lead the first Chaos Walk there.'],
-  ['02', 'Get reviewed', 'We review local capacity, crew readiness, route/permission awareness, safety and accessibility before any city is confirmed.'],
-  ['03', 'Build your crew', 'Recruit a small volunteer team for route, check-in, safety, content, challenge stations and local coordination.'],
-  ['04', 'Run the protocol', 'Use the PlanetHike playbook for route planning, permits, safety, accessibility, brand, Chaos Drops and event-day execution.'],
-  ['05', 'Confirm the city', 'A city moves from interest to confirmed only when the local operating facts and launch information are ready to publish.'],
+  ['01', 'Apply', 'Tell us your city, your local connection and why you want to bring The Chaos Walk there.'],
+  ['02', 'Meet us', 'We’ll talk through the idea, your local network and what it takes to create a safe, welcoming walk.'],
+  ['03', 'Build your crew', 'Bring together a small volunteer team for route, check-in, safety, content, Chaos Drops and local coordination.'],
+  ['04', 'Shape the day', 'Choose the route, work through local permissions and accessibility, then add the personality that makes your city yours.'],
+  ['05', 'Bring it to life', 'Once the city details are ready, we publish the event and you lead your local Chaos Walk into May 2027.'],
 ];
 
 export default function CityLeadsPage() {
@@ -21,23 +21,23 @@ export default function CityLeadsPage() {
       <section className="subHero cityLeadHero">
         <div className="subHeroInner">
           <p className="sectionKicker">CITY LEADS / MAY 2027</p>
-          <h1>YOUR CITY<br/>NEEDS A<br/><em>STARTER.</em></h1>
-          <p className="subLead">Every confirmed city needs an approved City Lead—or a small co-lead team—backed by local volunteers and one clear PlanetHike operating protocol.</p>
-          <a className="button buttonDark" href="/city-leads/apply">Apply to become a City Lead <ArrowRight size={18}/></a>
+          <h1>YOUR CITY<br/>NEEDS A<br/><em>MISFIT.</em></h1>
+          <p className="subLead">You know the streets, the people and the energy. We bring the playbook. Together, we make 10,000 steps look completely different.</p>
+          <a className="button buttonDark" href="/city-leads/apply">Apply to lead your city <ArrowRight size={18}/></a>
         </div>
       </section>
 
       <section className="roleStrip">
-        <article><MapPinned size={28}/><strong>Own the local route</strong><span>Choose a walkable route and coordinate local permissions where required.</span></article>
-        <article><Users size={28}/><strong>Build the crew</strong><span>Recruit volunteers so one person never carries the whole event.</span></article>
-        <article><ShieldCheck size={28}/><strong>Protect the standard</strong><span>Use the shared safety, challenge, brand, accessibility and incident protocol.</span></article>
+        <article><MapPinned size={28}/><strong>Shape the local route</strong><span>Choose a walkable route and coordinate local permissions where required.</span></article>
+        <article><Users size={28}/><strong>Build your crew</strong><span>Bring together a small volunteer team so the event belongs to the city, not one person.</span></article>
+        <article><ShieldCheck size={28}/><strong>Make it welcoming</strong><span>Plan for safety, accessibility, clear roles and a day people want to join again.</span></article>
       </section>
 
       <section className="processSection">
         <div className="sectionKicker">HOW IT WORKS</div>
         <div className="processIntro">
-          <h2>LOCAL ENERGY.<br/>GLOBAL STANDARD.</h2>
-          <p>PlanetHike scales through trusted local people, not through a central team pretending every city is already ready.</p>
+          <h2>LOCAL ENERGY.<br/>ONE CHAOS WALK.</h2>
+          <p>Every city should feel local. The two different shoes, off colours, 10,000 steps and shared fan moment connect it to everyone else.</p>
         </div>
         <div className="processList">
           {steps.map(([n,title,text]) => (
@@ -52,21 +52,21 @@ export default function CityLeadsPage() {
 
       <section className="protocolSection">
         <div>
-          <p className="sectionKicker light">THE PLANETHIKE PROTOCOL</p>
-          <h2>WE GIVE YOU THE<br/>PLAYBOOK.</h2>
+          <p className="sectionKicker light">WHAT WE BRING</p>
+          <h2>YOU GET THE<br/>PLAYBOOK.</h2>
         </div>
         <div className="protocolGrid">
-          {['Route + permissions','Volunteer roles','Safety + incidents','Accessibility','10K Chaos Drops','Fan ritual + DIY guidance','Local media + content','Event-day checklist','Post-event reporting'].map(item => (
+          {['Route guidance','Volunteer roles','Safety + incidents','Accessibility','10K Chaos Drops','Chaos Fan ritual','Local media + content','Event-day checklist','Post-event wrap-up'].map(item => (
             <span key={item}><CheckCircle2 size={17}/>{item}</span>
           ))}
         </div>
       </section>
 
       <section className="leadCta">
-        <p>MAY 2027 / CITY APPLICATIONS OPEN</p>
-        <h2>PUT YOUR CITY<br/>IN THE RUNNING.</h2>
-        <a className="button buttonDark" href="/city-leads/apply">Start the City Lead application <ArrowRight size={18}/></a>
-        <small>Applying does not confirm a city. PlanetHike reviews local readiness before publishing an event as confirmed.</small>
+        <p>MAY 2027 / CITY LEAD APPLICATIONS</p>
+        <h2>START SOMETHING<br/>YOUR CITY REMEMBERS.</h2>
+        <a className="button buttonDark" href="/city-leads/apply">Start your City Lead application <ArrowRight size={18}/></a>
+        <small>Applying starts the conversation. We’ll work through the local details with you before your city is announced.</small>
       </section>
     </main>
   );
