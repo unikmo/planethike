@@ -8,16 +8,15 @@ type Props = {
   title: string;
   intro: string;
   sections: Section[];
-  draft?: boolean;
 };
 
-export default function LegalPage({ eyebrow, title, intro, sections, draft = false }: Props) {
+export default function LegalPage({ eyebrow, title, intro, sections }: Props) {
   return (
     <main className="seoPage">
       <header className="seoHeader">
         <a className="brand" href="/">PLANET<span>HIKE</span></a>
-        <nav><a href="/the-chaos-walk">The Walk</a><a href="/cities">Cities</a><a href="/shop">Chaos Fan</a><a href="/city-leads">City Leads</a><a href="/guides">Guides</a></nav>
-        <a className="seoHeaderCta" href="/join">Join first-access</a>
+        <nav><a href="/the-chaos-walk">The Walk</a><a href="/cities">Cities</a><a href="/shop">Chaos Shop</a><a href="/city-leads">City Leads</a><a href="/guides">Guides</a></nav>
+        <a className="seoHeaderCta" href="/join">Pre-register free</a>
         <MobileMenu />
       </header>
 
@@ -33,12 +32,6 @@ export default function LegalPage({ eyebrow, title, intro, sections, draft = fal
           <p>Järvevana tee 9, 11314 Tallinn, Estonia · hello@planethike.org</p>
         </aside>
       </section>
-
-      {draft && (
-        <section style={{margin:'0 5vw 40px',padding:'18px 22px',background:'#fff1a8',border:'1px solid #111',fontWeight:700,lineHeight:1.5}}>
-          STAGING DRAFT — This page reflects the current target flows but still requires final legal review before production release.
-        </section>
-      )}
 
       <section className="seoSections">
         {sections.map((section, index) => (
