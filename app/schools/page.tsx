@@ -1,4 +1,27 @@
 import type { Metadata } from 'next';
 import SeoLanding from '../SeoLanding';
-export const metadata: Metadata={title:'School Walking Challenge | Join The Chaos Walk | PlanetHike',description:'Schools can join The Chaos Walk as a free 10,000-step participation experience with local safeguarding and supervision.',alternates:{canonical:'/schools'}};
-export default function Page(){return <SeoLanding eyebrow="SCHOOLS / PARTICIPATION" title="A school walking challenge students will remember" intro="Schools can take part without turning PlanetHike into a school fundraiser. The focus is participation, movement, creativity and a shared global moment." bullets={['Free participation','No fundraising requirement','Local supervision required','Group-friendly format']} sections={[{heading:'Participation, not a content farm',body:'PlanetHike keeps the school offer simple: one strong participation pathway rather than dozens of thin school fundraising pages.'},{heading:'Built around a memorable ritual',body:'Two different shoes, off-colour outfits and the Chaos Fan create an easy visual identity students can understand quickly.'},{heading:'Schools control safeguarding',body:'Any school participation must be organised and supervised under the school’s own safeguarding, consent, accessibility and local event requirements.'},{heading:'Join a city or create a school crew',body:'A school can join an existing city event where appropriate or organise a supervised internal crew aligned with the global Chaos Walk format.'}]} ctaLabel="Pre-register a school group"/>}
+
+export const metadata: Metadata = {
+  title: 'School Walking Challenge | Join The Chaos Walk | PlanetHike',
+  description: 'Schools can join The Chaos Walk for a memorable 10,000-step day built around movement, creativity and two different shoes.',
+  alternates: { canonical: '/schools' },
+};
+
+export default function Page() {
+  return <SeoLanding
+    eyebrow="SCHOOLS / MAY 2027"
+    title="A school walking challenge students will remember"
+    intro="Turn a walking day into something students can see themselves in: around 10,000 steps, deliberately different shoes, off colours and a shared global moment."
+    bullets={['Free participation','Around 10,000 steps','Group-friendly','School-led supervision']}
+    sections={[
+      {heading:'Make movement memorable',body:'The Chaos Walk gives students a simple visual ritual and a shared distance without turning the day into a race.'},
+      {heading:'Different together',body:'Two different shoes and deliberately clashing colours create the fun. Nobody needs to buy or wear a matching PlanetHike uniform.'},
+      {heading:'Schools lead the local setup',body:'Schools organise supervision, safeguarding, consent, accessibility and any local requirements for their participating students.'},
+      {heading:'Join a city or walk as a school crew',body:'A school can take part with a confirmed local Chaos Walk where appropriate or organise its own supervised group around the same May 2027 format.'}
+    ]}
+    ctaLabel="Pre-register a school group"
+    ctaHref="/#join"
+    secondaryLabel="How The Chaos Walk works"
+    secondaryHref="/the-chaos-walk"
+  />;
+}
