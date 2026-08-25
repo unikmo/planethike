@@ -3,23 +3,25 @@ import SeoLanding from '../SeoLanding';
 
 export const metadata: Metadata = {
   title: 'Workplace Step Challenge | Corporate Walking Challenge | PlanetHike',
-  description: 'Give your team a workplace step challenge people actually want to talk about. Join The Chaos Walk first-access for May 2027.',
+  description: 'Give your team a 10,000-step workplace challenge they will actually remember. Join The Chaos Walk in May 2027.',
   alternates: { canonical: '/companies' },
 };
 
 export default function Page() {
   return <SeoLanding
     eyebrow="FOR COMPANIES / TEAMS"
-    title="A workplace step challenge people remember"
-    intro="Turn the usual corporate wellness challenge into a shared cultural moment: 10,000 steps, team participation, Chaos Drops and a planned global event in May 2027."
-    bullets={['Team-friendly format','Free first-access registration','City or group participation','Optional merchandise — sales not open yet']}
+    title="A workplace step challenge people talk about afterwards"
+    intro="Trade another anonymous leaderboard for a day your team can see, photograph and laugh about: around 10,000 steps, two different shoes, off colours and shared Chaos Drops."
+    bullets={['Around 10,000 steps','Team-friendly','Free pre-registration','No race pace required']}
     sections={[
-      {heading:'Beyond another leaderboard',body:'PlanetHike is designed around participation and memorable moments, not just step totals. Teams can walk together, dress off-colour and take on the same Chaos Drop rhythm as other confirmed locations.'},
-      {heading:'Easy to explain internally',body:'The format is simple: join first-access free, aim for around 10,000 steps, wear two different shoes, bring a Chaos Fan if available and take part in the challenge moments.'},
-      {heading:'Works across offices',body:'Companies with teams in different cities can register interest in the same edition while allowing local offices to organize their own crew. Local event status is confirmed separately.'},
-      {heading:'Human impact only after verification',body:'PlanetHike intends to connect future official fan sales to a transparent reconstructive-surgery contribution. No active contribution claim will be made before the partner and money flow are locked.'}
+      {heading:'Make the team visible',body:'Everyone keeps their own style. The shared code is two different shoes and the Chaos Fan — enough to connect the group without putting employees in a matching event uniform.'},
+      {heading:'Easy to explain',body:'Pre-register the team, choose the city, aim for around 10,000 steps and dress deliberately off. The event is social, not competitive.'},
+      {heading:'One company, several cities',body:'Teams in different locations can join the same May 2027 edition. Each office can walk with its local city or create its own group.'},
+      {heading:'Give the day another purpose',body:'PlanetHike plans to connect official Chaos Fan sales to a human-impact mission, with the cause partner and exact contribution published before sales open.'}
     ]}
-    ctaLabel="Join first-access as a team"
+    ctaLabel="Pre-register my team"
     ctaHref="/#join"
+    secondaryLabel="How The Chaos Walk works"
+    secondaryHref="/the-chaos-walk"
   />;
 }
