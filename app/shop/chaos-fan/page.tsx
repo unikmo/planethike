@@ -2,26 +2,31 @@ import type { Metadata } from 'next';
 import SeoLanding from '../../SeoLanding';
 
 export const metadata: Metadata = {
-  title: 'Chaos Fan Edition 001 Preview | PlanetHike',
-  description: 'Preview the planned Edition 001 Chaos Fan for The Chaos Walk. Sales are not open yet; join PlanetHike first-access and request a fan launch alert.',
+  title: 'Chaos Fan Edition 001 | PlanetHike',
+  description: 'Meet Chaos Fan Edition 001, the colourful folding hand fan made for The Chaos Walk in May 2027.',
   alternates: { canonical: '/shop/chaos-fan' },
 };
 
 export default function Page() {
   return <SeoLanding
-    eyebrow="EDITION 001 / PRODUCT PREVIEW / NOT YET FOR SALE"
+    eyebrow="EDITION 001 / THE CHAOS WALK / MAY 2027"
     title="The Chaos Fan"
-    intro="A useful, photogenic folding fan designed to become the shared visual object of The Chaos Walk. The current planned launch price is €19.99, but checkout is not open and final commerce terms are not yet confirmed."
-    bullets={['Planned Edition 001 hero product','Planned price €19.99 — not an active offer','No purchase required to join','DIY alternative planned where official shipping is unavailable']}
+    intro="A colourful folding hand fan made to be carried, photographed, waved with a whole city and kept long after the 10,000 steps are done."
+    bullets={['€19.99 when sales open','A real folding hand fan — no tech','Made for the city-wide fan moment','The walk stays free']}
     sections={[
-      {heading:'Why a hand fan?',body:'It is useful during a warm-weather walk, visible in photos, easy to wave during Chaos Drops and collectible after the event.'},
-      {heading:'Built for the ritual',body:'The fan is designed for the global fan shot, challenge moments, portraits and the finish ritual. It should earn its place in the experience rather than become disposable merch.'},
-      {heading:'Impact promise comes after proof',body:'PlanetHike intends to connect official fan sales to a transparent reconstructive-surgery contribution. Partner, contribution amount, settlement and reporting details will be published before sales open.'},
-      {heading:'Global participation, selective commerce',body:'Official sales will open only where checkout, fulfilment, shipping and returns have been tested. Participation remains broader than commerce.'}
+      {heading:'The object everyone carries',body:'Two different shoes are the visual code. The Chaos Fan is the shared object: one thing thousands of different-looking people can lift at the same moment.'},
+      {heading:'Made for the photograph',body:'Open it during the walk, use it in Chaos Drops, lift it for the city-wide fan shot and keep Edition 001 afterwards.'},
+      {heading:'Useful, not disposable',body:'It is a real hand fan first. The goal is an object that earns its place on a warm walk and still feels worth keeping after the event.'},
+      {heading:'Fun that gives back',body:'PlanetHike plans a meaningful contribution from official Fan sales to its human-impact mission. We will publish the cause partner and exact contribution before Edition 001 goes on sale.'}
     ]}
-    ctaLabel="Join + request fan alert"
+    faq={[
+      {q:'Do I need the Chaos Fan to join?',a:'No. The Chaos Walk is free and buying merchandise is not an entry requirement. The Fan is the shared event object we strongly encourage participants to bring.'},
+      {q:'When can I buy Edition 001?',a:'Sales will open before the May 2027 walk. Pre-register and tick the Chaos Shop alert to hear first.'},
+      {q:'How much will it cost?',a:'Edition 001 is planned at €19.99 in the European shop. Local pricing and shipping will be shown when ordering opens.'}
+    ]}
+    ctaLabel="Get the Edition 001 alert"
     ctaHref="/#join"
-    secondaryLabel="Back to product preview"
+    secondaryLabel="Explore the Chaos Shop"
     secondaryHref="/shop"
   />;
 }
