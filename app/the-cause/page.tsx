@@ -2,24 +2,26 @@ import type { Metadata } from 'next';
 import SeoLanding from '../SeoLanding';
 
 export const metadata: Metadata = {
-  title: 'The Planned Human Mission | PlanetHike',
-  description: 'PlanetHike intends to link future official Chaos Fan sales to transparent reconstructive-surgery support. Partner and contribution mechanics will be published before sales open.',
+  title: 'The PlanetHike Cause | Fun That Gives Back',
+  description: 'PlanetHike plans to connect official Chaos Fan sales to reconstructive care and will publish the partner and exact contribution before Edition 001 goes on sale.',
   alternates: { canonical: '/the-cause' },
 };
 
 export default function Page() {
   return <SeoLanding
-    eyebrow="THE HUMAN MISSION / VERIFICATION BEFORE PROMISES"
-    title="Have fun. Build impact credibly."
-    intro="The Chaos Walk is designed to be desirable on its own. PlanetHike intends to connect future official Chaos Fan sales to reconstructive-surgery support, but the production promise will not be activated until the partner and money flow are verified."
-    bullets={['Participation stays free','No active donation claim before partner proof','Contribution mechanics published before sales','Public reporting planned for any activated model']}
+    eyebrow="THE CAUSE / FUN THAT GIVES BACK"
+    title="A ridiculous walk. A serious impact."
+    intro="The Chaos Walk should be worth joining because it is unforgettable. The Chaos Fan should also do more than look good in a photograph. PlanetHike plans to connect official Fan sales to reconstructive care."
+    bullets={['The walk stays free','Cause partner announced before sales','Exact Fan contribution published before sales','Impact updates shared publicly']}
     sections={[
-      {heading:'Why reconstructive surgery?',body:'PlanetHike is exploring a human-impact focus around reconstructive mouth and nose care because the outcomes can touch breathing, eating, speech, appearance, confidence and daily participation.'},
-      {heading:'What is not yet locked',body:'The final partner organization, contribution amount, settlement cadence, treatment scope and public reporting standard are not yet being presented as active production facts.'},
-      {heading:'What must happen before sales',body:'PlanetHike will publish the selected partner, the exact sales-linked contribution rule, how transfers are made and how results are reported before any impact-linked commerce claim goes live.'},
-      {heading:'Cause second. Credibility first.',body:'People should want to join because The Chaos Walk is memorable. The cause should strengthen trust only when PlanetHike can prove exactly what the commercial promise means.'}
+      {heading:'Why reconstructive care?',body:'Reconstructive mouth and nose care can affect breathing, eating, speech, appearance, confidence and everyday participation. That human impact is where PlanetHike intends to focus its giving.'},
+      {heading:'The Fan helps fund it',body:'PlanetHike plans a meaningful contribution from every official Chaos Fan sold. The exact amount will be published alongside the cause partner before Edition 001 goes on sale.'},
+      {heading:'Show the money flow',body:'When sales open, the site will explain who receives the contribution, how it is transferred and how PlanetHike reports what was given.'},
+      {heading:'Fun first. Impact visible.',body:'Nobody should need guilt to join The Chaos Walk. The event should earn attention on its own — and then turn some of that attention into something useful.'}
     ]}
-    secondaryLabel="Preview the Chaos Fan"
+    ctaLabel="Pre-register for The Chaos Walk"
+    ctaHref="/#join"
+    secondaryLabel="Meet the Chaos Fan"
     secondaryHref="/shop/chaos-fan"
   />;
 }
