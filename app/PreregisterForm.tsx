@@ -51,9 +51,7 @@ export default function PreregisterForm() {
       setSubmittedInterest(interest);
       setFanAlertRequested(fanAlert);
       setStatus('success');
-      setMessage(
-        'You’re on the May 2027 first-access list. We’ll send confirmed date and city information when it is ready. Joining this list does not yet confirm a local event.',
-      );
+      setMessage('You’re pre-registered for May 2027. We’ll email the exact date and your city details as they are announced.');
       trackEvent('preregister_submit', {
         interest,
         country_code: String(payload.country_code || ''),
@@ -64,7 +62,7 @@ export default function PreregisterForm() {
       setCitySelection('');
     } catch (error) {
       setStatus('error');
-      setMessage(error instanceof Error ? error.message : 'Unable to join the first-access list right now.');
+      setMessage(error instanceof Error ? error.message : 'Unable to pre-register right now.');
     }
   }
 
@@ -72,11 +70,11 @@ export default function PreregisterForm() {
     return (
       <div className={styles.success} role="status">
         <div className={styles.successIcon}><Check size={24} /></div>
-        <strong>YOU’RE ON THE LIST.</strong>
+        <strong>YOU’RE IN.</strong>
         <p>{message}</p>
-        {fanAlertRequested && <p className={styles.successNote}>Chaos Fan launch alert requested. Sales are not open yet.</p>}
+        {fanAlertRequested && <p className={styles.successNote}>You’ll also be first to hear when Chaos Fan Edition 001 goes on sale.</p>}
         <div className={styles.successActions}>
-          <a href="/shop">Preview the Chaos Fan <ArrowRight size={16} /></a>
+          <a href="/shop">Explore the Chaos Shop <ArrowRight size={16} /></a>
           {submittedInterest === 'host' && <a href="/city-leads/apply">Complete City Lead application <ArrowRight size={16} /></a>}
         </div>
       </div>
@@ -115,7 +113,7 @@ export default function PreregisterForm() {
           </select>
         </label>
         <label>
-          <span>City / interest location</span>
+          <span>Your city</span>
           <select
             name="city"
             value={citySelection}
@@ -133,7 +131,7 @@ export default function PreregisterForm() {
 
       {citySelection === OTHER_CITY && (
         <label>
-          <span>Your city</span>
+          <span>Tell us your city</span>
           <input
             name="custom_city"
             autoComplete="address-level2"
@@ -148,49 +146,49 @@ export default function PreregisterForm() {
         <label>
           <span>I want to</span>
           <select name="interest" defaultValue="walker">
-            <option value="walker">Join the first-access list as a walker</option>
+            <option value="walker">Walk The Chaos Walk</option>
             <option value="team">Bring a group / team</option>
-            <option value="volunteer">Volunteer with a future city crew</option>
-            <option value="host">Express interest in leading my city</option>
+            <option value="volunteer">Volunteer with my city crew</option>
+            <option value="host">Lead The Chaos Walk in my city</option>
           </select>
         </label>
         <div aria-live="polite">
-          <span className={styles.availabilityLabel}>Chaos Fan availability</span>
+          <span className={styles.availabilityLabel}>Chaos Shop</span>
           <p className={styles.availabilityText}>
             {!selectedCountry
-              ? 'Choose a country to see the current merchandise plan.'
+              ? 'Choose your country to see the current shop plan.'
               : selectedCountry.commerce
-                ? 'Official fan sales are planned only after fulfilment, checkout and impact reporting are verified.'
-                : 'Participation interest is open. Official fan sales are not scheduled for this market yet; a local DIY fan option is planned.'}
+                ? 'Chaos Fan Edition 001 and selected event merchandise are planned for your market. Join the alert below to hear when the shop opens.'
+                : 'You can still join the walk. Shop availability for your country will be announced separately.'}
           </p>
         </div>
       </div>
 
       <fieldset className={styles.choiceGroup}>
-        <legend>Preferences and consent</legend>
+        <legend>Keep me in the loop</legend>
         <label className={styles.checkboxLabel}>
           <input name="merchandise_interest" type="checkbox" />
-          <span>Tell me when the official Chaos Fan goes on sale.</span>
+          <span>Tell me when Chaos Fan Edition 001 and the Chaos Shop open.</span>
         </label>
         <label className={styles.checkboxLabel}>
           <input name="marketing_consent" type="checkbox" />
-          <span>Send me occasional PlanetHike launch and event updates. I can unsubscribe at any time.</span>
+          <span>Send me occasional PlanetHike event updates. I can unsubscribe at any time.</span>
         </label>
         <label className={styles.checkboxLabel}>
           <input name="privacy_accepted" type="checkbox" required />
-          <span>I have read the <a href="/privacy">privacy notice</a> and agree to the processing needed to manage my first-access registration.</span>
+          <span>I have read the <a href="/privacy">privacy notice</a> and agree to the processing needed to manage my pre-registration.</span>
         </label>
       </fieldset>
 
       <input className={styles.honeypot} name="company" tabIndex={-1} autoComplete="off" aria-hidden="true" />
 
       <button className={styles.submit} type="submit" disabled={status === 'loading'}>
-        {status === 'loading' ? 'Joining…' : 'Join first-access free'}
+        {status === 'loading' ? 'Registering…' : 'Pre-register free'}
         {status !== 'loading' && <ArrowRight size={18} />}
       </button>
 
       <p className={styles.microcopy}>
-        Free. No purchase required. Choosing a city records demand and does not mean a local Chaos Walk is confirmed yet.
+        Free. No purchase required. We’ll email the exact date and local city details as they are announced.
       </p>
       {status === 'error' && <p className={styles.error} role="alert">{message}</p>}
     </form>
