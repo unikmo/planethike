@@ -19,18 +19,18 @@ type Props = {
 function getVariant(title: string, eyebrow: string) {
   const value = `${title} ${eyebrow}`.toLowerCase();
   if (value.includes('company') || value.includes('workplace') || value.includes('corporate')) return 'business';
-  if (value.includes('cause') || value.includes('charity') || value.includes('surgery')) return 'cause';
+  if (value.includes('cause') || value.includes('charity') || value.includes('surgery') || value.includes('impact')) return 'cause';
   if (value.includes('city') || value.includes('group')) return 'community';
   if (value.includes('mile') || value.includes('km') || value.includes('calorie') || value.includes('training') || value.includes('how ') || value.includes('guide')) return 'guide';
   return 'event';
 }
 
-export default function SeoLanding({ eyebrow, title, intro, bullets = [], sections = [], faq = [], ctaLabel = 'Join first-access free', ctaHref = '/#join', secondaryLabel = 'Explore The Chaos Walk', secondaryHref = '/the-chaos-walk' }: Props) {
+export default function SeoLanding({ eyebrow, title, intro, bullets = [], sections = [], faq = [], ctaLabel = 'Pre-register free', ctaHref = '/#join', secondaryLabel = 'Explore The Chaos Walk', secondaryHref = '/the-chaos-walk' }: Props) {
   const variant = getVariant(title, eyebrow);
   const visualLabel = variant === 'business'
-    ? 'TEAM ENERGY, WITHOUT THE GENERIC WELLNESS CHALLENGE.'
+    ? 'ONE TEAM. 10,000 STEPS. ZERO BORING.'
     : variant === 'cause'
-      ? 'HUMAN IMPACT — WITH PROOF BEFORE PROMISES.'
+      ? 'WALK BOLD. GIVE BACK. SEE THE IMPACT.'
       : variant === 'community'
         ? 'ONE CITY. ONE CREW. ONE VERY VISIBLE WALK.'
         : variant === 'guide'
@@ -41,8 +41,8 @@ export default function SeoLanding({ eyebrow, title, intro, bullets = [], sectio
     <main className={`seoPage seo-${variant}`}>
       <header className="seoHeader">
         <a className="brand" href="/">PLANET<span>HIKE</span></a>
-        <nav><a href="/the-chaos-walk">The Walk</a><a href="/10000-step-challenge">10,000 Steps</a><a href="/cities">Cities</a><a href="/companies">Companies</a><a href="/guides">Guides</a></nav>
-        <a className="seoHeaderCta" href="/#join">Join first-access</a>
+        <nav><a href="/the-chaos-walk">The Walk</a><a href="/10000-step-challenge">10,000 Steps</a><a href="/cities">Cities</a><a href="/shop">Chaos Shop</a><a href="/guides">Guides</a></nav>
+        <a className="seoHeaderCta" href="/#join">Pre-register free</a>
         <MobileMenu />
       </header>
 
@@ -74,7 +74,7 @@ export default function SeoLanding({ eyebrow, title, intro, bullets = [], sectio
 
       {faq.length > 0 && <section className="seoFaq"><p className="seoEyebrow">FAQ</p><h2>What people want to know.</h2><div>{faq.map((item) => <details key={item.q}><summary>{item.q}</summary><p>{item.a}</p></details>)}</div></section>}
 
-      <section className="seoBottomCta"><p>MAY 2027 · EXACT DATE TO BE ANNOUNCED · FREE FIRST-ACCESS</p><h2>Make 10,000 steps unforgettable.</h2><a href="/#join">Join The Chaos Walk first-access list <ArrowRight size={18}/></a></section>
+      <section className="seoBottomCta"><p>MAY 2027 · FREE PRE-REGISTRATION</p><h2>Make 10,000 steps unforgettable.</h2><a href="/#join">Pre-register for The Chaos Walk <ArrowRight size={18}/></a></section>
     </main>
   );
 }
