@@ -30,10 +30,10 @@ export default function GuidesPage() {
           <a href="/the-chaos-walk">The Walk</a>
           <a href="/10000-step-challenge">10,000 Steps</a>
           <a href="/cities">Cities</a>
-          <a href="/companies">Companies</a>
+          <a href="/shop">Chaos Shop</a>
           <a href="/guides">Guides</a>
         </nav>
-        <a className="seoHeaderCta" href="/#join">Join first-access</a>
+        <a className="seoHeaderCta" href="/#join">Pre-register free</a>
         <MobileMenu />
       </header>
 
@@ -44,10 +44,10 @@ export default function GuidesPage() {
           <p className="seoLead">Straightforward answers, training help and ideas for people planning a 10,000-step challenge, a 10K walk or a group walking event.</p>
         </div>
         <aside className="seoHeroCard">
-          <span>MAY 2027 · EXACT DATE TO BE ANNOUNCED</span>
+          <span>MAY 2027</span>
           <strong>READ.<br/>PLAN.<br/>THEN MAKE IT CHAOS.</strong>
-          <p>Use the guides, then join PlanetHike’s free first-access list for The Chaos Walk.</p>
-          <a className="seoPrimary" href="/#join">Join first-access free <ArrowRight size={18}/></a>
+          <p>Use the guides, then pre-register free for The Chaos Walk.</p>
+          <a className="seoPrimary" href="/#join">Pre-register free <ArrowRight size={18}/></a>
         </aside>
       </section>
 
@@ -63,8 +63,8 @@ export default function GuidesPage() {
 
       <section className="seoBottomCta">
         <p>10,000 STEPS DO NOT HAVE TO FEEL ORDINARY.</p>
-        <h2>Join The Chaos Walk first-access.</h2>
-        <a href="/#join">Join the May 2027 first-access list <ArrowRight size={18}/></a>
+        <h2>Walk different in May 2027.</h2>
+        <a href="/#join">Pre-register for The Chaos Walk <ArrowRight size={18}/></a>
       </section>
     </main>
   );
