@@ -3,46 +3,46 @@ import { ArrowLeft, ArrowRight, Fan, MapPin, Package, Shirt, Truck } from 'lucid
 import MobileMenu from '../MobileMenu';
 
 export const metadata: Metadata = {
-  title: 'Chaos Shop — Edition 001 | PlanetHike',
-  description: 'Preview the PlanetHike Chaos Fan, mismatch socks, Chaos Tee, bundles and the planned direct-delivery or event-collection fulfilment model for The Chaos Walk.',
+  title: 'Chaos Shop | Fan, Mismatch Socks, Tees & Event Bundles | PlanetHike',
+  description: 'Discover Chaos Fan Edition 001, mismatch socks, colourful tees, bandanas and event bundles for The Chaos Walk in May 2027.',
   alternates: { canonical: '/shop' },
 };
 
 const products = [
   {
-    kicker: 'HERO PRODUCT · SPECIALIST MANUFACTURE',
+    kicker: 'THE ICON · EDITION 001',
     title: 'Chaos Fan\nEdition 001',
-    price: '€19.99*',
-    note: 'The shared object of the day. Bulk-manufactured separately from POD apparel so colour, folding action and print quality stay under PlanetHike control.',
+    price: '€19.99',
+    note: 'The folding hand fan made for the city-wide fan shot, the walk and the photo you keep afterwards.',
     className: 'commerceProductFan',
   },
   {
-    kicker: 'POD · SAMPLE TEST REQUIRED',
+    kicker: 'THE PAIR THAT ISN’T A PAIR',
     title: 'Mismatch\nSocks',
-    price: 'PRICE AT LAUNCH',
-    note: 'A deliberately mismatched pair designed to reinforce the two-different-shoes ritual. Production route must pass sample and fulfilment testing before checkout opens.',
+    price: 'PRICE COMING SOON',
+    note: 'Two deliberately different socks in one pack. Because matching your socks on Chaos Walk day would be suspicious.',
     className: 'commerceProductSocks',
   },
   {
-    kicker: 'GELATO POD · PLANNED',
+    kicker: 'OFF COLOUR · ON PURPOSE',
     title: 'Chaos\nTee',
-    price: 'PRICE AT LAUNCH',
-    note: 'Colour-clash T-shirts produced on demand through Gelato where the selected garment, print quality and delivery route pass launch testing.',
+    price: 'PRICE COMING SOON',
+    note: 'Bright, clash-ready colour for people who want to turn the volume up without wearing an event uniform.',
     className: 'commerceProductTee',
   },
   {
-    kicker: 'ACCESSORY · SAMPLE TEST REQUIRED',
+    kicker: 'ONE MORE WRONG COLOUR',
     title: 'Chaos\nBandana',
-    price: 'PRICE AT LAUNCH',
-    note: 'A lightweight colour hit for people who want more chaos without buying a full outfit. Supplier and product route remain subject to sample validation.',
+    price: 'PRICE COMING SOON',
+    note: 'Wear it, tie it to a bag or wave it. A small extra hit of colour for a day when normal is off duty.',
     className: 'commerceProductBandana',
   },
 ];
 
 const bundles = [
-  ['01', 'The Signature Set', 'Chaos Fan + mismatched socks. The shortest route to the PlanetHike visual code.'],
-  ['02', 'The Chaos Kit', 'Chaos Fan + mismatched socks + Chaos Tee + bandana. One complete event bundle.'],
-  ['03', 'City Chaos Box', 'Consolidated participant orders plus event stock prepared for approved City Leads. Built for 20 / 50 / 100+ unit city batches.'],
+  ['01', 'The Signature Set', 'Chaos Fan + mismatch socks. Two PlanetHike signatures in one easy choice.'],
+  ['02', 'The Chaos Kit', 'Chaos Fan + mismatch socks + Chaos Tee + bandana. Maximum colour, minimum decision-making.'],
+  ['03', 'City Chaos Box', 'Group packs for teams, clubs and confirmed city crews. Built for bigger orders and event-day collection.'],
 ];
 
 export default function ShopPage() {
@@ -51,7 +51,7 @@ export default function ShopPage() {
       <header className="commerceHeader">
         <a className="luxBrand" href="/">PLANETHIKE</a>
         <nav className="commerceNav" aria-label="Shop navigation">
-          <a href="#products">Products</a>
+          <a href="#products">The drop</a>
           <a href="#bundles">Bundles</a>
           <a href="#delivery">Delivery</a>
         </nav>
@@ -61,14 +61,14 @@ export default function ShopPage() {
 
       <section className="commerceHero">
         <div className="commerceHeroCopy">
-          <p className="commerceEyebrow">THE CHAOS SHOP · EDITION 001 · PRE-LAUNCH</p>
-          <h1>The walk is free.<br/><em>The objects make it visible.</em></h1>
-          <p>The Chaos Fan is the hero product. Apparel and accessories stay small, colourful and useful. No giant merch catalogue. No fake checkout before fulfilment is ready.</p>
+          <p className="commerceEyebrow">THE CHAOS SHOP · EDITION 001 · MAY 2027</p>
+          <h1>The walk is free.<br/><em>The look is yours.</em></h1>
+          <p>Start with the Chaos Fan. Add mismatch socks, a deliberately loud tee or one more wrong colour. Nothing here is a uniform. Everything is made to help the day look unmistakably different.</p>
           <div className="commerceHeroActions">
-            <a href="/#join" className="commercePrimary">Join first-access + fan alert <ArrowRight size={17}/></a>
-            <a href="#delivery" className="commerceSecondary">See delivery model <ArrowRight size={17}/></a>
+            <a href="/#join" className="commercePrimary">Tell me when the shop opens <ArrowRight size={17}/></a>
+            <a href="#delivery" className="commerceSecondary">How delivery works <ArrowRight size={17}/></a>
           </div>
-          <small>*Fan price is planned, not an active offer. Other prices open only after samples, supplier costs and fulfilment are verified.</small>
+          <small>Edition 001 opens before The Chaos Walk. Final prices and country availability will be shown before ordering begins.</small>
         </div>
         <div className="commerceHeroMedia" role="img" aria-label="Colourful PlanetHike folding hand fan held by a participant" />
       </section>
@@ -76,8 +76,8 @@ export default function ShopPage() {
       <section className="commerceProducts" id="products">
         <div className="commerceSectionHead">
           <p className="commerceEyebrow">01 · THE DROP</p>
-          <h2>Four products.<br/>That is enough.</h2>
-          <p>Every item must strengthen the visual ritual. If it does not help people look or feel more PlanetHike, it does not belong in Edition 001.</p>
+          <h2>Four things.<br/>Plenty of chaos.</h2>
+          <p>The rule is simple: every piece should help you look more like yourself on the one day everybody is invited to dress wrong.</p>
         </div>
         <div className="commerceProductGrid">
           {products.map((product) => (
@@ -96,8 +96,8 @@ export default function ShopPage() {
       <section className="commerceBundles" id="bundles">
         <div className="commerceSectionHead commerceSectionHeadDark">
           <p className="commerceEyebrow">02 · BUNDLES</p>
-          <h2>Make choosing easy.</h2>
-          <p>Bundles should increase participation in the visual ritual, not create a maze of discounts.</p>
+          <h2>Pick your level of wrong.</h2>
+          <p>One icon, one easy set or the full colour hit. The choice should take seconds.</p>
         </div>
         <div className="commerceBundleList">
           {bundles.map(([n, title, text]) => (
@@ -113,31 +113,31 @@ export default function ShopPage() {
 
       <section className="commerceDelivery" id="delivery">
         <div className="commerceSectionHead">
-          <p className="commerceEyebrow">03 · FULFILMENT</p>
-          <h2>Ship to me.<br/>Or collect at the walk.</h2>
-          <p>PlanetHike uses two fulfilment paths so the event can stay global without forcing every item through one warehouse.</p>
+          <p className="commerceEyebrow">03 · GET YOUR ORDER</p>
+          <h2>To your door.<br/>Or waiting at the walk.</h2>
+          <p>Choose the delivery option that works for you when the shop opens.</p>
         </div>
         <div className="commerceDeliveryGrid">
           <article>
             <div className="commerceDeliveryIcon"><Truck size={28}/></div>
-            <p className="commerceMini">DIRECT DELIVERY</p>
+            <p className="commerceMini">HOME DELIVERY</p>
             <h3>Deliver to me.</h3>
-            <p>Eligible POD items are planned to be produced and shipped through Gelato after checkout opens. The customer pays the applicable shipping charge shown at checkout.</p>
+            <p>Your order is sent directly to the address you choose. Shipping is shown separately when you order.</p>
             <ul>
-              <li>Best for people ordering early or outside event-pickup windows.</li>
-              <li>Gelato integration is planned; it is not yet live.</li>
-              <li>The separately manufactured Chaos Fan may have a different fulfilment route until consolidation is tested.</li>
+              <li>Best if you want your gear early.</li>
+              <li>Available countries and delivery estimates will be shown in the shop.</li>
+              <li>Wear it, clash it and arrive ready.</li>
             </ul>
           </article>
           <article>
             <div className="commerceDeliveryIcon commerceDeliveryIconAlt"><MapPin size={28}/></div>
             <p className="commerceMini">EVENT COLLECTION</p>
             <h3>Collect at my Chaos Walk.</h3>
-            <p>Orders are grouped by confirmed city and prepared for bulk delivery to the approved City Lead. Event merchandise must arrive with the City Lead at least 14 days before event day.</p>
+            <p>Choose event collection for a confirmed city and your order joins the city batch. We send collection stock to the City Lead ahead of the walk so it is ready for you on event day.</p>
             <ul>
-              <li>Each city receives a published order cutoff before the event.</li>
-              <li>After the cutoff, event pickup closes and direct delivery remains the fallback where available.</li>
-              <li>Participants collect their named order from the city distribution point on event day.</li>
+              <li>City collection closes earlier than home delivery.</li>
+              <li>City Leads receive collection stock at least two weeks before event day.</li>
+              <li>Pick up your named order from the event collection point.</li>
             </ul>
           </article>
         </div>
@@ -145,31 +145,31 @@ export default function ShopPage() {
 
       <section className="commerceLogistics">
         <div>
-          <p className="commerceEyebrow commerceEyebrowLight">04 · CITY LOGISTICS</p>
-          <h2>Everything there<br/>two weeks early.</h2>
+          <p className="commerceEyebrow commerceEyebrowLight">04 · CITY COLLECTION</p>
+          <h2>Your order.<br/>Already there.</h2>
         </div>
         <div className="commerceTimeline">
-          <article><span>ORDER WINDOW</span><strong>Participant pre-orders</strong><p>Direct delivery or event collection is selected at checkout once commerce is live.</p></article>
-          <article><span>CITY CUTOFF</span><strong>Pickup orders lock</strong><p>The exact cutoff is published per confirmed city based on supplier and routing tests.</p></article>
-          <article><span>T−14</span><strong>Hard arrival rule</strong><p>City Lead must have event-collection merchandise at least 14 days before the walk.</p></article>
-          <article><span>EVENT DAY</span><strong>Collect + walk</strong><p>Orders are handed out locally before the Chaos Walk begins.</p></article>
+          <article><span>ORDER</span><strong>Choose event collection</strong><p>Select your confirmed city when you order.</p></article>
+          <article><span>CUTOFF</span><strong>City orders close</strong><p>Each city gets a clearly published collection-order deadline.</p></article>
+          <article><span>T−14</span><strong>The city box arrives</strong><p>Collection stock reaches the City Lead at least two weeks before the walk.</p></article>
+          <article><span>EVENT DAY</span><strong>Collect + walk</strong><p>Pick up your order, put the colours on and join the chaos.</p></article>
         </div>
       </section>
 
       <section className="commerceSystem">
         <div className="commerceSystemGrid">
-          <article><Fan size={25}/><strong>Chaos Fan</strong><p>Specialist bulk manufacture. PlanetHike controls the hero product.</p></article>
-          <article><Shirt size={25}/><strong>Gelato POD</strong><p>T-shirts first. Other POD items only after product-level availability and sample quality are confirmed.</p></article>
-          <article><Package size={25}/><strong>City batch</strong><p>Event-collection orders consolidated for approved City Leads.</p></article>
+          <article><Fan size={25}/><strong>The icon</strong><p>Chaos Fan Edition 001 is the object designed to show up in thousands of photographs.</p></article>
+          <article><Shirt size={25}/><strong>Your clothes. Louder.</strong><p>The apparel adds colour without turning participants into a matching team.</p></article>
+          <article><Package size={25}/><strong>Built for cities</strong><p>Direct delivery for individuals. Grouped event collection for confirmed city walks.</p></article>
         </div>
-        <p className="commerceSystemNote">Commerce remains PRE-LAUNCH. No checkout, shipping promise, Gelato integration, supplier availability or cause-linked contribution is represented as operational until it is verified.</p>
+        <p className="commerceSystemNote">The walk is free. Buying PlanetHike merchandise is not an entry requirement. Cause and contribution details will be published before Edition 001 sales open.</p>
       </section>
 
       <section className="commerceCta">
         <p className="commerceEyebrow">EDITION 001 · MAY 2027</p>
-        <h2>Get the drop<br/>before the drop.</h2>
-        <p>Join first-access and request the Chaos Fan alert. We will open sales only after samples, fulfilment and checkout pass launch testing.</p>
-        <a href="/#join" className="commercePrimary">Join first-access + fan alert <ArrowRight size={17}/></a>
+        <h2>Be there<br/>before the drop.</h2>
+        <p>Pre-register and tick the Chaos Shop alert. We’ll tell you when Edition 001 opens.</p>
+        <a href="/#join" className="commercePrimary">Get the Edition 001 alert <ArrowRight size={17}/></a>
       </section>
     </main>
   );
