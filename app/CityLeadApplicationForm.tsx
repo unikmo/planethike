@@ -46,9 +46,7 @@ export default function CityLeadApplicationForm() {
     return (
       <div className={styles.success} role="status">
         <h2>Application received.</h2>
-        <p>
-          This does not confirm a PlanetHike city yet. Applications are reviewed for local capacity, safety, accessibility and operating readiness before a city can be marked confirmed.
-        </p>
+        <p>Thanks for raising your hand. We’ll review your application and contact you about the next step for your city.</p>
       </div>
     );
   }
@@ -72,8 +70,8 @@ export default function CityLeadApplicationForm() {
           <input name="email" type="email" autoComplete="email" maxLength={254} required />
         </label>
         <label>
-          <span>Current role / community connection</span>
-          <input name="current_role" maxLength={160} placeholder="e.g. club organizer, teacher, volunteer lead" required />
+          <span>Your local connection</span>
+          <input name="current_role" maxLength={160} placeholder="e.g. club organiser, teacher, volunteer lead" required />
         </label>
       </div>
 
@@ -93,26 +91,26 @@ export default function CityLeadApplicationForm() {
 
       <div className={styles.row}>
         <label>
-          <span>Local network</span>
+          <span>Your local network</span>
           <select name="local_network" defaultValue="some" required>
-            <option value="small">I am starting from a small network</option>
-            <option value="some">I can reach some local groups or communities</option>
+            <option value="small">I am starting with a small network</option>
+            <option value="some">I can reach local groups or communities</option>
             <option value="strong">I already lead or coordinate an active local network</option>
           </select>
         </label>
         <label>
-          <span>Crew readiness</span>
+          <span>Your crew today</span>
           <select name="crew_status" defaultValue="need_recruit" required>
             <option value="need_recruit">I would need to recruit a crew</option>
             <option value="one_or_two">I already have 1–2 possible helpers</option>
-            <option value="crew_ready">I have a small crew ready to discuss the event</option>
+            <option value="crew_ready">I have a small crew ready to talk</option>
           </select>
         </label>
       </div>
 
       <label>
-        <span>Relevant organizing or volunteering experience</span>
-        <textarea name="organizing_experience" maxLength={1800} placeholder="Tell us about events, clubs, community work, school activities, sports, volunteering or other relevant experience." required />
+        <span>Organising or volunteering experience</span>
+        <textarea name="organizing_experience" maxLength={1800} placeholder="Events, clubs, community work, school activities, sports, volunteering — tell us what you have done." required />
       </label>
 
       <label>
@@ -121,14 +119,14 @@ export default function CityLeadApplicationForm() {
       </label>
 
       <fieldset className={styles.checks}>
-        <legend>Readiness acknowledgements</legend>
+        <legend>A few things to know</legend>
         <label className={styles.checkLabel}>
           <input name="route_permit_ack" type="checkbox" required />
-          <span>I understand that a confirmed city will need a suitable route and any locally required permissions or approvals.</span>
+          <span>I understand that the city will need a suitable route and any locally required permissions.</span>
         </label>
         <label className={styles.checkLabel}>
           <input name="safety_accessibility_ack" type="checkbox" required />
-          <span>I understand that local safety, incident planning and accessibility are part of City Lead approval.</span>
+          <span>I understand that safety, accessibility and a clear volunteer plan are part of bringing the event to my city.</span>
         </label>
         <label className={styles.checkLabel}>
           <input name="privacy_accepted" type="checkbox" required />
@@ -136,7 +134,7 @@ export default function CityLeadApplicationForm() {
         </label>
         <label className={styles.checkLabel}>
           <input name="marketing_consent" type="checkbox" />
-          <span>Send me occasional PlanetHike organizer and launch updates. I can unsubscribe at any time.</span>
+          <span>Send me occasional PlanetHike organiser and event updates. I can unsubscribe at any time.</span>
         </label>
       </fieldset>
 
@@ -145,7 +143,7 @@ export default function CityLeadApplicationForm() {
       <button className={styles.submit} type="submit" disabled={status === 'loading'}>
         {status === 'loading' ? 'Submitting…' : 'Submit City Lead application'}
       </button>
-      <p className={styles.note}>Applications are reviewed. Submission does not confirm a city, event date, route or organizer status.</p>
+      <p className={styles.note}>Submitting starts the conversation; your city is announced only after the local plan is agreed.</p>
       {status === 'error' && <p className={styles.error} role="alert">{message}</p>}
     </form>
   );
