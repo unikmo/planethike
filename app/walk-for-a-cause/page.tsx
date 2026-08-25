@@ -2,24 +2,26 @@ import type { Metadata } from 'next';
 import SeoLanding from '../SeoLanding';
 
 export const metadata: Metadata = {
-  title: 'Walk for a Cause Without a Fundraising Paywall | PlanetHike',
-  description: 'The Chaos Walk is planned as free participation. PlanetHike is verifying a future sales-linked reconstructive-surgery contribution before any impact promise becomes active.',
+  title: 'Walk for a Cause Without Fundraising Pressure | PlanetHike',
+  description: 'Join The Chaos Walk free in May 2027. No fundraising target: PlanetHike plans to give from official Chaos Fan sales instead.',
   alternates: { canonical: '/walk-for-a-cause' },
 };
 
 export default function Page() {
   return <SeoLanding
-    eyebrow="FUN FIRST / HUMAN IMPACT AFTER VERIFICATION"
-    title="Walk for a Cause"
-    intro="PlanetHike is building a genuinely fun walking experience first. Participation is planned to stay free, while any future sales-linked human-impact promise must be documented before it becomes active."
-    bullets={['Free participation model','No pledge requirement','Impact mechanism still being verified','Partner and transfer rules published before sales']}
+    eyebrow="WALK FOR A CAUSE / WITHOUT THE GUILT TRIP"
+    title="Walk for a cause. Keep the fun."
+    intro="You should not need a sponsorship target to earn your place on the route. The Chaos Walk stays free while PlanetHike plans to generate its cause contribution through official Chaos Fan sales."
+    bullets={['Free participation','No pledge target','10,000-step social walk','Fan sales support the cause']}
     sections={[
-      {heading:'Not a traditional fundraiser',body:'Participants should not need to collect pledges or hit a fundraising target to join. The event experience must stand on its own.'},
-      {heading:'A human-impact direction',body:'PlanetHike is exploring reconstructive mouth and nose surgery as the human mission connected to future official merchandise.'},
-      {heading:'No number before the proof',body:'A fixed contribution amount will only be stated as an active promise after the partner, agreement, settlement process and reporting standard are locked.'},
-      {heading:'Fun is not a compromise',body:'The stronger the event experience, the less PlanetHike needs guilt-based fundraising language. Impact should benefit from participation people already want to share.'}
+      {heading:'No fundraising homework',body:'Pre-register, show up in two different shoes and walk. We are not asking every participant to chase friends for pledges before they can enjoy the event.'},
+      {heading:'A product people actually want',body:'The Chaos Fan is designed to be part of the experience first: useful on the walk, obvious in photographs and collectible afterwards.'},
+      {heading:'Then make the sale matter',body:'PlanetHike plans to give a meaningful amount from every official Fan sold to its human-impact mission. The partner and exact contribution will be published before sales begin.'},
+      {heading:'Make impact shareable too',body:'After the event, PlanetHike intends to report the Fan contribution and the partner receiving it so participants can see what the day helped create.'}
     ]}
-    secondaryLabel="See the cause status"
+    ctaLabel="Pre-register free"
+    ctaHref="/#join"
+    secondaryLabel="See the PlanetHike cause"
     secondaryHref="/the-cause"
   />;
 }
