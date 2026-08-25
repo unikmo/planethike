@@ -3,7 +3,7 @@ import MobileMenu from '../MobileMenu';
 
 export const metadata: Metadata = {
   title: 'About PlanetHike | The Chaos Walk',
-  description: 'PlanetHike OÜ is building The Chaos Walk, a free 10,000-step social walking experience planned for May 2027.',
+  description: 'PlanetHike is the home of The Chaos Walk: 10,000 steps, two different shoes, off colours, one Chaos Fan and one unforgettable day in your city.',
   alternates: { canonical: '/about' },
 };
 
@@ -24,7 +24,7 @@ export default function AboutPage() {
       addressLocality: 'Tallinn',
       addressCountry: 'EE',
     },
-    description: 'PlanetHike is building The Chaos Walk, a free 10,000-step social walking experience planned for May 2027.',
+    description: 'PlanetHike is the home of The Chaos Walk, a free 10,000-step social walking experience planned for May 2027.',
   };
 
   return (
@@ -32,29 +32,29 @@ export default function AboutPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(organizationSchema)}} />
       <header className="seoHeader">
         <a className="brand" href="/">PLANET<span>HIKE</span></a>
-        <nav><a href="/the-chaos-walk">The Walk</a><a href="/cities">Cities</a><a href="/shop">Chaos Fan</a><a href="/city-leads">City Leads</a><a href="/guides">Guides</a></nav>
-        <a className="seoHeaderCta" href="/join">Join first-access</a>
+        <nav><a href="/the-chaos-walk">The Walk</a><a href="/cities">Cities</a><a href="/shop">Chaos Shop</a><a href="/city-leads">City Leads</a><a href="/guides">Guides</a></nav>
+        <a className="seoHeaderCta" href="/join">Pre-register free</a>
         <MobileMenu />
       </header>
 
       <section className="seoHero">
         <div>
           <p className="seoEyebrow">ABOUT PLANETHIKE</p>
-          <h1>One brand. One current direction.</h1>
-          <p className="seoLead">PlanetHike OÜ is building The Chaos Walk: a free 10,000-step social walking experience planned for May 2027, delivered locally only where the operating facts are ready.</p>
+          <h1>Walking was never supposed to look this normal.</h1>
+          <p className="seoLead">PlanetHike is the home of The Chaos Walk: 10,000 steps, two different shoes, off colours, one Chaos Fan and a city full of people choosing not to blend in.</p>
         </div>
         <aside className="seoHeroCard">
-          <span>LEGAL ENTITY</span>
-          <strong>PLANETHIKE OÜ<br/>ESTONIA</strong>
-          <p>Reg. No. 17233027 · Järvevana tee 9, 11314 Tallinn.</p>
+          <span>PLANETHIKE OÜ</span>
+          <strong>TALLINN.<br/>GLOBAL IDEA.<br/>LOCAL CHAOS.</strong>
+          <p>Reg. No. 17233027 · Järvevana tee 9, 11314 Tallinn, Estonia.</p>
         </aside>
       </section>
 
       <section className="seoSections">
-        <article id="history"><span>01</span><h2>The transition</h2><p>PlanetHike previously published an environmental participation model built around Water, Art, Trees and RegreenityCoin. That legacy proposition is not the active direction of this May 2027 build. The current flagship is The Chaos Walk.</p></article>
-        <article><span>02</span><h2>The current proposition</h2><p>Free first-access, approximately 10,000 steps, two different shoes, one planned Chaos Fan and shared challenge moments. A city is confirmed only after an approved local lead and operating readiness are in place.</p></article>
-        <article id="partners"><span>03</span><h2>Partners and impact</h2><p>No reconstructive-surgery partner is being announced as active in this build. PlanetHike intends to publish the partner, contribution rule, settlement process and reporting standard before any impact-linked merchandise sale opens.</p></article>
-        <article><span>04</span><h2>What first-access means</h2><p>The exact May 2027 event date has not yet been announced. Joining first-access records participant demand and gives PlanetHike a way to send confirmed launch information without overstating city readiness.</p></article>
+        <article><span>01</span><h2>Why PlanetHike</h2><p>Walking is one of the simplest things people can do together. PlanetHike makes it harder to forget: a bold visual ritual, a shared distance and a day designed to create stories instead of another ordinary step count.</p></article>
+        <article><span>02</span><h2>The ritual</h2><p>Wear two unmistakably different shoes. Clash your colours. Walk around 10,000 steps. Carry the Chaos Fan if you have one. Everything else is yours.</p></article>
+        <article><span>03</span><h2>City by city</h2><p>The Chaos Walk comes alive through local City Leads and volunteer crews. Each city brings its own route and personality while sharing the same global visual code.</p></article>
+        <article><span>04</span><h2>Fun that gives back</h2><p>The event should be worth joining even before the cause is mentioned. PlanetHike also plans a meaningful contribution from official Chaos Fan sales to a human-impact mission, with the partner and exact contribution published before sales open.</p></article>
       </section>
     </main>
   );
