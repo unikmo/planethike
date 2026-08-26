@@ -1,0 +1,14 @@
+.hero::after {
+  background-image:
+    linear-gradient(90deg, rgba(238,231,220,.98), rgba(238,231,220,.08) 28%),
+    url('/visuals/chaos-woman.webp') !important;
+  background-position: center 42% !important;
+  background-size: cover !important;
+}
+
+@media (max-width: 900px) {
+  .hero::after {
+    opacity: .38;
+    background-position: 64% 42% !important;
+  }
+}
