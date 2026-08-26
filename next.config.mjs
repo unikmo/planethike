@@ -4,8 +4,8 @@ const nextConfig = {
     return [
       { source: '/pledge', destination: '/walk-for-a-cause', permanent: true },
       { source: '/impact-pledge', destination: '/walk-for-a-cause', permanent: true },
-      { source: '/regreenitycoin', destination: '/about#history', permanent: true },
-      { source: '/regreenity-coin', destination: '/about#history', permanent: true },
+      { source: '/regreenitycoin', destination: '/about', permanent: true },
+      { source: '/regreenity-coin', destination: '/about', permanent: true },
       { source: '/my-steps', destination: '/10000-step-challenge', permanent: true },
       { source: '/city-hosts', destination: '/city-leads', permanent: true },
       { source: '/city-hosts-aritists', destination: '/city-leads', permanent: true },
@@ -15,7 +15,6 @@ const nextConfig = {
       { source: '/reg-individual', destination: '/join', permanent: true },
       { source: '/register-as-team-company-school', destination: '/join', permanent: true },
       { source: '/how-it-works', destination: '/the-chaos-walk', permanent: true },
-      { source: '/partners', destination: '/about#partners', permanent: true },
       { source: '/planethike-shop', destination: '/shop', permanent: true },
       { source: '/contact-us', destination: '/contact', permanent: true },
       { source: '/terms_conditions', destination: '/terms', permanent: true },
