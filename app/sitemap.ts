@@ -15,6 +15,7 @@ const core = [
   '/shop/chaos-fan',
   '/join',
   '/guides',
+  '/partners',
   '/about',
   '/faq',
   '/contact',
