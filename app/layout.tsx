@@ -6,6 +6,7 @@ import './chaos2027.css';
 import './hero-approved.css';
 import './hero-final.css';
 import './seo-pages.css';
+import './seo-rich.css';
 import './navigation.css';
 import './premium.css';
 import './commerce.css';
