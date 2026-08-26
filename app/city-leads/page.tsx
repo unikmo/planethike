@@ -1,12 +1,30 @@
+import type { Metadata } from 'next';
 import { ArrowLeft, ArrowRight, CheckCircle2, MapPinned, ShieldCheck, Users } from 'lucide-react';
 import MobileMenu from '../MobileMenu';
+import styles from './page.module.css';
 
-const steps = [
-  ['01', 'Apply', 'Tell us your city, your local connection and why you want to bring The Chaos Walk there.'],
-  ['02', 'Meet us', 'We’ll talk through the idea, your local network and what it takes to create a safe, welcoming walk.'],
-  ['03', 'Build your crew', 'Bring together a small volunteer team for route, check-in, safety, content, Chaos Drops and local coordination.'],
-  ['04', 'Shape the day', 'Choose the route, work through local permissions and accessibility, then add the personality that makes your city yours.'],
-  ['05', 'Bring it to life', 'Once the city details are ready, we publish the event and you lead your local Chaos Walk into May 2027.'],
+export const metadata: Metadata = {
+  title: 'Lead The Chaos Walk in Your City | PlanetHike',
+  description: 'Apply to become a PlanetHike City Lead and bring The Chaos Walk — 10,000 steps, two different shoes and off colours — to your city in May 2027.',
+  alternates: { canonical: '/city-leads' },
+  openGraph: {
+    title: 'Lead The Chaos Walk in Your City | PlanetHike',
+    description: 'Know your city and know how to bring people together? Apply to lead a local Chaos Walk in May 2027.',
+    url: 'https://planethike.org/city-leads',
+    type: 'website',
+  },
+};
+
+const playbook = [
+  'Route guidance',
+  'Volunteer roles',
+  'Safety + incidents',
+  'Accessibility',
+  '10K Chaos Drops',
+  'Chaos Fan ritual',
+  'Local media + content',
+  'Event-day checklist',
+  'Post-event wrap-up',
 ];
 
 export default function CityLeadsPage() {
@@ -18,7 +36,7 @@ export default function CityLeadsPage() {
         <MobileMenu />
       </header>
 
-      <section className="subHero cityLeadHero">
+      <section className={`subHero cityLeadHero ${styles.hero}`}>
         <div className="subHeroInner">
           <p className="sectionKicker">CITY LEADS / MAY 2027</p>
           <h1>YOUR CITY<br/>NEEDS A<br/><em>MISFIT.</em></h1>
@@ -40,26 +58,17 @@ export default function CityLeadsPage() {
           <p>Every city should feel local. The two different shoes, off colours, 10,000 steps and shared fan moment connect it to everyone else.</p>
         </div>
         <div className="processList">
-          {steps.map(([n,title,text]) => (
-            <article key={n}>
-              <span>{n}</span>
-              <h3>{title}</h3>
-              <p>{text}</p>
-            </article>
-          ))}
+          <article><span>01</span><h3>Apply</h3><p>Tell us your city, your local connection and why you want to bring The Chaos Walk there.</p></article>
+          <article><span>02</span><h3>Meet us</h3><p>We’ll talk through the idea, your local network and what it takes to create a safe, welcoming walk.</p></article>
+          <article><span>03</span><h3>Build your crew</h3><p>Bring together a small volunteer team for route, check-in, safety, content, Chaos Drops and local coordination.</p></article>
+          <article><span>04</span><h3>Shape the day</h3><p>Choose the route, work through local permissions and accessibility, then add the personality that makes your city yours.</p></article>
+          <article><span>05</span><h3>Bring it to life</h3><p>Once the city details are ready, we publish the event and you lead your local Chaos Walk into May 2027.</p></article>
         </div>
       </section>
 
       <section className="protocolSection">
-        <div>
-          <p className="sectionKicker light">WHAT WE BRING</p>
-          <h2>YOU GET THE<br/>PLAYBOOK.</h2>
-        </div>
-        <div className="protocolGrid">
-          {['Route guidance','Volunteer roles','Safety + incidents','Accessibility','10K Chaos Drops','Chaos Fan ritual','Local media + content','Event-day checklist','Post-event wrap-up'].map(item => (
-            <span key={item}><CheckCircle2 size={17}/>{item}</span>
-          ))}
-        </div>
+        <div><p className="sectionKicker light">WHAT WE BRING</p><h2>YOU GET THE<br/>PLAYBOOK.</h2></div>
+        <div className="protocolGrid">{playbook.map((item)=><span key={item}><CheckCircle2 size={17}/>{item}</span>)}</div>
       </section>
 
       <section className="leadCta">
