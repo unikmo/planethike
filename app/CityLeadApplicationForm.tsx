@@ -46,7 +46,10 @@ export default function CityLeadApplicationForm() {
     return (
       <div className={styles.success} role="status">
         <h2>Application received.</h2>
-        <p>Thanks for raising your hand. We’ll review your application and contact you about the next step for your city.</p>
+        <p>Thanks for raising your hand. We’ll review the local fit, your network and the operating picture before we contact you about a next step.</p>
+        <p>A submitted application does not confirm your city. A city goes live only after the local lead, crew, route, permissions, safety and accessibility plan are ready.</p>
+        <p>While you wait, start thinking about two or three people who could make a dependable local crew — not a huge committee.</p>
+        <p><a href="/city-leads">Review the City Lead playbook</a> · <a href="/the-chaos-walk">See the participant experience</a></p>
       </div>
     );
   }
