@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --lux-ink: #0b0b0c;
   --lux-paper: #f6f4ef;
   --lux-white: #ffffff;
@@ -243,7 +243,7 @@ body {
 .luxLeadPoints { display: grid; gap: 13px; margin-bottom: 30px; color: #4f4f52; font-size: 13px; }
 .luxLeadPoints span { display: flex; align-items: center; gap: 10px; }
 .luxLeadCopy .luxButton { align-self: flex-start; }
-.luxLeadMedia { min-height: 520px; background: url('/visuals/community.webp') center/cover no-repeat; }
+.luxLeadMedia { min-height: 520px; background: url('/visuals/community-mismatched.webp') center/cover no-repeat; }
 
 .luxCause {
   width: min(1400px, calc(100% - 48px));
@@ -377,3 +377,4 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .luxPath, .luxButton { transition: none; }
 }
+
