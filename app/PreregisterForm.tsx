@@ -51,7 +51,7 @@ export default function PreregisterForm() {
       setSubmittedInterest(interest);
       setFanAlertRequested(fanAlert);
       setStatus('success');
-      setMessage('You’re pre-registered for May 2027. We’ll email the exact date and your city details as they are announced.');
+      setMessage('Your city interest is recorded for May 2027. We’ll send the exact date and confirmed local details as they are announced.');
       trackEvent('preregister_submit', {
         interest,
         country_code: String(payload.country_code || ''),
@@ -72,8 +72,11 @@ export default function PreregisterForm() {
         <div className={styles.successIcon}><Check size={24} /></div>
         <strong>YOU’RE IN.</strong>
         <p>{message}</p>
-        {fanAlertRequested && <p className={styles.successNote}>You’ll also be first to hear when Chaos Fan Edition 001 goes on sale.</p>}
+        <p className={styles.successNote}>Next: build comfortably toward 10,000 steps, choose two genuinely different shoes that are both safe to walk in, and start planning your most gloriously off-colour look.</p>
+        {fanAlertRequested && <p className={styles.successNote}>You also asked for the Chaos Shop alert. We’ll tell you when Chaos Fan Edition 001 and event merchandise open.</p>}
+        <p className={styles.successNote}>A city selection records demand; it does not mean that city is confirmed yet. Confirmed local timing, route and meeting information will be published separately.</p>
         <div className={styles.successActions}>
+          <a href="/the-chaos-walk">See what happens on the day <ArrowRight size={16} /></a>
           <a href="/shop">Explore the Chaos Shop <ArrowRight size={16} /></a>
           {submittedInterest === 'host' && <a href="/city-leads/apply">Complete City Lead application <ArrowRight size={16} /></a>}
         </div>
@@ -188,7 +191,7 @@ export default function PreregisterForm() {
       </button>
 
       <p className={styles.microcopy}>
-        Free. No purchase required. We’ll email the exact date and local city details as they are announced.
+        Free. No purchase required. We’ll email the exact date and confirmed local city details as they are announced.
       </p>
       {status === 'error' && <p className={styles.error} role="alert">{message}</p>}
     </form>
