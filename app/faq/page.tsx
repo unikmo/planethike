@@ -22,7 +22,7 @@ export default function FaqPage() {
       {q:'How will merchandise delivery work?',a:'When the shop opens, you can choose home delivery where available or event collection in a confirmed city. City collection stock is sent to the local team at least two weeks before event day.'},
       {q:'How do I know if my city is happening?',a:'Pre-register your city first. When a City Lead, crew and local route are ready, PlanetHike will publish the city details and email participants there.'},
       {q:'Can I lead The Chaos Walk in my city?',a:'Yes. Apply through the City Lead page. You do not need to be a professional event organiser, but you should know your city, be able to bring people together and care about safety and accessibility.'},
-      {q:'What cause does PlanetHike support?',a:'PlanetHike plans to connect official Chaos Fan sales to a human-impact mission focused on reconstructive care. The cause partner and exact contribution will be published before Edition 001 sales open.'}
+      {q:'What cause does PlanetHike support?',a:'PlanetHike intends to pass donations from official Chaos Mask sales directly to a local cleft organisation in each confirmed walk city. The local walk organisation selects the beneficiary. As the final donation depends on sales, PlanetHike will report the receiving organisation and final amount after that city’s relevant sales period closes.'}
     ]}
     ctaLabel="Pre-register free"
     ctaHref="/#join"
@@ -30,3 +30,4 @@ export default function FaqPage() {
     secondaryHref="/shop"
   />;
 }
+
