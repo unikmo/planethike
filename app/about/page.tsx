@@ -54,8 +54,9 @@ export default function AboutPage() {
         <article><span>01</span><h2>Why PlanetHike</h2><p>Walking is one of the simplest things people can do together. PlanetHike makes it harder to forget: a bold visual ritual, a shared distance and a day designed to create stories instead of another ordinary step count.</p></article>
         <article><span>02</span><h2>The ritual</h2><p>Wear two unmistakably different shoes. Clash your colours. Walk around 10,000 steps. Carry the Chaos Fan if you have one. Everything else is yours.</p></article>
         <article><span>03</span><h2>City by city</h2><p>The Chaos Walk comes alive through local City Leads and volunteer crews. Each city brings its own route and personality while sharing the same global visual code.</p></article>
-        <article><span>04</span><h2>Fun that gives back</h2><p>The event should be worth joining even before the cause is mentioned. PlanetHike also plans a meaningful contribution from official Chaos Fan sales to a human-impact mission, with the partner and exact contribution published before sales open.</p></article>
+        <article><span>04</span><h2>Fun that gives back</h2><p>The event should be worth joining even before the cause is mentioned. PlanetHike intends to pass donations from official Chaos Mask sales directly to a local cleft organisation in each confirmed walk city, selected by the local walk organisation. The recipient and final amount will be reported after the relevant sales period closes.</p></article>
       </section>
     </main>
   );
 }
+
