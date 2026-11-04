@@ -17,7 +17,7 @@ export default function Page() {
       {heading:'Make the team visible',body:'Everyone keeps their own style. The shared code is two different shoes and the Chaos Fan — enough to connect the group without putting employees in a matching event uniform.'},
       {heading:'Easy to explain',body:'Pre-register the team, choose the city, aim for around 10,000 steps and dress deliberately off. The event is social, not competitive.'},
       {heading:'One company, several cities',body:'Teams in different locations can join the same May 2027 edition. Each office can walk with its local city or create its own group.'},
-      {heading:'Give the day another purpose',body:'PlanetHike plans to connect official Chaos Fan sales to a human-impact mission, with the cause partner and exact contribution published before sales open.'}
+      {heading:'Give the day another purpose',body:'PlanetHike intends to pass donations from official Chaos Mask sales directly to a local cleft organisation in each confirmed walk city, selected by the local walk organisation. The recipient and final amount will be reported after the relevant sales period closes.'}
     ]}
     ctaLabel="Pre-register my team"
     ctaHref="/#join"
@@ -25,3 +25,4 @@ export default function Page() {
     secondaryHref="/the-chaos-walk"
   />;
 }
+
