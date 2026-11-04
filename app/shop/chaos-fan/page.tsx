@@ -17,7 +17,7 @@ export default function Page() {
       {heading:'The object everyone carries',body:'Two different shoes are the visual code. The Chaos Fan is the shared object: one thing thousands of different-looking people can lift at the same moment.'},
       {heading:'Made for the photograph',body:'Open it during the walk, use it in Chaos Drops, lift it for the city-wide fan shot and keep Edition 001 afterwards.'},
       {heading:'Useful, not disposable',body:'It is a real hand fan first. The goal is an object that earns its place on a warm walk and still feels worth keeping after the event.'},
-      {heading:'Fun that gives back',body:'PlanetHike plans a meaningful contribution from official Fan sales to its human-impact mission. We will publish the cause partner and exact contribution before Edition 001 goes on sale.'}
+      {heading:'Part of the ritual',body:'The Chaos Fan is event merchandise, not an entry requirement. PlanetHike’s separate local cause commitment concerns official Chaos Mask sales; details are published on the Cause page before those sales open.'}
     ]}
     faq={[
       {q:'Do I need the Chaos Fan to join?',a:'No. The Chaos Walk is free and buying merchandise is not an entry requirement. The Fan is the shared event object we strongly encourage participants to bring.'},
@@ -30,3 +30,4 @@ export default function Page() {
     secondaryHref="/shop"
   />;
 }
+
