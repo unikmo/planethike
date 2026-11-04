@@ -10,8 +10,10 @@ export default function MobileMenu() {
         <a href="/city-leads">City Leads</a>
         <a href="/guides">Guides</a>
         <a href="/the-cause">The Cause</a>
+        <a href="/become-a-partner">Become a partner</a>
         <a href="/privacy">Privacy</a>
       </div>
     </details>
   );
 }
+
