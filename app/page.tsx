@@ -111,11 +111,11 @@ export default function Home() {
         <div className="luxLeadCopy">
           <p className="luxEyebrow">BE THE REASON IT HAPPENS</p>
           <h2>Lead your city.</h2>
-          <p>City Leads build the local crew, help prepare the route and bring PlanetHike’s event protocol to life. Applying does not automatically confirm a city.</p>
+          <p>City Leads build the local crew, help prepare the route and bring PlanetHike’s event protocol to life. They can work independently or alongside a local organisation, including a cleft organisation that chooses to host or co-host. Applying does not automatically confirm a city.</p>
           <div className="luxLeadPoints">
             <span><MapPin size={18}/> Local route + readiness</span>
-            <span><Users size={18}/> Small volunteer crew</span>
-            <span><HeartHandshake size={18}/> One shared operating standard</span>
+            <span><Users size={18}/> Volunteer crew + local partners</span>
+            <span><HeartHandshake size={18}/> Safe, accessible shared standard</span>
           </div>
           <a className="luxButton luxButtonDark" href="/city-leads/apply">Apply to lead your city <ArrowRight size={17}/></a>
         </div>
