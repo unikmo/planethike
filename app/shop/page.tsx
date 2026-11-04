@@ -162,7 +162,7 @@ export default function ShopPage() {
           <article><Shirt size={25}/><strong>Your clothes. Louder.</strong><p>The apparel adds colour without turning participants into a matching team.</p></article>
           <article><Package size={25}/><strong>Built for cities</strong><p>Direct delivery for individuals. Grouped event collection for confirmed city walks.</p></article>
         </div>
-        <p className="commerceSystemNote">The walk is free. Buying PlanetHike merchandise is not an entry requirement. In each confirmed city, the local walk organisation selects the local cleft beneficiary for donations linked to official Chaos Mask sales. The recipient and final donation will be reported after the relevant sales period closes.</p>
+        <p className="commerceSystemNote">The walk is free. Buying PlanetHike merchandise is not an entry requirement. In each confirmed city, PlanetHike commits 20% of qualifying Chaos Fan sales revenue to a local cleft organisation selected by the local walk organisation. The recipient and final donation will be reported after the relevant sales period closes.</p>
       </section>
 
       <section className="commerceCta">
