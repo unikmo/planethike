@@ -3,9 +3,9 @@ import MobileMenu from '../MobileMenu';
 
 const steps = [
   ['01', 'Apply', 'Tell us your city, your local connection and why you want to bring The Chaos Walk there.'],
-  ['02', 'Meet us', 'We’ll talk through the idea, your local network and what it takes to create a safe, welcoming walk.'],
-  ['03', 'Build your crew', 'Bring together a small volunteer team for route, check-in, safety, content, Chaos Drops and local coordination.'],
-  ['04', 'Shape the day', 'Choose the route, work through local permissions and accessibility, then add the personality that makes your city yours.'],
+  ['02', 'Meet us', 'We’ll talk through the idea, your local network and what it takes to create a safe, welcoming walk. We can also identify a local host or co-host organisation.'],
+  ['03', 'Build your crew', 'Bring together a small volunteer team and any local partners for route, check-in, safety, content, Chaos Drops and local coordination.'],
+  ['04', 'Shape the day', 'Choose the route, work through local permissions and accessibility, then add the personality that makes your city yours. A cleft organisation can host or co-host if it chooses.'],
   ['05', 'Bring it to life', 'Once the city details are ready, we publish the event and you lead your local Chaos Walk into May 2027.'],
 ];
 
@@ -22,15 +22,15 @@ export default function CityLeadsPage() {
         <div className="subHeroInner">
           <p className="sectionKicker">CITY LEADS / MAY 2027</p>
           <h1>YOUR CITY<br/>NEEDS A<br/><em>MISFIT.</em></h1>
-          <p className="subLead">You know the streets, the people and the energy. We bring the playbook. Together, we make 10,000 steps look completely different.</p>
+          <p className="subLead">You know the streets, the people and the energy. We bring the playbook. Lead independently or alongside a local organisation, and make 10,000 steps look completely different.</p>
           <a className="button buttonDark" href="/city-leads/apply">Apply to lead your city <ArrowRight size={18}/></a>
         </div>
       </section>
 
       <section className="roleStrip">
         <article><MapPinned size={28}/><strong>Shape the local route</strong><span>Choose a walkable route and coordinate local permissions where required.</span></article>
-        <article><Users size={28}/><strong>Build your crew</strong><span>Bring together a small volunteer team so the event belongs to the city, not one person.</span></article>
-        <article><ShieldCheck size={28}/><strong>Make it welcoming</strong><span>Plan for safety, accessibility, clear roles and a day people want to join again.</span></article>
+        <article><Users size={28}/><strong>Build your crew</strong><span>Bring together a small volunteer team and any local partner organisation so the event belongs to the city, not one person.</span></article>
+        <article><ShieldCheck size={28}/><strong>Make it welcoming</strong><span>Plan for safety, accessibility, clear roles and a day people want to join again. A cleft organisation may host or co-host by agreement.</span></article>
       </section>
 
       <section className="processSection">
@@ -56,7 +56,7 @@ export default function CityLeadsPage() {
           <h2>YOU GET THE<br/>PLAYBOOK.</h2>
         </div>
         <div className="protocolGrid">
-          {['Route guidance','Volunteer roles','Safety + incidents','Accessibility','10K Chaos Drops','Chaos Fan ritual','Local media + content','Event-day checklist','Post-event wrap-up'].map(item => (
+          {['Route guidance','Volunteer roles','Safety + incidents','Accessibility','10K Chaos Drops','Chaos Fan ritual','Local partner coordination','Event-day checklist','Post-event wrap-up'].map(item => (
             <span key={item}><CheckCircle2 size={17}/>{item}</span>
           ))}
         </div>
@@ -71,3 +71,4 @@ export default function CityLeadsPage() {
     </main>
   );
 }
+
