@@ -10,6 +10,7 @@ const core = [
   '/cities',
   '/city-leads',
   '/the-cause',
+  '/become-a-partner',
   '/schools',
   '/shop',
   '/shop/chaos-fan',
@@ -43,3 +44,4 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: path === '' ? 1 : path === '/guides' ? 0.8 : path.startsWith('/guides/') ? 0.7 : 0.85,
   }));
 }
+
