@@ -29,7 +29,7 @@ export default function CityLeadApplyPage() {
           <p className="seoEyebrow">CITY LEAD APPLICATION / MAY 2027</p>
           <h1>Tell us why your city needs The Chaos Walk.</h1>
           <p className="seoLead">
-            You do not need to be a professional event organiser. You do need to know your city, bring people together and care about making the day safe, welcoming and unforgettable.
+            You do not need to be a professional event organiser. You do need to know your city, bring people together and care about making the day safe, welcoming and unforgettable. If you represent a school, charity, community group or cleft organisation, you can also explore hosting or co-hosting as a local partner.
           </p>
         </div>
         <aside className="seoHeroCard">
@@ -41,7 +41,9 @@ export default function CityLeadApplyPage() {
 
       <section style={{ padding: '0 5vw 110px' }}>
         <CityLeadApplicationForm />
+        <p style={{ marginTop: 24, maxWidth: 720 }}>Representing a school, charity, community group or cleft organisation? <a href="/become-a-partner">See the local-partner route</a>.</p>
       </section>
     </main>
   );
 }
+
