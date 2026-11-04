@@ -125,7 +125,7 @@ export default function Home() {
       <section className="luxCause">
         <div><Sparkles size={27}/><strong>Free to join.</strong><p>Participation stays separate from merchandise.</p></div>
         <div><Globe2 size={27}/><strong>Global idea. Local proof.</strong><p>City status is published only when local readiness is real.</p></div>
-        <div><HeartHandshake size={27}/><strong>Cause partner to be announced.</strong><p>Any impact-linked fan contribution will be published only after the partner and money flow are verified.</p></div>
+        <div><HeartHandshake size={27}/><strong>Local cleft beneficiary to be announced.</strong><p>Each local walk organisation selects its beneficiary. The receiving organisation and final donation will be reported after the relevant mask-sales period closes.</p></div>
       </section>
 
       <section className="luxJoin" id="join">
@@ -145,3 +145,4 @@ export default function Home() {
     </main>
   );
 }
+
