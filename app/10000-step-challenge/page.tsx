@@ -3,7 +3,7 @@ import SeoLanding from '../SeoLanding';
 
 export const metadata: Metadata = {
   title: '10,000 Step Challenge | Free Social Walking Challenge | PlanetHike',
-  description: 'Take on around 10,000 steps with PlanetHike and make the distance unforgettable through The Chaos Walk in May 2027.',
+  description: 'Take on around 10,000 steps with PlanetHike and make the distance unforgettable through The Chaos Walk on Sunday, 17 October 2027.',
   alternates: { canonical: '/10000-step-challenge' },
 };
 

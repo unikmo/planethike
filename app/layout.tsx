@@ -13,13 +13,13 @@ import './commerce.css';
 export const metadata: Metadata = {
   title: 'PlanetHike — The Chaos Walk',
   description:
-    'PlanetHike is building The Chaos Walk: a free global 10,000-step social walking experience planned for May 2027. Exact event dates and local city status will be confirmed before launch.',
+    'PlanetHike is building The Chaos Walk: a free global 10,000-step social walking experience on Sunday, 17 October 2027. Local city status will be confirmed before launch.',
   metadataBase: new URL('https://planethike.org'),
   alternates: { canonical: '/' },
   openGraph: {
     title: 'PlanetHike — The Chaos Walk',
     description:
-      'A free 10,000-step social walking experience planned for May 2027. Join the first-access list for city and launch updates.',
+      'A free 10,000-step social walking experience on Sunday, 17 October 2027. Join the first-access list for city and launch updates.',
     url: 'https://planethike.org',
     siteName: 'PlanetHike',
     type: 'website',

@@ -51,7 +51,7 @@ export default function PreregisterForm() {
       setSubmittedInterest(interest);
       setFanAlertRequested(fanAlert);
       setStatus('success');
-      setMessage('You’re pre-registered for May 2027. We’ll email the exact date and your city details as they are announced.');
+      setMessage('You’re pre-registered for Sunday, 17 October 2027. We’ll email your city details as they are announced.');
       trackEvent('preregister_submit', {
         interest,
         country_code: String(payload.country_code || ''),
@@ -188,7 +188,7 @@ export default function PreregisterForm() {
       </button>
 
       <p className={styles.microcopy}>
-        Free. No purchase required. We’ll email the exact date and local city details as they are announced.
+        Free. No purchase required. We’ll email local city details as they are announced.
       </p>
       {status === 'error' && <p className={styles.error} role="alert">{message}</p>}
     </form>

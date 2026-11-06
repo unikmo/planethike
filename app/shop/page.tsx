@@ -4,7 +4,7 @@ import MobileMenu from '../MobileMenu';
 
 export const metadata: Metadata = {
   title: 'Chaos Shop | Fan, Mismatch Socks, Tees & Event Bundles | PlanetHike',
-  description: 'Discover Chaos Fan Edition 001, mismatch socks, colourful tees, bandanas and event bundles for The Chaos Walk in May 2027.',
+  description: 'Discover Chaos Fan Edition 001, mismatch socks, colourful tees, bandanas and event bundles for The Chaos Walk on Sunday, 17 October 2027.',
   alternates: { canonical: '/shop' },
 };
 
@@ -61,7 +61,7 @@ export default function ShopPage() {
 
       <section className="commerceHero">
         <div className="commerceHeroCopy">
-          <p className="commerceEyebrow">THE CHAOS SHOP · EDITION 001 · MAY 2027</p>
+          <p className="commerceEyebrow">THE CHAOS SHOP · EDITION 001 · SUNDAY, 17 OCTOBER 2027</p>
           <h1>The walk is free.<br/><em>The look is yours.</em></h1>
           <p>Start with the Chaos Fan. Add mismatch socks, a deliberately loud tee or one more wrong colour. Nothing here is a uniform. Everything is made to help the day look unmistakably different.</p>
           <div className="commerceHeroActions">
@@ -166,7 +166,7 @@ export default function ShopPage() {
       </section>
 
       <section className="commerceCta">
-        <p className="commerceEyebrow">EDITION 001 · MAY 2027</p>
+        <p className="commerceEyebrow">EDITION 001 · SUNDAY, 17 OCTOBER 2027</p>
         <h2>Be there<br/>before the drop.</h2>
         <p>Pre-register and tick the Chaos Shop alert. We’ll tell you when Edition 001 opens.</p>
         <a href="/#join" className="commercePrimary">Get the Edition 001 alert <ArrowRight size={17}/></a>

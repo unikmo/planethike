@@ -3,7 +3,7 @@ import SeoLanding from '../SeoLanding';
 
 export const metadata: Metadata = {
   title: 'Walk for a Cause Without Fundraising Pressure | PlanetHike',
-  description: 'Join The Chaos Walk free in May 2027. No fundraising target: 20% of qualifying Chaos Fan sales revenue supports a local cleft organisation in each confirmed walk city.',
+  description: 'Join The Chaos Walk free on Sunday, 17 October 2027. No fundraising target: 20% of qualifying Chaos Fan sales revenue supports a local cleft organisation in each confirmed walk city.',
   alternates: { canonical: '/walk-for-a-cause' },
 };
 

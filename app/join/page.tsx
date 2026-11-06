@@ -3,8 +3,8 @@ import MobileMenu from '../MobileMenu';
 import PreregisterForm from '../PreregisterForm';
 
 export const metadata: Metadata = {
-  title: 'Pre-register for The Chaos Walk | May 2027 | PlanetHike',
-  description: 'Pre-register free for The Chaos Walk in May 2027. Choose your city and be first to get the event details.',
+  title: 'Pre-register for The Chaos Walk | 17 October 2027 | PlanetHike',
+  description: 'Pre-register free for The Chaos Walk on Sunday, 17 October 2027. Choose your city and be first to get local event details.',
   alternates: { canonical: '/join' },
 };
 
@@ -19,7 +19,7 @@ export default function Page() {
       </header>
       <section className="seoHero">
         <div>
-          <p className="seoEyebrow">MAY 2027 · PRE-REGISTRATION OPEN</p>
+          <p className="seoEyebrow">SUNDAY, 17 OCTOBER 2027 · PRE-REGISTRATION OPEN</p>
           <h1>Put your city on the Chaos Walk map.</h1>
           <p className="seoLead">Choose your city, tell us how you want to join and we’ll send the exact date and local event details as they are announced.</p>
         </div>

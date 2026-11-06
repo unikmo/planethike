@@ -74,7 +74,7 @@ export default function SeoLanding({ eyebrow, title, intro, bullets = [], sectio
 
       {faq.length > 0 && <section className="seoFaq"><p className="seoEyebrow">FAQ</p><h2>What people want to know.</h2><div>{faq.map((item) => <details key={item.q}><summary>{item.q}</summary><p>{item.a}</p></details>)}</div></section>}
 
-      <section className="seoBottomCta"><p>MAY 2027 · FREE PRE-REGISTRATION</p><h2>Make 10,000 steps unforgettable.</h2><a href="/#join">Pre-register for The Chaos Walk <ArrowRight size={18}/></a></section>
+      <section className="seoBottomCta"><p>SUNDAY, 17 OCTOBER 2027 · FREE PRE-REGISTRATION</p><h2>Make 10,000 steps unforgettable.</h2><a href="/#join">Pre-register for The Chaos Walk <ArrowRight size={18}/></a></section>
     </main>
   );
 }

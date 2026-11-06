@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return <SeoLanding
-    eyebrow="SCHOOLS / MAY 2027"
+    eyebrow="SCHOOLS / SUNDAY, 17 OCTOBER 2027"
     title="A school walking challenge students will remember"
     intro="Turn a walking day into something students can see themselves in: around 10,000 steps, deliberately different shoes, off colours and a shared global moment."
     bullets={['Free participation','Around 10,000 steps','Group-friendly','School-led supervision']}
@@ -17,7 +17,7 @@ export default function Page() {
       {heading:'Make movement memorable',body:'The Chaos Walk gives students a simple visual ritual and a shared distance without turning the day into a race.'},
       {heading:'Different together',body:'Two different shoes and deliberately clashing colours create the fun. Nobody needs to buy or wear a matching PlanetHike uniform.'},
       {heading:'Schools lead the local setup',body:'Schools organise supervision, safeguarding, consent, accessibility and any local requirements for their participating students.'},
-      {heading:'Join a city or walk as a school crew',body:'A school can take part with a confirmed local Chaos Walk where appropriate or organise its own supervised group around the same May 2027 format.'}
+      {heading:'Join a city or walk as a school crew',body:'A school can take part with a confirmed local Chaos Walk where appropriate or organise its own supervised group on Sunday, 17 October 2027.'}
     ]}
     ctaLabel="Pre-register a school group"
     ctaHref="/#join"

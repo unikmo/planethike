@@ -24,7 +24,7 @@ export default function AboutPage() {
       addressLocality: 'Tallinn',
       addressCountry: 'EE',
     },
-    description: 'PlanetHike is the home of The Chaos Walk, a free 10,000-step social walking experience planned for May 2027.',
+    description: 'PlanetHike is the home of The Chaos Walk, a free 10,000-step social walking experience on Sunday, 17 October 2027.',
   };
 
   return (

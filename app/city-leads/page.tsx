@@ -6,7 +6,7 @@ const steps = [
   ['02', 'Meet us', 'We’ll talk through the idea, your local network and what it takes to create a safe, welcoming walk. We can also identify a local host or co-host organisation.'],
   ['03', 'Build your crew', 'Bring together a small volunteer team and any local partners for route, check-in, safety, content, Chaos Drops and local coordination.'],
   ['04', 'Shape the day', 'Choose the route, work through local permissions and accessibility, then add the personality that makes your city yours. A cleft organisation can host or co-host if it chooses.'],
-  ['05', 'Bring it to life', 'Once the city details are ready, we publish the event and you lead your local Chaos Walk into May 2027.'],
+  ['05', 'Bring it to life', 'Once the city details are ready, we publish the event and you lead your local Chaos Walk on Sunday, 17 October 2027.'],
 ];
 
 export default function CityLeadsPage() {
@@ -20,7 +20,7 @@ export default function CityLeadsPage() {
 
       <section className="subHero cityLeadHero">
         <div className="subHeroInner">
-          <p className="sectionKicker">CITY LEADS / MAY 2027</p>
+          <p className="sectionKicker">CITY LEADS / SUNDAY, 17 OCTOBER 2027</p>
           <h1>YOUR CITY<br/>NEEDS A<br/><em>MISFIT.</em></h1>
           <p className="subLead">You know the streets, the people and the energy. We bring the playbook. Lead independently or alongside a local organisation, and make 10,000 steps look completely different.</p>
           <a className="button buttonDark" href="/city-leads/apply">Apply to lead your city <ArrowRight size={18}/></a>
@@ -63,7 +63,7 @@ export default function CityLeadsPage() {
       </section>
 
       <section className="leadCta">
-        <p>MAY 2027 / CITY LEAD APPLICATIONS</p>
+        <p>SUNDAY, 17 OCTOBER 2027 / CITY LEAD APPLICATIONS</p>
         <h2>START SOMETHING<br/>YOUR CITY REMEMBERS.</h2>
         <a className="button buttonDark" href="/city-leads/apply">Start your City Lead application <ArrowRight size={18}/></a>
         <small>Applying starts the conversation. We’ll work through the local details with you before your city is announced.</small>

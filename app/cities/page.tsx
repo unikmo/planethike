@@ -3,13 +3,13 @@ import SeoLanding from '../SeoLanding';
 
 export const metadata: Metadata = {
   title: 'The Chaos Walk in Your City | PlanetHike',
-  description: 'Pre-register for The Chaos Walk in your city or apply to lead it. May 2027.',
+  description: 'Pre-register for The Chaos Walk in your city or apply to lead it. Sunday, 17 October 2027.',
   alternates: { canonical: '/cities' },
 };
 
 export default function Page() {
   return <SeoLanding
-    eyebrow="YOUR CITY / MAY 2027"
+    eyebrow="YOUR CITY / SUNDAY, 17 OCTOBER 2027"
     title="Bring the chaos to your city"
     intro="Tell us where you want to walk. Every pre-registration helps us see where the energy is. When a City Lead or local host organisation, crew and route are ready, we’ll announce the city details."
     bullets={['Pre-register free','10,000 steps','City Leads and host organisations wanted','Local details by email']}

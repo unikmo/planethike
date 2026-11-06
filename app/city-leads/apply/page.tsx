@@ -4,7 +4,7 @@ import MobileMenu from '../../MobileMenu';
 
 export const metadata: Metadata = {
   title: 'Apply to Become a City Lead | PlanetHike',
-  description: 'Apply to bring The Chaos Walk to your city in May 2027.',
+  description: 'Apply to bring The Chaos Walk to your city on Sunday, 17 October 2027.',
   alternates: { canonical: '/city-leads/apply' },
   robots: { index: false, follow: true },
 };
@@ -26,7 +26,7 @@ export default function CityLeadApplyPage() {
 
       <section className="seoHero">
         <div>
-          <p className="seoEyebrow">CITY LEAD APPLICATION / MAY 2027</p>
+          <p className="seoEyebrow">CITY LEAD APPLICATION / SUNDAY, 17 OCTOBER 2027</p>
           <h1>Tell us why your city needs The Chaos Walk.</h1>
           <p className="seoLead">
             You do not need to be a professional event organiser. You do need to know your city, bring people together and care about making the day safe, welcoming and unforgettable. If you represent a school, charity, community group or cleft organisation, you can also explore hosting or co-hosting as a local partner.

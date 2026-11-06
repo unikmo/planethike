@@ -3,13 +3,13 @@ import SeoLanding from '../SeoLanding';
 
 export const metadata: Metadata = {
   title: 'The Chaos Walk | 10,000 Steps. Two Different Shoes. | PlanetHike',
-  description: 'The Chaos Walk is PlanetHike’s free 10,000-step social walking experience for May 2027: two different shoes, off colours, one Chaos Fan and your city.',
+  description: 'The Chaos Walk is PlanetHike’s free 10,000-step social walking experience on Sunday, 17 October 2027: two different shoes, off colours, one Chaos Fan and your city.',
   alternates: { canonical: '/the-chaos-walk' },
 };
 
 export default function Page() {
   return <SeoLanding
-    eyebrow="THE CHAOS WALK / MAY 2027"
+    eyebrow="THE CHAOS WALK / SUNDAY, 17 OCTOBER 2027"
     title="10,000 steps. Zero normal."
     intro="For one day, your city becomes the stage: wear two unmistakably different shoes, clash your colours, grab the Chaos Fan and walk around 10,000 steps with people who came to stand out together."
     bullets={['Free pre-registration','Around 10,000 steps','Two different shoes','Off colours + the Chaos Fan']}
@@ -23,7 +23,7 @@ export default function Page() {
       {q:'Is it a race?',a:'No. The point is the experience, not a finish time.'},
       {q:'Do I need to be fit?',a:'You should be comfortable with the distance or build up to it beforehand. The route is a social walk, not a competitive race.'},
       {q:'Do I have to buy merchandise?',a:'No. The walk is free. The Chaos Fan is strongly encouraged because it is part of the shared event ritual, but merchandise is not an entry requirement.'},
-      {q:'When is it?',a:'May 2027. The exact date will be announced to pre-registered participants and published on the site.'}
+      {q:'When is it?',a:'Sunday, 17 October 2027. Local city details will be emailed to pre-registered participants and published on the site when confirmed.'}
     ]}
     ctaLabel="Pre-register free"
     ctaHref="/#join"

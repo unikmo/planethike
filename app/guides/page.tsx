@@ -44,7 +44,7 @@ export default function GuidesPage() {
           <p className="seoLead">Straightforward answers, training help and ideas for people planning a 10,000-step challenge, a 10K walk or a group walking event.</p>
         </div>
         <aside className="seoHeroCard">
-          <span>MAY 2027</span>
+          <span>SUNDAY, 17 OCTOBER 2027</span>
           <strong>READ.<br/>PLAN.<br/>THEN MAKE IT CHAOS.</strong>
           <p>Use the guides, then pre-register free for The Chaos Walk.</p>
           <a className="seoPrimary" href="/#join">Pre-register free <ArrowRight size={18}/></a>
@@ -63,7 +63,7 @@ export default function GuidesPage() {
 
       <section className="seoBottomCta">
         <p>10,000 STEPS DO NOT HAVE TO FEEL ORDINARY.</p>
-        <h2>Walk different in May 2027.</h2>
+        <h2>Walk different on Sunday, 17 October 2027.</h2>
         <a href="/#join">Pre-register for The Chaos Walk <ArrowRight size={18}/></a>
       </section>
     </main>

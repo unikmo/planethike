@@ -39,7 +39,7 @@ export default function Home() {
             <a className="luxButton luxButtonDark" href="#join">Join first-access free <ArrowRight size={17}/></a>
             <a className="luxButton luxButtonGhost" href="/shop">Preview the Chaos Fan <ArrowRight size={17}/></a>
           </div>
-          <p className="luxMeta">MAY 2027 · exact date and local city status announced when confirmed</p>
+          <p className="luxMeta">SUNDAY, 17 OCTOBER 2027 · local city status announced when confirmed</p>
         </div>
       </section>
 
@@ -130,7 +130,7 @@ export default function Home() {
 
       <section className="luxJoin" id="join">
         <div className="luxJoinHead">
-          <p className="luxEyebrow">MAY 2027 · FIRST-ACCESS LIST OPEN</p>
+          <p className="luxEyebrow">SUNDAY, 17 OCTOBER 2027 · FIRST-ACCESS LIST OPEN</p>
           <h2>Walk different.</h2>
           <p>Choose your city. Wear two different shoes. We’ll send confirmed launch information when it is ready.</p>
         </div>
@@ -140,7 +140,7 @@ export default function Home() {
       <footer className="luxFooter">
         <div><a className="luxBrand luxFooterBrand" href="#top">PLANETHIKE</a><p>Two different shoes. Your own everything.</p></div>
         <div className="luxFooterLinks"><a href="/the-chaos-walk">The Walk</a><a href="/cities">Cities</a><a href="/city-leads">City Leads</a><a href="/shop">Chaos Fan</a><a href="/faq">FAQ</a><a href="/about">About</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/imprint">Imprint</a></div>
-        <small>© 2026 PlanetHike · May 2027 launch details remain subject to confirmation.</small>
+        <small>© 2026 PlanetHike · Sunday, 17 October 2027. Local city details remain subject to confirmation.</small>
       </footer>
     </main>
   );
