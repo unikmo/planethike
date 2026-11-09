@@ -30,10 +30,11 @@ export default function PreregisterForm() {
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    const formElement = event.currentTarget;
     setStatus('loading');
     setMessage('');
 
-    const form = new FormData(event.currentTarget);
+    const form = new FormData(formElement);
     const payload = Object.fromEntries(form.entries());
     const interest = String(payload.interest || 'walker');
     const fanAlert = payload.merchandise_interest === 'on';
@@ -57,7 +58,7 @@ export default function PreregisterForm() {
         country_code: String(payload.country_code || ''),
         merchandise_interest: fanAlert,
       });
-      event.currentTarget.reset();
+      formElement.reset();
       setCountryCode('');
       setCitySelection('');
     } catch (error) {
