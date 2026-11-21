@@ -184,12 +184,12 @@ export default function PreregisterForm() {
       <input className={styles.honeypot} name="company" tabIndex={-1} autoComplete="off" aria-hidden="true" />
 
       <button className={styles.submit} type="submit" disabled={status === 'loading'}>
-        {status === 'loading' ? 'Registering…' : 'Pre-register free'}
+        {status === 'loading' ? 'Registering…' : 'Count me in — free'}
         {status !== 'loading' && <ArrowRight size={18} />}
       </button>
 
       <p className={styles.microcopy}>
-        Free. No purchase required. We’ll email local city details as they are announced.
+        Officially unofficial misfit list. Free, no purchase required. This is first-access interest, not a confirmed city ticket. We’ll email local details when confirmed.
       </p>
       {status === 'error' && <p className={styles.error} role="alert">{message}</p>}
     </form>
