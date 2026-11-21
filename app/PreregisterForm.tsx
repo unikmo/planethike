@@ -154,12 +154,12 @@ export default function PreregisterForm() {
           </select>
         </label>
         <div aria-live="polite">
-          <span className={styles.availabilityLabel}>Chaos Shop</span>
+          <span className={styles.availabilityLabel}>Chaos Fan · Edition 001</span>
           <p className={styles.availabilityText}>
             {!selectedCountry
-              ? 'Choose your country to see the current shop plan.'
+              ? 'Choose your country to see whether Fan Edition 001 is planned for your market.'
               : selectedCountry.commerce
-                ? 'Chaos Fan Edition 001 and selected event merchandise are planned for your market. Join the alert below to hear when the shop opens.'
+                ? 'Chaos Fan Edition 001 is planned for your market. Tick the optional first-access alert below to hear when sales open.'
                 : 'You can still join the walk. Shop availability for your country will be announced separately.'}
           </p>
         </div>
@@ -169,7 +169,7 @@ export default function PreregisterForm() {
         <legend>Keep me in the loop</legend>
         <label className={styles.checkboxLabel}>
           <input name="merchandise_interest" type="checkbox" />
-          <span>Tell me when Chaos Fan Edition 001 and the Chaos Shop open.</span>
+          <span>Get first access to Chaos Fan Edition 001. Optional — notify me when sales open.</span>
         </label>
         <label className={styles.checkboxLabel}>
           <input name="marketing_consent" type="checkbox" />
