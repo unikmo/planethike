@@ -76,3 +76,39 @@
 @media (prefers-reduced-motion: reduce) {
   .luxChallengeOption { transition: none; }
 }
+
+/* Keep the Fan visible in the hero without competing with free registration. */
+.luxFanHeroLink {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  border-bottom: 1px solid rgba(11,11,12,.65);
+  padding-bottom: 3px;
+  color: #111;
+  font-size: 12px;
+  font-weight: 750;
+}
+.luxFanHeroLink:hover { border-bottom-color: transparent; }
+.luxFanHeroLink:focus-visible, .luxFanDetailsLink:focus-visible {
+  outline: 3px solid #6375d8;
+  outline-offset: 4px;
+}
+.luxFanSection { scroll-margin-top: 76px; }
+.luxFanDetailsLink {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 7px;
+  margin-top: 16px;
+  border-bottom: 1px solid rgba(255,255,255,.65);
+  padding-bottom: 4px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+}
+@media (max-width: 620px) {
+  .luxFanHeroLink { margin-top: 12px; font-size: 12px; }
+  .luxFanCopy h2 { font-size: clamp(44px, 10vw, 66px); }
+}
