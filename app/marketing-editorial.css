@@ -1,0 +1,78 @@
+
+/* PlanetHike editorial layer: preserve the existing premium art direction. */
+.luxHero .luxCampaignLine {
+  margin: 25px 0 4px;
+  font-size: clamp(18px, 1.65vw, 27px);
+  font-weight: 800;
+  letter-spacing: -.035em;
+  line-height: 1.15;
+}
+.luxHero .luxCampaignLine + .luxLead { margin-top: 13px; font-size: clamp(20px, 1.8vw, 27px); line-height: 1.25; }
+.luxShoesDivorce {
+  padding: clamp(76px, 9vw, 144px) clamp(24px, 6vw, 90px);
+  background: #e7edff;
+  color: #0b0b0c;
+}
+.luxShoesDivorceInner { max-width: 1140px; margin: auto; }
+.luxShoesDivorce h2 {
+  max-width: 1030px;
+  margin: 0;
+  font-size: clamp(48px, 7.2vw, 110px);
+  letter-spacing: -.066em;
+  font-weight: 500;
+  line-height: .96;
+}
+.luxShoesDivorce p:not(.luxEyebrow) {
+  max-width: 690px;
+  margin: 26px 0 0;
+  color: #34363f;
+  font-size: clamp(17px, 1.5vw, 21px);
+  line-height: 1.55;
+}
+.luxShoesDivorce strong { display: block; max-width: 720px; margin: 30px 0 20px; font-size: 20px; }
+.luxShoesDivorce a { display: inline-flex; gap: 9px; align-items: center; font-size: 14px; font-weight: 750; border-bottom: 1px solid; padding-bottom: 5px; }
+.luxChallenge {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  gap: clamp(32px, 6vw, 108px);
+  align-items: center;
+  padding: clamp(78px, 9vw, 140px) clamp(24px, 5vw, 82px);
+  background: #f7f5f0;
+  color: #111;
+  scroll-margin-top: 90px;
+}
+.luxChallengeIntro h2 { margin: 0; font-size: clamp(46px, 5.6vw, 90px); line-height: .98; font-weight: 500; letter-spacing: -.055em; }
+.luxChallengeIntro > p:not(.luxEyebrow) { max-width: 610px; font-size: 18px; line-height: 1.57; color: #48484e; }
+.luxChallenge .luxChallengeFinePrint { font-size: 12px !important; color: #666 !important; line-height: 1.5; }
+.luxChallengeCard { border: 1px solid rgba(0,0,0,.12); border-radius: 25px; background: #fff; padding: clamp(22px, 3vw, 46px); box-shadow: 0 25px 70px rgba(0,0,0,.035); }
+.luxChallengeCard fieldset { border: 0; padding: 0; margin: 0; min-width: 0; display: grid; gap: 10px; }
+.luxChallengeCard legend { font-size: 12px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; margin-bottom: 18px; }
+.luxChallengeOption { display: flex; gap: 12px; align-items: center; min-height: 64px; border-radius: 13px; border: 1px solid rgba(0,0,0,.16); padding: 14px 16px; font-size: 14px; cursor: pointer; transition: background .2s, border-color .2s; }
+.luxChallengeOption.isSelected { background: #e8edff; border-color: #4f5ac5; }
+.luxChallengeOption:focus-within { outline: 3px solid #6375d8; outline-offset: 2px; }
+.luxChallengeOption input { accent-color: #111; width: 18px; height: 18px; flex: none; }
+.luxChallengeVerdict { margin-top: 25px; border-radius: 17px; padding: 25px; background: #111; color: #fff; }
+.luxChallengeVerdict span { display: block; font-size: 10px; letter-spacing: .18em; font-weight: 700; color: #c5d0ff; }
+.luxChallengeVerdict strong { display: block; margin-top: 12px; font-size: clamp(25px, 2.1vw, 34px); line-height: 1.1; letter-spacing: -.035em; }
+.luxChallengeVerdict p { color: #ddd; font-size: 13px; line-height: 1.5; }
+.luxChallengeActions { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 20px; }
+.luxChallengeActions button, .luxChallengeActions a { min-height: 48px; display: inline-flex; align-items: center; justify-content: center; gap: 9px; border-radius: 999px; padding: 12px 18px; font-size: 12px; font-weight: 700; cursor: pointer; }
+.luxChallengeActions button { background: #111; color: #fff; border: 1px solid #111; font-family: inherit; }
+.luxChallengeActions a { border: 1px solid #111; color: #111; }
+.luxChallengeActions button:focus-visible, .luxChallengeActions a:focus-visible { outline: 3px solid #6375d8; outline-offset: 3px; }
+@media (max-width: 950px) {
+  .luxChallenge { grid-template-columns: 1fr; gap: 28px; }
+  .luxShoesDivorce { padding: 80px 24px; }
+}
+@media (max-width: 620px) {
+  .luxHero .luxCampaignLine { margin-top: 17px; font-size: 19px; }
+  .luxHero .luxCampaignLine + .luxLead { font-size: 19px; margin-top: 9px; }
+  .luxChallenge { padding: 70px 18px; }
+  .luxChallengeCard { padding: 20px; }
+  .luxChallengeActions { flex-direction: column; }
+  .luxChallengeActions > * { width: 100%; }
+  .luxShoesDivorce h2 { font-size: clamp(46px, 12vw, 68px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .luxChallengeOption { transition: none; }
+}
