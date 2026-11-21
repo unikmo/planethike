@@ -41,6 +41,7 @@ export default function Home() {
             <a className="luxButton luxButtonDark" href="#join">Join the chaos — free <ArrowRight size={17}/></a>
             <a className="luxButton luxButtonGhost" href="#shoe-challenge">How wrong are your shoes? <ArrowRight size={17}/></a>
           </div>
+          <a className="luxFanHeroLink" href="#chaos-fan">Meet the Chaos Fan — Edition 001 <ArrowRight size={15}/></a>
           <p className="luxMeta">SUNDAY, 17 OCTOBER 2027 · local city status announced when confirmed</p>
         </div>
       </section>
@@ -99,14 +100,15 @@ export default function Home() {
 
       <ShoeChallenge />
 
-      <section className="luxFanSection">
+      <section className="luxFanSection" id="chaos-fan">
         <div className="luxFanMedia" role="img" aria-label="Participant holding the colourful PlanetHike hand fan" />
         <div className="luxFanCopy">
           <p className="luxEyebrow luxEyebrowLight">THE CHAOS FAN · EDITION 001</p>
-          <h2>A hand fan.<br/>Not a gadget.</h2>
-          <p>Useful on the walk. Highly visible in photographs. Easy to carry afterwards. The Chaos Fan is planned as an optional annual collectible, not tech gear and not a participation requirement.</p>
+          <h2>The official accessory<br/>of unofficial chaos.</h2>
+          <p>One city. Thousands of mismatched shoes. One unmistakable Fan in the air. Chaos Fan Edition 001 is the collectible you’ll want in the group photo and long after the walk. Completely optional: the walk is free, with or without one.</p>
           <div className="luxStatus"><span className="luxStatusDot"/> Sales are not open yet</div>
-          <a className="luxButton luxButtonLight" href="/shop">Preview Edition 001 <ArrowRight size={17}/></a>
+          <a className="luxButton luxButtonLight" href="#join">Get first access to Edition 001 <ArrowRight size={17}/></a>
+          <a className="luxFanDetailsLink" href="/shop">Explore the Chaos Fan <ArrowRight size={15}/></a>
         </div>
       </section>
 
