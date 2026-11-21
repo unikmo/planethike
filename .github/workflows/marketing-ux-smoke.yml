@@ -1,0 +1,49 @@
+name: Marketing UX Smoke
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  browser-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+      - name: Build production bundle
+        run: npm run build
+      - name: Install browser QA dependencies
+        run: |
+          npm install --no-save --no-audit --no-fund playwright@1.58.2
+          npx playwright install --with-deps chromium
+      - name: Start local server
+        run: |
+          npm run start -- --hostname 127.0.0.1 --port 3000 > /tmp/planethike-server.log 2>&1 &
+          for i in $(seq 1 40); do
+            if curl -sf http://127.0.0.1:3000/ > /dev/null; then exit 0; fi
+            sleep 2
+          done
+          cat /tmp/planethike-server.log
+          exit 1
+      - name: Browser QA
+        run: node scripts/marketing-smoke.mjs
+      - name: Upload QA screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: planethike-marketing-ux
+          path: smoke-artifacts/
+          if-no-files-found: ignore
