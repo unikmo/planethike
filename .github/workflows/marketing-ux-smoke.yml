@@ -47,3 +47,21 @@ jobs:
           name: planethike-marketing-ux
           path: smoke-artifacts/
           if-no-files-found: ignore
+
+  production-e2e-once:
+    if: github.event_name == 'pull_request' && github.head_ref == 'qa/planet-production-e2e-20261122'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate live site and submit one marked test registration
+        env:
+          GITHUB_RUN_ID: ${{ github.run_id }}
+        run: node scripts/production-e2e-once.mjs
