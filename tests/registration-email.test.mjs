@@ -2,75 +2,52 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { sendRegistrationConfirmation } from '../app/registration-email.ts';
 
-const input = {
-  email: 'user@example.invalid',
-  firstName: 'Mina',
-  city: 'Berlin',
-  fanInterest: true
-};
+const input = { email:'user@example.invalid', firstName:'Mina', city:'Berlin', fanInterest:true };
 
-test('does not attempt sending without configuration', async () => {
-  let called = false;
-  const result = await sendRegistrationConfirmation(input, {
-    apiKey: '', from: '',
-    send: async () => { called = true; throw new Error('Should not be called'); },
+test('missing Titan SMTP credentials does not send', async () => {
+  let called=false;
+  const status=await sendRegistrationConfirmation(input,{
+    user:'',password:'', send:async()=>{called=true;}
   });
-  assert.equal(result, 'not_configured');
-  assert.equal(called, false);
+  assert.equal(status,'not_configured');
+  assert.equal(called,false);
 });
 
-test('sends consent-scoped receipt with Fan interest to verified sender', async () => {
-  let payload, headers, address;
-  const result = await sendRegistrationConfirmation(input, {
-    apiKey: 'test-key',
-    from: 'PlanetHike <hello@planethike.org>',
-    send: async (url, init) => {
-      address = url; headers = init.headers;
-      payload = JSON.parse(init.body);
-      return { ok: true };
-    },
+test('registration receipt uses verified Titan mailbox and Fan consent correctly', async()=>{
+  let delivered;
+  const status=await sendRegistrationConfirmation(input,{
+    user:'hello@planethike.org',password:'test-smtp-pass',
+    send:async mail=>{delivered=mail; return {messageId:'mock-id'};}
   });
-  assert.equal(result, 'sent');
-  assert.equal(address, 'https://api.resend.com/emails');
-  assert.equal(payload.to[0], input.email);
-  assert.match(payload.text, /one-time alert when Chaos Fan/);
-  assert.match(payload.text, /not yet confirmed/);
-  assert.doesNotMatch(payload.text, /You are subscribed to marketing/);
-  assert.equal(headers.Authorization, 'Bearer test-key');
-  assert.equal(headers['Idempotency-Key'].length, 64);
+  assert.equal(status,'sent');
+  assert.deepEqual(delivered.from,{name:'PlanetHike',address:'hello@planethike.org'});
+  assert.equal(delivered.to,input.email);
+  assert.match(delivered.text,/one-time alert when Chaos Fan/);
+  assert.match(delivered.text,/not yet confirmed/);
+  assert.doesNotMatch(delivered.text,/You are subscribed to marketing/);
 });
 
-test('does not infer Fan opt-in for a walker', async () => {
-  let payload;
-  await sendRegistrationConfirmation({ ...input, fanInterest: false }, {
-    apiKey: 'test', from: 'hello@planethike.org',
-    send: async (_url, init) => {
-      payload = JSON.parse(init.body);
-      return { ok: true };
-    },
+test('no Fan interest means no Fan opt-in confirmation',async()=>{
+  let delivered;
+  const status=await sendRegistrationConfirmation({...input,fanInterest:false},{
+    user:'hello@planethike.org',password:'test',send:async mail=>{delivered=mail;}
   });
-  assert.match(payload.text, /did not request the optional Chaos Fan/);
+  assert.equal(status,'sent');
+  assert.match(delivered.text,/did not request the optional Chaos Fan/);
 });
 
-test('provider failure does not masquerade as sent', async () => {
-  const result = await sendRegistrationConfirmation(input, {
-    apiKey: 'test', from: 'hello@planethike.org',
-    send: async () => ({ ok: false, status: 403 }),
+test('Titan SMTP failure does not masquerade as sent',async()=>{
+  const status=await sendRegistrationConfirmation(input,{
+    user:'hello@planethike.org',password:'test',send:async()=>{throw Error('SMTP failed');}
   });
-  assert.equal(result, 'failed');
+  assert.equal(status,'failed');
 });
 
-test('sanitizes input before including it in receipt body', async () => {
-  let payload;
-  await sendRegistrationConfirmation({
-    ...input, firstName: 'Mina\nInjected Subject:', city: 'Berlin\r\nInjected header'
-  }, {
-    apiKey: 'test', from: 'hello@planethike.org',
-    send: async (_url, init) => {
-      payload = JSON.parse(init.body);
-      return { ok: true };
-    },
+test('user-supplied fields are stripped of embedded newlines',async()=>{
+  let delivered;
+  await sendRegistrationConfirmation({...input,firstName:'Mina\nInjected Subject:',city:'Berlin\r\nInjected header'},{
+    user:'hello@planethike.org',password:'test',send:async mail=>{delivered=mail;}
   });
-  assert.doesNotMatch(payload.text, /Mina\nInjected Subject/);
-  assert.doesNotMatch(payload.text, /Berlin\r\nInjected header/);
+  assert.doesNotMatch(delivered.text,/Mina\nInjected Subject/);
+  assert.doesNotMatch(delivered.text,/Berlin\r\nInjected header/);
 });
