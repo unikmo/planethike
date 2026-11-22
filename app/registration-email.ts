@@ -1,4 +1,4 @@
-import { createHash } from 'node:crypto';
+import nodemailer from 'nodemailer';
 
 type RegistrationEmailInput = {
   email: string;
@@ -9,19 +9,23 @@ type RegistrationEmailInput = {
 
 export type RegistrationEmailStatus = 'sent' | 'not_configured' | 'failed';
 
+type MailData = { from: { name: string; address: string }; to: string; subject: string; text: string };
+type MailSender = (mail: MailData) => Promise<unknown>;
+
 export async function sendRegistrationConfirmation(
   input: RegistrationEmailInput,
   options: {
-    apiKey?: string;
-    from?: string;
-    send?: typeof fetch;
+    user?: string;
+    password?: string;
+    host?: string;
+    send?: MailSender;
   } = {},
 ): Promise<RegistrationEmailStatus> {
-  const apiKey = options.apiKey ?? process.env.RESEND_API_KEY;
-  const from = options.from ?? process.env.PLANETHIKE_FROM_EMAIL;
-  if (!apiKey || !from) return 'not_configured';
+  const user = options.user ?? process.env.TITAN_SMTP_USER;
+  const password = options.password ?? process.env.TITAN_SMTP_PASSWORD;
+  if (!user || !password) return 'not_configured';
 
-  // A receipt confirms a saved registration, not an event ticket, city approval, or purchase.
+  // A receipt confirms a saved registration, not a city ticket or a purchase.
   const safeName = input.firstName.replace(/[\r\n\x00-\x1f]/g, ' ').trim();
   const safeCity = input.city.replace(/[\r\n\x00-\x1f]/g, ' ').trim();
   const lines = [
@@ -40,28 +44,28 @@ export async function sendRegistrationConfirmation(
     '',
     'PlanetHike',
   ];
-  const idempotencyKey = createHash('sha256')
-    .update('planethike-registration-v1:' + input.email.trim().toLowerCase())
-    .digest('hex');
 
   try {
-    const response = await (options.send ?? fetch)('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        'Content-Type': 'application/json',
-        'Idempotency-Key': idempotencyKey,
-      },
-      body: JSON.stringify({
-        from,
-        to: [input.email],
-        subject: 'You are on the Chaos Walk first-access list',
-        text: lines.join('\n'),
-      }),
-      cache: 'no-store',
-      signal: AbortSignal.timeout(8000),
+    const host = options.host ?? process.env.TITAN_SMTP_HOST ?? 'smtp.titan.email';
+    const sender = options.send ?? (async (mail: MailData) => {
+      const smtp = nodemailer.createTransport({
+        host,
+        port: 465,
+        secure: true,
+        auth: { user, pass: password },
+        connectionTimeout: 8000,
+        greetingTimeout: 8000,
+        socketTimeout: 10000,
+      });
+      return smtp.sendMail(mail);
     });
-    return response.ok ? 'sent' : 'failed';
+    await sender({
+      from: { name: 'PlanetHike', address: user },
+      to: input.email,
+      subject: 'You are on the Chaos Walk first-access list',
+      text: lines.join('\n'),
+    });
+    return 'sent';
   } catch {
     return 'failed';
   }
