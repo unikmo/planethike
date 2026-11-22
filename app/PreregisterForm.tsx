@@ -75,7 +75,7 @@ export default function PreregisterForm() {
         <p>{message}</p>
         {fanAlertRequested && <p className={styles.successNote}>You’ll also be first to hear when Chaos Fan Edition 001 goes on sale.</p>}
         <div className={styles.successActions}>
-          <a href="/shop">Explore the Chaos Shop <ArrowRight size={16} /></a>
+          <a href="/shop">See Chaos Fan Edition 001 <ArrowRight size={16} /></a>
           {submittedInterest === 'host' && <a href="/city-leads/apply">Complete City Lead application <ArrowRight size={16} /></a>}
         </div>
       </div>
@@ -157,9 +157,9 @@ export default function PreregisterForm() {
           <span className={styles.availabilityLabel}>Chaos Fan · Edition 001</span>
           <p className={styles.availabilityText}>
             {!selectedCountry
-              ? 'Choose your country to see whether Fan Edition 001 is planned for your market.'
+              ? 'Choose your country to see the current Fan launch plan.'
               : selectedCountry.commerce
-                ? 'Chaos Fan Edition 001 is planned for your market. Tick the optional first-access alert below to hear when sales open.'
+                ? 'Chaos Fan Edition 001 is being planned for your market. Tick the optional alert for ordering news; availability is not confirmed.'
                 : 'You can still join the walk. Shop availability for your country will be announced separately.'}
           </p>
         </div>
@@ -169,7 +169,7 @@ export default function PreregisterForm() {
         <legend>Keep me in the loop</legend>
         <label className={styles.checkboxLabel}>
           <input name="merchandise_interest" type="checkbox" />
-          <span>Get first access to Chaos Fan Edition 001. Optional — notify me when sales open.</span>
+          <span>Notify me when Chaos Fan Edition 001 ordering opens. Optional — no purchase or deposit required.</span>
         </label>
         <label className={styles.checkboxLabel}>
           <input name="marketing_consent" type="checkbox" />
