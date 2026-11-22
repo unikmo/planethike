@@ -117,6 +117,7 @@ try {
     const response = await detail.goto(`${BASE}/shop/chaos-fan`, { waitUntil: 'networkidle' });
     assert.equal(response?.status(), 200);
     await detail.getByText(/Target price €19.99/i).waitFor();
+    await detail.locator('summary').filter({ hasText: 'When can I buy Edition 001?' }).click();
     await detail.getByText(/Orders are not yet open/i).waitFor();
     await detail.close();
   });
