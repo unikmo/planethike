@@ -70,7 +70,7 @@ try {
     assert.equal(await merch.isChecked(), false);
     assert.equal(await marketing.isChecked(), false);
     assert.equal(await privacy.isChecked(), false);
-    await page.getByText(/Get first access to Chaos Fan Edition 001/i).last().waitFor();
+    await page.getByText(/Notify me when Chaos Fan Edition 001 ordering opens/i).last().waitFor();
   });
   await check('registration POST carries city and Fan opt-in, no live data writes', async () => {
     let recorded;
@@ -94,6 +94,32 @@ try {
     assert.equal(recorded.privacy_accepted, 'on');
     await join.getByText(/first to hear when Chaos Fan Edition 001/i).waitFor();
   });
+  await check('shop: only Chaos Fan Edition 001 is marketed; no checkout or bundle catalogue', async () => {
+    const shop = await desktop.context.newPage();
+    const response = await shop.goto(`${BASE}/shop`, { waitUntil: 'networkidle' });
+    assert.equal(response?.status(), 200);
+    await shop.getByRole('heading', { name: /One Fan/i }).waitFor();
+    await shop.getByRole('heading', { name: /The Fan. That.s the drop/i }).waitFor();
+    assert.equal(await shop.locator('.commerceProduct').count(), 1);
+    assert.equal(await shop.getByRole('heading', { name: /Chaos Fan Edition 001/i }).count(), 1);
+    assert.equal(await shop.locator('.commerceBundles').count(), 0);
+    assert.equal(await shop.getByRole('button', { name: /buy|add to cart|checkout/i }).count(), 0);
+    await shop.getByText(/Sales are not open/i).first().waitFor().catch(async () => {
+      await shop.getByText(/Sales are not open; price and delivery availability/i).waitFor();
+    });
+    await shop.getByRole('link', { name: /Get the Fan launch alert/i }).first().click();
+    assert.equal(new URL(shop.url()).hash, '#join');
+    await shop.getByRole('button', { name: /Count me in — free/i }).waitFor();
+    await shop.close();
+  });
+  await check('Fan detail page: first-access only, target price not represented as final', async () => {
+    const detail = await desktop.context.newPage();
+    const response = await detail.goto(`${BASE}/shop/chaos-fan`, { waitUntil: 'networkidle' });
+    assert.equal(response?.status(), 200);
+    await detail.getByText(/Target price €19.99/i).waitFor();
+    await detail.getByText(/Orders are not yet open/i).waitFor();
+    await detail.close();
+  });
   await desktop.context.close();
 
   const mobile = await visit({ width: 375, height: 812 }, 'mobile');
@@ -102,6 +128,15 @@ try {
     await mobile.page.getByText('Management has been notified.').first().waitFor();
     await mobile.page.getByRole('button', { name: /Count me in — free/i }).waitFor();
     await mobile.page.getByRole('link', { name: /Meet the Chaos Fan/i }).waitFor();
+  });
+  await check('mobile: Fan-only shop has no overflow and shows only one featured product', async () => {
+    const shop = await mobile.context.newPage();
+    await shop.goto(`${BASE}/shop`, { waitUntil: 'networkidle' });
+    const width = await shop.evaluate(() => ({ viewport: window.innerWidth, html: document.documentElement.scrollWidth }));
+    assert.ok(width.html <= width.viewport + 2, JSON.stringify(width));
+    assert.equal(await shop.locator('.commerceProduct').count(), 1);
+    await shop.getByRole('link', { name: /Get the Fan launch alert/i }).first().waitFor();
+    await shop.close();
   });
   await mobile.context.close();
   console.log(`SUCCESS: ${passed} smoke assertions passed`);
