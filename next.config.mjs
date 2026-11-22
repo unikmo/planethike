@@ -1,5 +1,28 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  async headers() {
+    return [{
+      source: '/:path*',
+      headers: [
+        { key: 'X-Content-Type-Options', value: 'nosniff' },
+        { key: 'X-Frame-Options', value: 'DENY' },
+        { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+        { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
+        { key: 'Content-Security-Policy', value: [
+          "default-src 'self'",
+          "base-uri 'self'",
+          "object-src 'none'",
+          "frame-ancestors 'none'",
+          "form-action 'self'",
+          "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com",
+          "style-src 'self' 'unsafe-inline'",
+          "img-src 'self' data: blob: https:",
+          "font-src 'self' data: https:",
+          "connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://www.googletagmanager.com",
+        ].join('; ') },
+      ],
+    }];
+  },
   async redirects() {
     return [
       { source: '/pledge', destination: '/walk-for-a-cause', permanent: true },
