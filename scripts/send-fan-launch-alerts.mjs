@@ -1,11 +1,12 @@
 import assert from 'node:assert/strict';
-import { createHash } from 'node:crypto';
+import nodemailer from 'nodemailer';
 
 const send = process.argv.includes('--send');
 const url = process.env.SUPABASE_URL;
 const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
-const from = process.env.PLANETHIKE_FROM_EMAIL;
-const resendKey = process.env.RESEND_API_KEY;
+const smtpUser = process.env.TITAN_SMTP_USER;
+const smtpPassword = process.env.TITAN_SMTP_PASSWORD;
+const smtpHost = process.env.TITAN_SMTP_HOST || 'smtp.titan.email';
 const orderUrl = process.env.FAN_ORDER_URL;
 const approved = process.env.FAN_LAUNCH_APPROVED === 'YES';
 
@@ -18,7 +19,7 @@ const headers = {
 };
 if (send) {
   assert.ok(approved, 'Explicit FAN_LAUNCH_APPROVED=YES required');
-  assert.ok(resendKey && from, 'Verified sender and Resend API key required');
+  assert.ok(smtpUser && smtpPassword, 'Titan SMTP mailbox credentials required');
   assert.ok(orderUrl?.startsWith('https://planethike.org/'), 'Only PlanetHike ordering URL allowed');
   const shop = await fetch('https://planethike.org/shop', {cache:'no-store'});
   assert.equal(shop.status, 200, 'Live shop must be available');
@@ -44,25 +45,19 @@ for(let page=0;page<100;page++){
   // Process from a stable snapshot: each accepted row is marked, so never use
   // OFFSET while processing and removing rows from the pending subset.
   for (const row of rows){
-    const idempotencyKey = createHash('sha256')
-      .update('chaos-fan-001-launch:'+row.email.trim().toLowerCase()).digest('hex');
     const safeName=String(row.first_name).replace(/[\r\n\x00-\x1f]/g,' ').trim();
     try {
-      const sent=await fetch('https://api.resend.com/emails',{
-        method:'POST',
-        headers:{
-          'Authorization':`Bearer ${resendKey}`,
-          'Content-Type':'application/json',
-          'Idempotency-Key':idempotencyKey
-        },
-        body:JSON.stringify({
-          from, to:[row.email],
-          subject:'Chaos Fan Edition 001 ordering is open',
-          text:`Hi ${safeName},\n\nYou asked for a one-time alert when Chaos Fan Edition 001 ordering opened. Ordering is now open: ${orderUrl}\n\nThe Chaos Walk remains free, with no purchase required.\n\nPlanetHike\n`
-        }),
-        signal: AbortSignal.timeout(15000)
+      const smtp = nodemailer.createTransport({
+        host:smtpHost,port:465,secure:true,
+        auth:{user:smtpUser,pass:smtpPassword},
+        connectionTimeout:8000,greetingTimeout:8000,socketTimeout:12000
       });
-      if (!sent.ok) throw new Error(`Resend HTTP ${sent.status}`);
+      await smtp.sendMail({
+        from:{name:'PlanetHike',address:smtpUser},
+        to:row.email,
+        subject:'Chaos Fan Edition 001 ordering is open',
+        text:`Hi ${safeName},\n\nYou asked for a one-time alert when Chaos Fan Edition 001 ordering opened. Ordering is now open: ${orderUrl}\n\nThe Chaos Walk remains free, with no purchase required.\n\nPlanetHike\n`
+      });
       const marked=await fetch(
         `${base}/rest/v1/planethike_preregistrations?id=eq.${encodeURIComponent(row.id)}&fan_launch_notified_at=is.null`,
         {
