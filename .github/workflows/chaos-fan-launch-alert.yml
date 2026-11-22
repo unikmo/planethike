@@ -31,8 +31,9 @@ jobs:
           CONFIRMATION: ${{ inputs.confirmation }}
           SUPABASE_URL: ${{ secrets.PLANETHIKE_SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.PLANETHIKE_SUPABASE_SERVICE_ROLE_KEY }}
-          RESEND_API_KEY: ${{ secrets.PLANETHIKE_RESEND_API_KEY }}
-          PLANETHIKE_FROM_EMAIL: ${{ vars.PLANETHIKE_FROM_EMAIL }}
+          TITAN_SMTP_USER: ${{ secrets.PLANETHIKE_TITAN_SMTP_USER }}
+          TITAN_SMTP_PASSWORD: ${{ secrets.PLANETHIKE_TITAN_SMTP_PASSWORD }}
+          TITAN_SMTP_HOST: ${{ vars.PLANETHIKE_TITAN_SMTP_HOST }}
           FAN_ORDER_URL: ${{ vars.FAN_ORDER_URL }}
         run: |
           if [ "$ACTION" = "send" ]; then
