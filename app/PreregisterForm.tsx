@@ -15,6 +15,7 @@ export default function PreregisterForm() {
   const [citySelection, setCitySelection] = useState('');
   const [submittedInterest, setSubmittedInterest] = useState('walker');
   const [fanAlertRequested, setFanAlertRequested] = useState(false);
+  const [confirmationEmailSent, setConfirmationEmailSent] = useState(false);
   const started = useRef(false);
 
   const selectedCountry = useMemo(
@@ -51,6 +52,7 @@ export default function PreregisterForm() {
 
       setSubmittedInterest(interest);
       setFanAlertRequested(fanAlert);
+      setConfirmationEmailSent(data.confirmation_email === 'sent');
       setStatus('success');
       setMessage('You’re pre-registered for Sunday, 17 October 2027. We’ll email your city details as they are announced.');
       trackEvent('preregister_submit', {
@@ -73,6 +75,7 @@ export default function PreregisterForm() {
         <div className={styles.successIcon}><Check size={24} /></div>
         <strong>YOU’RE IN.</strong>
         <p>{message}</p>
+        {confirmationEmailSent && <p className={styles.successNote}>Your registration confirmation email has been sent.</p>}
         {fanAlertRequested && <p className={styles.successNote}>You’ll also be first to hear when Chaos Fan Edition 001 goes on sale.</p>}
         <div className={styles.successActions}>
           <a href="/shop">See Chaos Fan Edition 001 <ArrowRight size={16} /></a>

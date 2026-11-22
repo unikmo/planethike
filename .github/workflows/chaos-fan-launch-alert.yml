@@ -1,0 +1,48 @@
+name: One-time Chaos Fan Launch Alert
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: Preview or send (only after Fan orders open)
+        required: true
+        type: choice
+        options: [dry-run, send]
+      confirmation:
+        description: Type SEND_FAN_EDITION_001 to authorize sending
+        required: false
+        type: string
+permissions:
+  contents: read
+jobs:
+  fan-launch-alert:
+    runs-on: ubuntu-24.04
+    environment: production
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Dispatch only after explicit approval
+        env:
+          ACTION: ${{ inputs.action }}
+          CONFIRMATION: ${{ inputs.confirmation }}
+          SUPABASE_URL: ${{ secrets.PLANETHIKE_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.PLANETHIKE_SUPABASE_SERVICE_ROLE_KEY }}
+          TITAN_SMTP_USER: ${{ secrets.PLANETHIKE_TITAN_SMTP_USER }}
+          TITAN_SMTP_PASSWORD: ${{ secrets.PLANETHIKE_TITAN_SMTP_PASSWORD }}
+          TITAN_SMTP_HOST: ${{ vars.PLANETHIKE_TITAN_SMTP_HOST }}
+          FAN_ORDER_URL: ${{ vars.FAN_ORDER_URL }}
+        run: |
+          if [ "$ACTION" = "send" ]; then
+            if [ "$CONFIRMATION" != "SEND_FAN_EDITION_001" ]; then
+              echo "Explicit send authorization required" >&2
+              exit 1
+            fi
+            export FAN_LAUNCH_APPROVED=YES
+            node scripts/send-fan-launch-alerts.mjs --send
+          else
+            node scripts/send-fan-launch-alerts.mjs
+          fi

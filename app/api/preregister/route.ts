@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { countryByCode } from '../../locations';
+import { sendRegistrationConfirmation } from '../../registration-email';
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const OTHER_CITY = 'City not yet listed';
@@ -93,7 +94,17 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'We could not save your first-access registration. Please try again.' }, { status: 500 });
     }
 
-    return NextResponse.json({ ok: true, commerce_eligible: country.commerce, city_status: 'interest_only' });
+    // Registration succeeds independently of email provider availability.
+    const confirmationEmail = await sendRegistrationConfirmation({
+      email, firstName, city, fanInterest: merchandiseInterest,
+    });
+    if (confirmationEmail === 'failed') {
+      console.error('Registration saved but confirmation email delivery request failed');
+    }
+    return NextResponse.json({
+      ok: true, commerce_eligible: country.commerce, city_status: 'interest_only',
+      confirmation_email: confirmationEmail === 'sent' ? 'sent' : 'not_sent',
+    });
   } catch {
     return NextResponse.json({ error: 'Invalid request.' }, { status: 400 });
   }

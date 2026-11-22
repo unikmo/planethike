@@ -1,0 +1,51 @@
+name: Registration Email and Production QA
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'app/registration-email.ts'
+      - 'app/api/preregister/route.ts'
+      - 'app/PreregisterForm.tsx'
+      - 'tests/registration-email.test.mjs'
+      - 'scripts/production-regression.mjs'
+      - '.github/workflows/registration-release-qa.yml'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'next.config.mjs'
+      - 'scripts/marketing-smoke.mjs'
+      - 'scripts/send-fan-launch-alerts.mjs'
+permissions:
+  contents: read
+jobs:
+  email-unit-and-audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci --no-audit --no-fund
+      - name: Registration email unit tests
+        run: node --experimental-strip-types --test tests/registration-email.test.mjs
+      - name: Production build and TypeScript
+        run: npm run build
+      - name: Production dependency security audit
+        run: npm audit --omit=dev --audit-level=high
+  live-browser-regression:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci --no-audit --no-fund
+      - run: npm install --no-save --no-audit --no-fund playwright@1.58.2
+      - run: npx playwright install --with-deps chromium
+      - name: Safe read-only production regression and performance
+        run: node scripts/production-regression.mjs
