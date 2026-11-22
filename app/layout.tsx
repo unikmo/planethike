@@ -9,6 +9,7 @@ import './seo-pages.css';
 import './navigation.css';
 import './premium.css';
 import './commerce.css';
+import './marketing-editorial.css';
 
 export const metadata: Metadata = {
   title: 'PlanetHike — The Chaos Walk',

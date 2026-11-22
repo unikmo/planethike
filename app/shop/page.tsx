@@ -1,59 +1,22 @@
 import type { Metadata } from 'next';
-import { ArrowLeft, ArrowRight, Fan, MapPin, Package, Shirt, Truck } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Fan, Footprints, HeartHandshake, Package, Truck } from 'lucide-react';
 import MobileMenu from '../MobileMenu';
 
 export const metadata: Metadata = {
-  title: 'Chaos Shop | Fan, Mismatch Socks, Tees & Event Bundles | PlanetHike',
-  description: 'Discover Chaos Fan Edition 001, mismatch socks, colourful tees, bandanas and event bundles for The Chaos Walk on Sunday, 17 October 2027.',
+  title: 'Chaos Fan Edition 001 | PlanetHike Shop',
+  description: 'One collectible for The Chaos Walk: Chaos Fan Edition 001. Join the free walk and opt in to the Fan launch alert. Orders are not yet open.',
   alternates: { canonical: '/shop' },
 };
 
-const products = [
-  {
-    kicker: 'THE ICON · EDITION 001',
-    title: 'Chaos Fan\nEdition 001',
-    price: '€19.99',
-    note: 'The folding hand fan made for the city-wide fan shot, the walk and the photo you keep afterwards.',
-    className: 'commerceProductFan',
-  },
-  {
-    kicker: 'THE PAIR THAT ISN’T A PAIR',
-    title: 'Mismatch\nSocks',
-    price: 'PRICE COMING SOON',
-    note: 'Two deliberately different socks in one pack. Because matching your socks on Chaos Walk day would be suspicious.',
-    className: 'commerceProductSocks',
-  },
-  {
-    kicker: 'OFF COLOUR · ON PURPOSE',
-    title: 'Chaos\nTee',
-    price: 'PRICE COMING SOON',
-    note: 'Bright, clash-ready colour for people who want to turn the volume up without wearing an event uniform.',
-    className: 'commerceProductTee',
-  },
-  {
-    kicker: 'ONE MORE WRONG COLOUR',
-    title: 'Chaos\nBandana',
-    price: 'PRICE COMING SOON',
-    note: 'Wear it, tie it to a bag or wave it. A small extra hit of colour for a day when normal is off duty.',
-    className: 'commerceProductBandana',
-  },
-];
-
-const bundles = [
-  ['01', 'The Signature Set', 'Chaos Fan + mismatch socks. Two PlanetHike signatures in one easy choice.'],
-  ['02', 'The Chaos Kit', 'Chaos Fan + mismatch socks + Chaos Tee + bandana. Maximum colour, minimum decision-making.'],
-  ['03', 'City Chaos Box', 'Group packs for teams, clubs and confirmed city crews. Built for bigger orders and event-day collection.'],
-];
-
 export default function ShopPage() {
   return (
-    <main className="commercePage">
+    <main className="commercePage commerceFanOnly">
       <header className="commerceHeader">
         <a className="luxBrand" href="/">PLANETHIKE</a>
         <nav className="commerceNav" aria-label="Shop navigation">
-          <a href="#products">The drop</a>
-          <a href="#bundles">Bundles</a>
-          <a href="#delivery">Delivery</a>
+          <a href="#fan">Edition 001</a>
+          <a href="#how-it-works">How it works</a>
+          <a href="#fan-impact">The cause</a>
         </nav>
         <a className="commerceBack" href="/"><ArrowLeft size={15}/> Back to The Chaos Walk</a>
         <MobileMenu />
@@ -61,117 +24,74 @@ export default function ShopPage() {
 
       <section className="commerceHero">
         <div className="commerceHeroCopy">
-          <p className="commerceEyebrow">THE CHAOS SHOP · EDITION 001 · SUNDAY, 17 OCTOBER 2027</p>
-          <h1>The walk is free.<br/><em>The look is yours.</em></h1>
-          <p>Start with the Chaos Fan. Add mismatch socks, a deliberately loud tee or one more wrong colour. Nothing here is a uniform. Everything is made to help the day look unmistakably different.</p>
+          <p className="commerceEyebrow">THE CHAOS FAN · EDITION 001</p>
+          <h1>One Fan.<br/><em>Zero normal.</em></h1>
+          <p>The official accessory of unofficial chaos. One unmistakable Fan in the air. Thousands of people in their own mismatched shoes. No uniform required.</p>
           <div className="commerceHeroActions">
-            <a href="/#join" className="commercePrimary">Tell me when the shop opens <ArrowRight size={17}/></a>
-            <a href="#delivery" className="commerceSecondary">How delivery works <ArrowRight size={17}/></a>
+            <a href="/#join" className="commercePrimary">Get the Fan launch alert <ArrowRight size={17}/></a>
+            <a href="#fan" className="commerceSecondary">Meet Edition 001 <ArrowRight size={17}/></a>
           </div>
-          <small>Edition 001 opens before The Chaos Walk. Final prices and country availability will be shown before ordering begins.</small>
+          <small>Free walk registration and Fan launch interest are separate. Tick the optional Fan alert on the registration form. Sales are not open; price and delivery availability will be confirmed before orders are accepted.</small>
         </div>
         <div className="commerceHeroMedia" role="img" aria-label="Colourful PlanetHike folding hand fan held by a participant" />
       </section>
 
-      <section className="commerceProducts" id="products">
+      <section className="commerceProducts" id="fan">
         <div className="commerceSectionHead">
-          <p className="commerceEyebrow">01 · THE DROP</p>
-          <h2>Four things.<br/>Plenty of chaos.</h2>
-          <p>The rule is simple: every piece should help you look more like yourself on the one day everybody is invited to dress wrong.</p>
+          <p className="commerceEyebrow">01 · THE ONLY YEAR ONE COLLECTIBLE</p>
+          <h2>The Fan.<br/>That&apos;s the drop.</h2>
+          <p>Two different shoes make the walk yours. Chaos Fan Edition 001 makes the group photograph instantly recognizable. Keep your clothes. Bring your personality.</p>
         </div>
         <div className="commerceProductGrid">
-          {products.map((product) => (
-            <article className={`commerceProduct ${product.className}`} key={product.title}>
-              <span>{product.kicker}</span>
-              <div>
-                <h3>{product.title.split('\n').map((line) => <span key={line}>{line}</span>)}</h3>
-                <strong>{product.price}</strong>
-              </div>
-              <p>{product.note}</p>
-            </article>
-          ))}
+          <article className="commerceProduct commerceProductFan">
+            <span>THE ICON · EDITION 001</span>
+            <div>
+              <h3><span>Chaos Fan</span><span>Edition 001</span></h3>
+              <strong>Target price €19.99 · final price pending</strong>
+            </div>
+            <p>A real, colourful folding hand fan designed for the shared photo moment and to keep long after the walk. Not an entry ticket. No purchase required to participate.</p>
+            <a className="commerceFanProductLink" href="/#join">Join the Fan alert <ArrowRight size={17}/></a>
+          </article>
+          <div className="commerceFanOnlyStory">
+            <span className="commerceEyebrow">WHY JUST ONE?</span>
+            <h3>Your outfit is already the collection.</h3>
+            <p>The only shared visual object for Edition 001 is the Fan. Wear whatever you love. Your own clothes are part of the point.</p>
+            <p>The walk remains free, even if you never buy a Fan.</p>
+          </div>
         </div>
       </section>
 
-      <section className="commerceBundles" id="bundles">
-        <div className="commerceSectionHead commerceSectionHeadDark">
-          <p className="commerceEyebrow">02 · BUNDLES</p>
-          <h2>Pick your level of wrong.</h2>
-          <p>One icon, one easy set or the full colour hit. The choice should take seconds.</p>
-        </div>
-        <div className="commerceBundleList">
-          {bundles.map(([n, title, text]) => (
-            <article key={n}>
-              <span>{n}</span>
-              <h3>{title}</h3>
-              <p>{text}</p>
-              <ArrowRight size={20}/>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="commerceDelivery" id="delivery">
+      <section className="commerceDelivery" id="how-it-works">
         <div className="commerceSectionHead">
-          <p className="commerceEyebrow">03 · GET YOUR ORDER</p>
-          <h2>To your door.<br/>Or waiting at the walk.</h2>
-          <p>Choose the delivery option that works for you when the shop opens.</p>
+          <p className="commerceEyebrow">02 · FIRST-ACCESS PROCESS</p>
+          <h2>Interest first.<br/>Orders later.</h2>
+          <p>We will not take paid orders until the physical sample, manufacturing, pricing, delivery coverage and fulfillment process are confirmed.</p>
         </div>
-        <div className="commerceDeliveryGrid">
-          <article>
-            <div className="commerceDeliveryIcon"><Truck size={28}/></div>
-            <p className="commerceMini">HOME DELIVERY</p>
-            <h3>Deliver to me.</h3>
-            <p>Your order is sent directly to the address you choose. Shipping is shown separately when you order.</p>
-            <ul>
-              <li>Best if you want your gear early.</li>
-              <li>Available countries and delivery estimates will be shown in the shop.</li>
-              <li>Wear it, clash it and arrive ready.</li>
-            </ul>
-          </article>
-          <article>
-            <div className="commerceDeliveryIcon commerceDeliveryIconAlt"><MapPin size={28}/></div>
-            <p className="commerceMini">EVENT COLLECTION</p>
-            <h3>Collect at my Chaos Walk.</h3>
-            <p>Choose event collection for a confirmed city and your order joins the city batch. We send collection stock to the City Lead ahead of the walk so it is ready for you on event day.</p>
-            <ul>
-              <li>City collection closes earlier than home delivery.</li>
-              <li>City Leads receive collection stock at least two weeks before event day.</li>
-              <li>Pick up your named order from the event collection point.</li>
-            </ul>
-          </article>
+        <div className="commerceFanProcess">
+          <article><Footprints size={28}/><span>01 · REGISTER</span><h3>Join the free walk.</h3><p>Choose your city. Raising your hand does not require buying merchandise, and does not confirm a local event.</p></article>
+          <article><Fan size={28}/><span>02 · OPT IN</span><h3>Get the Fan alert.</h3><p>Tick the separate, optional Edition 001 checkbox to be notified when Fan ordering opens.</p></article>
+          <article><Package size={28}/><span>03 · ORDER LATER</span><h3>Choose when ready.</h3><p>When sales open, we will publish the confirmed price, shipping options, delivery estimates and terms before checkout.</p></article>
         </div>
+        <p className="commerceFanDeliveryNote"><Truck size={18}/> Home shipping and collection in confirmed cities are possibilities under evaluation, not currently available checkout options.</p>
       </section>
 
-      <section className="commerceLogistics">
-        <div>
-          <p className="commerceEyebrow commerceEyebrowLight">04 · CITY COLLECTION</p>
-          <h2>Your order.<br/>Already there.</h2>
+      <section className="commerceSystem" id="fan-impact">
+        <div className="commerceFanImpact">
+          <HeartHandshake size={29}/>
+          <div>
+            <h2>Ridiculous fun. Real purpose.</h2>
+            <p>For each confirmed walk city, PlanetHike commits 20% of qualifying Chaos Fan sales revenue to a local cleft organisation selected by the local walk organisation. The recipient and final contribution will be reported after the relevant Fan-sales period closes.</p>
+            <p>Free participation is never conditional on purchasing the Fan.</p>
+          </div>
         </div>
-        <div className="commerceTimeline">
-          <article><span>ORDER</span><strong>Choose event collection</strong><p>Select your confirmed city when you order.</p></article>
-          <article><span>CUTOFF</span><strong>City orders close</strong><p>Each city gets a clearly published collection-order deadline.</p></article>
-          <article><span>T−14</span><strong>The city box arrives</strong><p>Collection stock reaches the City Lead at least two weeks before the walk.</p></article>
-          <article><span>EVENT DAY</span><strong>Collect + walk</strong><p>Pick up your order, put the colours on and join the chaos.</p></article>
-        </div>
-      </section>
-
-      <section className="commerceSystem">
-        <div className="commerceSystemGrid">
-          <article><Fan size={25}/><strong>The icon</strong><p>Chaos Fan Edition 001 is the object designed to show up in thousands of photographs.</p></article>
-          <article><Shirt size={25}/><strong>Your clothes. Louder.</strong><p>The apparel adds colour without turning participants into a matching team.</p></article>
-          <article><Package size={25}/><strong>Built for cities</strong><p>Direct delivery for individuals. Grouped event collection for confirmed city walks.</p></article>
-        </div>
-        <p className="commerceSystemNote">The walk is free. Buying PlanetHike merchandise is not an entry requirement. In each confirmed city, PlanetHike commits 20% of qualifying Chaos Fan sales revenue to a local cleft organisation selected by the local walk organisation. The recipient and final donation will be reported after the relevant sales period closes.</p>
       </section>
 
       <section className="commerceCta">
-        <p className="commerceEyebrow">EDITION 001 · SUNDAY, 17 OCTOBER 2027</p>
-        <h2>Be there<br/>before the drop.</h2>
-        <p>Pre-register and tick the Chaos Shop alert. We’ll tell you when Edition 001 opens.</p>
-        <a href="/#join" className="commercePrimary">Get the Edition 001 alert <ArrowRight size={17}/></a>
+        <p className="commerceEyebrow">EDITION 001 · FAN LAUNCH ALERT</p>
+        <h2>First in line.<br/>Still free to walk.</h2>
+        <p>Register your interest in The Chaos Walk. Tick the optional Fan alert for news of Edition 001. No payment is taken.</p>
+        <a href="/#join" className="commercePrimary">Get the Fan launch alert <ArrowRight size={17}/></a>
       </section>
     </main>
   );
 }
-

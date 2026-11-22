@@ -75,7 +75,7 @@ export default function PreregisterForm() {
         <p>{message}</p>
         {fanAlertRequested && <p className={styles.successNote}>You’ll also be first to hear when Chaos Fan Edition 001 goes on sale.</p>}
         <div className={styles.successActions}>
-          <a href="/shop">Explore the Chaos Shop <ArrowRight size={16} /></a>
+          <a href="/shop">See Chaos Fan Edition 001 <ArrowRight size={16} /></a>
           {submittedInterest === 'host' && <a href="/city-leads/apply">Complete City Lead application <ArrowRight size={16} /></a>}
         </div>
       </div>
@@ -154,12 +154,12 @@ export default function PreregisterForm() {
           </select>
         </label>
         <div aria-live="polite">
-          <span className={styles.availabilityLabel}>Chaos Shop</span>
+          <span className={styles.availabilityLabel}>Chaos Fan · Edition 001</span>
           <p className={styles.availabilityText}>
             {!selectedCountry
-              ? 'Choose your country to see the current shop plan.'
+              ? 'Choose your country to see the current Fan launch plan.'
               : selectedCountry.commerce
-                ? 'Chaos Fan Edition 001 and selected event merchandise are planned for your market. Join the alert below to hear when the shop opens.'
+                ? 'Chaos Fan Edition 001 is being planned for your market. Tick the optional alert for ordering news; availability is not confirmed.'
                 : 'You can still join the walk. Shop availability for your country will be announced separately.'}
           </p>
         </div>
@@ -169,7 +169,7 @@ export default function PreregisterForm() {
         <legend>Keep me in the loop</legend>
         <label className={styles.checkboxLabel}>
           <input name="merchandise_interest" type="checkbox" />
-          <span>Tell me when Chaos Fan Edition 001 and the Chaos Shop open.</span>
+          <span>Notify me when Chaos Fan Edition 001 ordering opens. Optional — no purchase or deposit required.</span>
         </label>
         <label className={styles.checkboxLabel}>
           <input name="marketing_consent" type="checkbox" />
@@ -184,12 +184,12 @@ export default function PreregisterForm() {
       <input className={styles.honeypot} name="company" tabIndex={-1} autoComplete="off" aria-hidden="true" />
 
       <button className={styles.submit} type="submit" disabled={status === 'loading'}>
-        {status === 'loading' ? 'Registering…' : 'Pre-register free'}
+        {status === 'loading' ? 'Registering…' : 'Count me in — free'}
         {status !== 'loading' && <ArrowRight size={18} />}
       </button>
 
       <p className={styles.microcopy}>
-        Free. No purchase required. We’ll email local city details as they are announced.
+        Officially unofficial misfit list. Free, no purchase required. This is first-access interest, not a confirmed city ticket. We’ll email local details when confirmed.
       </p>
       {status === 'error' && <p className={styles.error} role="alert">{message}</p>}
     </form>
