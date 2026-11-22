@@ -54,7 +54,7 @@ export default function Home() {
         </a>
         <a href="/shop" className="luxPath">
           <span className="luxPathIcon luxPathIconBlue"><Fan size={23}/></span>
-          <div><small>02 · OPTIONAL OBJECT</small><strong>Chaos Fan</strong><p>A colourful hand fan. Sales open later.</p></div>
+          <div><small>02 · THE ONLY YEAR 1 COLLECTIBLE</small><strong>Chaos Fan</strong><p>Edition 001. Get notified when ordering opens.</p></div>
           <ArrowRight size={19}/>
         </a>
         <a href="/city-leads" className="luxPath">
@@ -106,7 +106,7 @@ export default function Home() {
           <p className="luxEyebrow luxEyebrowLight">THE CHAOS FAN · EDITION 001</p>
           <h2>The official accessory<br/>of unofficial chaos.</h2>
           <p>One city. Thousands of mismatched shoes. One unmistakable Fan in the air. Chaos Fan Edition 001 is the collectible you’ll want in the group photo and long after the walk. Completely optional: the walk is free, with or without one.</p>
-          <div className="luxStatus"><span className="luxStatusDot"/> Sales are not open yet</div>
+          <div className="luxStatus"><span className="luxStatusDot"/> The only Edition 001 collectible · Orders not open yet</div>
           <a className="luxButton luxButtonLight" href="#join">Get first access to Edition 001 <ArrowRight size={17}/></a>
           <a className="luxFanDetailsLink" href="/shop">Explore the Chaos Fan <ArrowRight size={15}/></a>
         </div>
