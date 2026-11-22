@@ -121,6 +121,17 @@ try {
     await detail.getByText(/Orders are not yet open/i).waitFor();
     await detail.close();
   });
+  await check('response security headers are present and CSP is enforced', async () => {
+    const response = await page.request.get(`${BASE}/shop`);
+    assert.equal(response.status(), 200);
+    const h = response.headers();
+    assert.equal(h['x-content-type-options'], 'nosniff');
+    assert.equal(h['x-frame-options'], 'DENY');
+    assert.equal(h['referrer-policy'], 'strict-origin-when-cross-origin');
+    assert.match(h['permissions-policy'], /camera=\(\)/);
+    assert.match(h['content-security-policy'], /frame-ancestors 'none'/);
+    assert.match(h['content-security-policy'], /object-src 'none'/);
+  });
   await desktop.context.close();
 
   const mobile = await visit({ width: 375, height: 812 }, 'mobile');
