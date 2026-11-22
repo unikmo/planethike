@@ -23,7 +23,8 @@ if (send) {
   const shop = await fetch('https://planethike.org/shop', {cache:'no-store'});
   assert.equal(shop.status, 200, 'Live shop must be available');
   const html = await shop.text();
-  assert.ok(!html.includes('Orders are not yet open'), 'Cannot announce before launch');
+  assert.ok(!html.includes('Orders are not yet open') && !html.includes('Sales are not open'), 'Cannot announce before launch');
+  assert.ok(html.includes('Ordering is open'), 'Positive ordering-open page confirmation required');
 }
 
 let total=0, accepted=0, failed=0;
