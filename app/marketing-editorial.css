@@ -112,3 +112,76 @@
   .luxFanHeroLink { margin-top: 12px; font-size: 12px; }
   .luxFanCopy h2 { font-size: clamp(44px, 10vw, 66px); }
 }
+
+/* Edition 001: single collectible, no inactive product catalogue. */
+.commerceFanOnly .commerceProductGrid {
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+  gap: clamp(22px, 4vw, 66px);
+  border: 0;
+  align-items: stretch;
+}
+.commerceFanOnly .commerceProductFan {
+  border: 0;
+  border-radius: 26px;
+  min-height: 430px;
+  padding: clamp(30px, 5vw, 72px);
+  gap: 26px;
+}
+.commerceFanOnly .commerceProduct h3 { font-size: clamp(46px, 5vw, 80px); }
+.commerceFanOnly .commerceProduct strong { display: block; font-size: 16px; line-height: 1.4; }
+.commerceFanProductLink {
+  display: inline-flex;
+  gap: 9px;
+  align-items: center;
+  align-self: flex-start;
+  width: fit-content;
+  padding: 13px 20px;
+  border: 1px solid #111;
+  border-radius: 999px;
+  background: #111;
+  color: #fff !important;
+  font-size: 13px;
+  font-weight: 700;
+}
+.commerceFanOnlyStory {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(12px, 3vw, 36px);
+}
+.commerceFanOnlyStory h3 {
+  max-width: 580px;
+  margin: 0 0 20px;
+  font-size: clamp(34px, 4vw, 65px);
+  letter-spacing: -.05em;
+  line-height: 1.02;
+  font-weight: 500;
+}
+.commerceFanOnlyStory p { max-width: 500px; color: #55565b; line-height: 1.6; font-size: 17px; }
+.commerceFanProcess { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.commerceFanProcess article { min-height: 330px; border: 1px solid rgba(11,11,12,.1); border-radius: 22px; padding: clamp(26px, 3vw, 44px); background: #fff; display: flex; flex-direction: column; }
+.commerceFanProcess article > svg { margin-bottom: 54px; }
+.commerceFanProcess span { font-size: 11px; font-weight: 700; letter-spacing: .14em; }
+.commerceFanProcess h3 { margin: 15px 0; font-size: clamp(27px, 3vw, 42px); line-height: 1.08; letter-spacing: -.04em; font-weight: 500; }
+.commerceFanProcess p { margin: 0; font-size: 14px; line-height: 1.6; color: #5e5e60; }
+.commerceFanDeliveryNote { margin: 30px 0 0; display: flex; align-items: center; gap: 12px; font-size: 13px; color: #55565b; line-height: 1.5; }
+.commerceFanDeliveryNote svg { flex: none; }
+.commerceFanImpact { display: grid; grid-template-columns: 45px 1fr; gap: 22px; max-width: 900px; }
+.commerceFanImpact h2 { margin: 0 0 18px; font-size: clamp(36px, 5vw, 64px); letter-spacing: -.05em; font-weight: 500; }
+.commerceFanImpact p { color: #606064; font-size: 16px; line-height: 1.6; }
+.commerceFanOnly #fan, .commerceFanOnly #how-it-works, .commerceFanOnly #fan-impact { scroll-margin-top: 90px; }
+@media(max-width: 900px) {
+  .commerceFanOnly .commerceProductGrid { grid-template-columns: 1fr; }
+  .commerceFanProcess { grid-template-columns: 1fr; }
+  .commerceFanProcess article { min-height: 250px; }
+  .commerceFanProcess article > svg { margin-bottom: 24px; }
+}
+@media(max-width: 620px) {
+  .commerceFanOnly .commerceHero h1 { font-size: clamp(48px, 13vw, 73px); }
+  .commerceFanOnly .commerceProducts, .commerceFanOnly .commerceDelivery { padding: 76px 18px; }
+  .commerceFanOnly .commerceSectionHead h2 { font-size: clamp(46px, 12vw, 70px); }
+  .commerceFanDeliveryNote { align-items: flex-start; }
+  .commerceFanImpact { grid-template-columns: 1fr; }
+  .commerceFanOnlyStory { padding: 12px; }
+  .commerceFanOnly .commerceCta h2 { font-size: clamp(48px, 11vw, 85px); }
+}
