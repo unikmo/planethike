@@ -55,7 +55,7 @@ export default function ShopPage() {
           <div className="commerceFanOnlyStory">
             <span className="commerceEyebrow">WHY JUST ONE?</span>
             <h3>Your outfit is already the collection.</h3>
-            <p>No shirts, trousers, socks or bundles for Edition 001. The only shared visual object is the Fan. Everything else belongs to you.</p>
+            <p>The only shared visual object for Edition 001 is the Fan. Wear whatever you love. Your own clothes are part of the point.</p>
             <p>The walk remains free, even if you never buy a Fan.</p>
           </div>
         </div>
