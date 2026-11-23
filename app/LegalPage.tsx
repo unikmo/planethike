@@ -2,7 +2,6 @@ import type { ReactNode } from 'react';
 import MobileMenu from './MobileMenu';
 
 type Section = { heading: string; body: ReactNode };
-
 type Props = {
   eyebrow: string;
   title: string;
@@ -12,36 +11,45 @@ type Props = {
 
 export default function LegalPage({ eyebrow, title, intro, sections }: Props) {
   return (
-    <main className="seoPage">
+    <main className="phInfoPage">
       <header className="seoHeader">
-        <a className="brand" href="/">PLANET<span>HIKE</span></a>
-        <nav><a href="/the-chaos-walk">The Walk</a><a href="/cities">Cities</a><a href="/shop">Chaos Shop</a><a href="/city-leads">City Leads</a><a href="/guides">Guides</a></nav>
-        <a className="seoHeaderCta" href="/join">Pre-register free</a>
+        <a className="brand" href="/" aria-label="PlanetHike home">PLANET<span>HIKE</span></a>
+        <nav aria-label="Primary navigation">
+          <a href="/the-chaos-walk">The Walk</a>
+          <a href="/cities">Cities</a>
+          <a href="/shop">Chaos Fan</a>
+          <a href="/city-leads">City Leads</a>
+          <a href="/contact">Contact</a>
+        </nav>
+        <a className="seoHeaderCta" href="/join">Join free</a>
         <MobileMenu />
       </header>
 
-      <section className="seoHero" style={{alignItems:'start'}}>
-        <div>
-          <p className="seoEyebrow">{eyebrow}</p>
+      <div className="phInfoContent">
+        <div className="phInfoIntro">
+          <p className="phInfoEyebrow">{eyebrow}</p>
           <h1>{title}</h1>
-          <p className="seoLead">{intro}</p>
+          <p className="phInfoLead">{intro}</p>
         </div>
-        <aside className="seoHeroCard">
-          <span>PLANETHIKE OÜ</span>
-          <strong>REG. NO.<br/>17233027</strong>
-          <p>Järvevana tee 9, 11314 Tallinn, Estonia · hello@planethike.org</p>
-        </aside>
-      </section>
-
-      <section className="seoSections">
-        {sections.map((section, index) => (
-          <article key={section.heading}>
-            <span>{String(index + 1).padStart(2, '0')}</span>
-            <h2>{section.heading}</h2>
-            <div style={{fontFamily:"'Instrument Serif',serif",fontSize:22,lineHeight:1.25}}>{section.body}</div>
-          </article>
-        ))}
-      </section>
+        <div className="phInfoSections">
+          {sections.map((section) => (
+            <section className="phInfoSection" key={section.heading}>
+              <h2>{section.heading}</h2>
+              <div className="phInfoBody">{section.body}</div>
+            </section>
+          ))}
+        </div>
+      </div>
+      <footer className="phInfoFooter">
+        <a className="phInfoFooterBrand" href="/">PLANETHIKE</a>
+        <nav aria-label="Footer navigation">
+          <a href="/contact">Contact</a>
+          <a href="/privacy">Privacy</a>
+          <a href="/terms">Terms</a>
+          <a href="/imprint">Imprint</a>
+        </nav>
+        <small>© {new Date().getFullYear()} PlanetHike</small>
+      </footer>
     </main>
   );
 }
