@@ -51,3 +51,21 @@ test('user-supplied fields are stripped of embedded newlines',async()=>{
   assert.doesNotMatch(delivered.text,/Mina\nInjected Subject/);
   assert.doesNotMatch(delivered.text,/Berlin\r\nInjected header/);
 });
+
+test('classifies Titan 535 authentication rejection without leaking details', async () => {
+  const status=await sendRegistrationConfirmation(input,{
+    user:'hello@planethike.org',password:'test',send:async()=> {
+      const e=new Error('secret mail server details'); e.code='EAUTH'; e.responseCode=535; throw e;
+    }
+  });
+  assert.equal(status,'auth_failed');
+});
+
+test('classifies Titan socket connection failure without leaking details', async () => {
+  const status=await sendRegistrationConfirmation(input,{
+    user:'hello@planethike.org',password:'test',send:async()=> {
+      const e=new Error('secret'); e.code='ESOCKET'; throw e;
+    }
+  });
+  assert.equal(status,'connection_failed');
+});
