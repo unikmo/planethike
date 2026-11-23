@@ -1,0 +1,40 @@
+/* Shared, self-contained layout for contact and legal pages. */
+.phInfoPage{min-height:100vh;display:flex;flex-direction:column;background:#f5f2ec;color:#111;overflow-x:clip}
+.phInfoPage .seoHeader{flex-shrink:0}
+.phInfoContent{width:min(100% - 48px,920px);margin:0 auto;padding:72px 0 100px;flex:1}
+.phInfoIntro{padding-bottom:42px;border-bottom:1px solid rgba(17,17,17,.17)}
+.phInfoEyebrow{font-size:11px;text-transform:uppercase;font-weight:800;letter-spacing:.17em;color:#7540a1;margin:0 0 16px}
+.phInfoIntro h1{font-family:'DM Sans',Arial,sans-serif;font-size:clamp(52px,7vw,92px);font-weight:500;line-height:1;letter-spacing:-.06em;margin:0 0 22px}
+.phInfoLead{font-size:clamp(16px,1.7vw,20px);line-height:1.5;color:#515151;margin:0;max-width:720px}
+.phInfoSections{padding-top:10px}
+.phInfoSection{display:grid;grid-template-columns:220px minmax(0,1fr);gap:44px;padding:29px 0;border-bottom:1px solid rgba(17,17,17,.15)}
+.phInfoSection h2{font-size:18px;font-weight:700;line-height:1.35;margin:0}
+.phInfoBody{min-width:0;font-size:16px;line-height:1.65;color:#343434;overflow-wrap:anywhere}
+.phInfoBody p{margin:0 0 14px}
+.phInfoBody p:last-child{margin-bottom:0}
+.phInfoBody a{text-decoration:underline;text-underline-offset:3px}
+.phInfoBody strong{font-weight:700;color:#111}
+.phInfoFooter{background:#111;color:#fff;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px;padding:28px max(24px,calc((100vw - 920px)/2));font-family:'DM Sans',Arial,sans-serif}
+.phInfoFooterBrand{font-weight:800;letter-spacing:.18em;font-size:15px}
+.phInfoFooter nav{display:flex;flex-wrap:wrap;gap:20px;font-size:13px}
+.phInfoFooter a:hover{text-decoration:underline;text-underline-offset:3px}
+.phInfoFooter small{color:#c7c7c7;font-size:12px;opacity:1}
+.phContactForm{display:grid;gap:19px;max-width:620px}
+.phContactForm label{display:grid;gap:7px;font-size:13px;font-weight:700;color:#252525}
+.phContactForm input,.phContactForm textarea{font:inherit;font-size:16px;width:100%;border:1px solid #b9b9b9;background:#fff;color:#111;padding:13px 14px;border-radius:7px}
+.phContactForm textarea{min-height:160px;resize:vertical}
+.phContactForm input:focus-visible,.phContactForm textarea:focus-visible{outline:2px solid #7540a1;outline-offset:2px}
+.phContactForm button{justify-self:start;border:0;border-radius:999px;background:#111;color:#fff;padding:15px 24px;font-size:14px;font-weight:800;cursor:pointer}
+.phContactForm button:disabled{opacity:.55;cursor:wait}
+.phContactStatus{font-size:14px;font-weight:600}
+.phContactSuccess{color:#146036}
+.phContactError{color:#a42020}
+.phContactNote{font-size:13px;color:#656565;line-height:1.5}
+@media(max-width:700px){
+.phInfoContent{width:calc(100% - 36px);padding:45px 0 70px}
+.phInfoSection{grid-template-columns:1fr;gap:12px;padding:24px 0}
+.phInfoSection h2{font-size:17px}
+.phInfoBody{font-size:15px;line-height:1.6}
+.phInfoFooter{padding:28px 18px;display:grid;gap:22px}
+.phInfoFooter nav{gap:17px}
+}
