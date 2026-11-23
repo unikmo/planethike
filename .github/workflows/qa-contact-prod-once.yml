@@ -1,0 +1,20 @@
+name: One-off PlanetHike Contact Production Test
+on:
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  live-contact:
+    if: github.head_ref == 'qa/contact-production-one-off-20261123'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify live site and submit one real contact email
+        run: node scripts/qa-contact-prod-once.mjs
