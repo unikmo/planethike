@@ -1,0 +1,20 @@
+name: One-Off Titan SMTP Activation E2E
+on:
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  titan-production-test:
+    if: github.head_ref == 'qa/titan-smtp-activation-probe-20261123'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Live PlanetHike signup and SMTP acceptance
+        run: node scripts/qa-titan-activation-once.mjs
