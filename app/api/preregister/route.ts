@@ -104,6 +104,8 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({
       ok: true, commerce_eligible: country.commerce, city_status: 'interest_only',
       confirmation_email: confirmationEmail === 'sent' ? 'sent' : 'not_sent',
+      // Safe diagnostic classification; never expose SMTP host, password or server responses.
+      confirmation_email_reason: confirmationEmail === 'sent' ? undefined : confirmationEmail,
     });
   } catch {
     return NextResponse.json({ error: 'Invalid request.' }, { status: 400 });
