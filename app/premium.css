@@ -274,7 +274,7 @@ body {
 .luxFooter p { margin: 18px 0 0; color: rgba(255,255,255,.55); font-family: 'Instrument Serif', Georgia, serif; font-size: 23px; }
 .luxFooterLinks { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 13px 24px; font-size: 12px; }
 .luxFooterLinks a { color: rgba(255,255,255,.72); }
-.luxFooter small { grid-column: 1 / -1; color: rgba(255,255,255,.38); }
+.luxFooter small { grid-column: 1 / -1; color: rgba(255,255,255,.78); font-size: 12px; opacity: 1; }
 
 /* Premium pass for existing high-priority subpages */
 .subHeader,

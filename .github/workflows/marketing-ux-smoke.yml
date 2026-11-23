@@ -40,6 +40,8 @@ jobs:
           exit 1
       - name: Browser QA
         run: node scripts/marketing-smoke.mjs
+      - name: Sitewide desktop and mobile regression
+        run: node scripts/sitewide-regression.mjs
       - name: Upload QA screenshots
         if: always()
         uses: actions/upload-artifact@v4

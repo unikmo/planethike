@@ -11,6 +11,7 @@ export default function MobileMenu() {
         <a href="/guides">Guides</a>
         <a href="/the-cause">The Cause</a>
         <a href="/become-a-partner">Become a partner</a>
+        <a href="/contact">Contact</a>
         <a href="/privacy">Privacy</a>
       </div>
     </details>
