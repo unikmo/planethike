@@ -7,7 +7,7 @@ type RegistrationEmailInput = {
   fanInterest: boolean;
 };
 
-export type RegistrationEmailStatus = 'sent' | 'not_configured' | 'failed';
+export type RegistrationEmailStatus = 'sent' | 'not_configured' | 'auth_failed' | 'connection_failed' | 'smtp_rejected' | 'failed';
 
 type MailData = { from: { name: string; address: string }; to: string; subject: string; text: string };
 type MailSender = (mail: MailData) => Promise<unknown>;
@@ -66,7 +66,16 @@ export async function sendRegistrationConfirmation(
       text: lines.join('\n'),
     });
     return 'sent';
-  } catch {
-    return 'failed';
+  } catch (error: unknown) {
+    // SMTP exception messages may include sensitive provider details; never log them.
+    const failure = error as { code?: unknown; responseCode?: unknown };
+    const code = typeof failure?.code === 'string' ? failure.code : '';
+    const responseCode = typeof failure?.responseCode === 'number' ? failure.responseCode : 0;
+    let category: RegistrationEmailStatus = 'failed';
+    if (code === 'EAUTH' || responseCode === 535 || responseCode === 534) category = 'auth_failed';
+    else if (['ECONNECTION', 'ETIMEDOUT', 'ESOCKET', 'EDNS', 'ECONNRESET', 'ENOTFOUND'].includes(code)) category = 'connection_failed';
+    else if (code === 'EENVELOPE' || code === 'EMESSAGE' || responseCode >= 400) category = 'smtp_rejected';
+    console.error('Titan SMTP confirmation failure', { category, code: /^[A-Z_]{2,25}$/.test(code) ? code : 'UNKNOWN', responseCode });
+    return category;
   }
 }
